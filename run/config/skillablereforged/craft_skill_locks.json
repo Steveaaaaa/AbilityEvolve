@@ -1,0 +1,5 @@
+{
+  "craftSkillLocks": {
+		"minecraft:stick": ["building:2"]
+	}
+}

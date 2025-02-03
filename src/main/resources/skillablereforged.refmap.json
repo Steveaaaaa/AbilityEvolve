@@ -1,0 +1,15 @@
+{
+  "mappings": {
+    "yezi/skillablereforged/mixin/CraftingContainerMixin": {
+      "slotChangedCraftingGrid": "Lnet/minecraft/world/inventory/CraftingMenu;slotChangedCraftingGrid(Lnet/minecraft/world/inventory/AbstractContainerMenu;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/inventory/CraftingContainer;Lnet/minecraft/world/inventory/ResultContainer;)V"
+
+    }
+  },
+  "data": {
+    "searge": {
+      "yezi/skillablereforged/mixin/CraftingContainerMixin": {
+        "slotChangedCraftingGrid": "Lnet/minecraft/world/inventory/CraftingMenu;slotChangedCraftingGrid(Lnet/minecraft/world/inventory/AbstractContainerMenu;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/inventory/CraftingContainer;Lnet/minecraft/world/inventory/ResultContainer;)V"
+      }
+    }
+  }
+}
