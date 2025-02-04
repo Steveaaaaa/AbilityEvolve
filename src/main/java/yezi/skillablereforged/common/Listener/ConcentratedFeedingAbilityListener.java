@@ -9,7 +9,7 @@ import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.entity.animal.horse.Mule;
 import net.minecraftforge.event.entity.EntityMountEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import yezi.skillablereforged.common.commands.abilities.ConcentratedFeedingAbility;
+import yezi.skillablereforged.common.abilities.ConcentratedFeedingAbility;
 
 public class ConcentratedFeedingAbilityListener {
     private final ConcentratedFeedingAbility concentratedFeedingAbility = new ConcentratedFeedingAbility();

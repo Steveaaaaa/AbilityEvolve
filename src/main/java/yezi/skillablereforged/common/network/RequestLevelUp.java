@@ -6,7 +6,7 @@ import net.minecraftforge.network.NetworkEvent;
 import yezi.skillablereforged.Config;
 import yezi.skillablereforged.Skillablereforged;
 import yezi.skillablereforged.common.capabilities.SkillModel;
-import yezi.skillablereforged.common.commands.skills.Skill;
+import yezi.skillablereforged.common.skills.Skill;
 
 import java.util.function.Supplier;
 

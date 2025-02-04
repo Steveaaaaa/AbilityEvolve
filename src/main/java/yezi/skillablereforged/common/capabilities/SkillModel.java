@@ -1,9 +1,9 @@
 package yezi.skillablereforged.common.capabilities;
 
 import net.minecraftforge.common.util.LazyOptional;
-import yezi.skillablereforged.common.commands.skills.Requirement;
-import yezi.skillablereforged.common.commands.skills.RequirementType;
-import yezi.skillablereforged.common.commands.skills.Skill;
+import yezi.skillablereforged.common.skills.Requirement;
+import yezi.skillablereforged.common.skills.RequirementType;
+import yezi.skillablereforged.common.skills.Skill;
 import net.minecraft.client.Minecraft;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;

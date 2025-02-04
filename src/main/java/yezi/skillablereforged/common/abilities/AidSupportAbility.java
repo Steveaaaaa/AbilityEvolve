@@ -1,4 +1,4 @@
-package yezi.skillablereforged.common.commands.abilities;
+package yezi.skillablereforged.common.abilities;
 
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
@@ -8,8 +8,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import yezi.skillablereforged.common.capabilities.SkillModel;
-import yezi.skillablereforged.common.commands.skills.Requirement;
-import yezi.skillablereforged.common.commands.skills.Skill;
+import yezi.skillablereforged.common.skills.Requirement;
+import yezi.skillablereforged.common.skills.Skill;
 
 import java.util.List;
 import java.util.Map;

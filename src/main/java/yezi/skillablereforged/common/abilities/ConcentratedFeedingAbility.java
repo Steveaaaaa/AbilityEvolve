@@ -1,11 +1,11 @@
-package yezi.skillablereforged.common.commands.abilities;
+package yezi.skillablereforged.common.abilities;
 
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import yezi.skillablereforged.common.capabilities.SkillModel;
-import yezi.skillablereforged.common.commands.skills.Requirement;
-import yezi.skillablereforged.common.commands.skills.Skill;
+import yezi.skillablereforged.common.skills.Requirement;
+import yezi.skillablereforged.common.skills.Skill;
 
 import java.util.Map;
 

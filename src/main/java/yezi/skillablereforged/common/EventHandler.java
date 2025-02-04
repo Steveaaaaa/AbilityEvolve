@@ -25,7 +25,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import yezi.skillablereforged.Config;
 import yezi.skillablereforged.common.capabilities.SkillModel;
 import yezi.skillablereforged.common.capabilities.SkillProvider;
-import yezi.skillablereforged.common.commands.abilities.PassiveAbilityApplier;
+import yezi.skillablereforged.common.abilities.PassiveAbilityApplier;
 import yezi.skillablereforged.common.network.SyncToClient;
 
 import java.util.HashMap;

@@ -1,13 +1,12 @@
 package yezi.skillablereforged.common.commands;
 
 import com.mojang.brigadier.builder.ArgumentBuilder;
-import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import java.util.logging.Logger;
 import yezi.skillablereforged.Config;
 import yezi.skillablereforged.common.capabilities.SkillModel;
-import yezi.skillablereforged.common.commands.skills.Skill;
+import yezi.skillablereforged.common.skills.Skill;
 import yezi.skillablereforged.common.network.SyncSkillConfigPacket;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;

@@ -10,8 +10,8 @@ import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.loading.FMLPaths;
-import yezi.skillablereforged.common.commands.skills.Requirement;
-import yezi.skillablereforged.common.commands.skills.Skill;
+import yezi.skillablereforged.common.skills.Requirement;
+import yezi.skillablereforged.common.skills.Skill;
 
 import java.io.File;
 import java.io.FileReader;

@@ -10,7 +10,7 @@ import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.PacketDistributor;
 import yezi.skillablereforged.Config;
 import yezi.skillablereforged.Skillablereforged;
-import yezi.skillablereforged.common.commands.skills.Requirement;
+import yezi.skillablereforged.common.skills.Requirement;
 
 import java.lang.reflect.Type;
 import java.util.Map;

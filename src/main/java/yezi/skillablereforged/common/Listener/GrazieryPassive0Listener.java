@@ -1,9 +1,10 @@
-package yezi.skillablereforged.common.commands.abilities;
+package yezi.skillablereforged.common.Listener;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import yezi.skillablereforged.common.abilities.AidSupportAbility;
 
 public class GrazieryPassive0Listener {
     private final AidSupportAbility aidSupportAbility = new AidSupportAbility();

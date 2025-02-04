@@ -1,6 +1,6 @@
-package yezi.skillablereforged.common.commands.abilities;
+package yezi.skillablereforged.common.abilities;
 
-import yezi.skillablereforged.common.commands.skills.Requirement;
+import yezi.skillablereforged.common.skills.Requirement;
 
 public abstract class Ability {
     public final String name;

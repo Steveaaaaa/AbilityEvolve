@@ -10,7 +10,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import yezi.skillablereforged.Config;
 import yezi.skillablereforged.common.capabilities.SkillModel;
-import yezi.skillablereforged.common.commands.skills.Requirement;
+import yezi.skillablereforged.common.skills.Requirement;
 
 import java.util.List;
 import java.util.logging.Logger;

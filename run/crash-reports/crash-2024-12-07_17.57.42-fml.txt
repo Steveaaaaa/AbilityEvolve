@@ -45,13 +45,13 @@ Stacktrace:
 Details:
 	Mod File: /D:/MyMods/SkillableReforged/build/resources/main/
 	Failure message: Skillable Reforged (skillablereforged) encountered an error during the common_setup event phase
-		java.lang.IllegalArgumentException: No enum constant yezi.skillablereforged.common.commands.skills.Skill.CRAFT
+		java.lang.IllegalArgumentException: No enum constant yezi.skillablereforged.common.skills.Skill.CRAFT
 	Mod Version: 1.1
 	Mod Issue URL: NOT PROVIDED
-	Exception message: java.lang.IllegalArgumentException: No enum constant yezi.skillablereforged.common.commands.skills.Skill.CRAFT
+	Exception message: java.lang.IllegalArgumentException: No enum constant yezi.skillablereforged.common.skills.Skill.CRAFT
 Stacktrace:
 	at java.lang.Enum.valueOf(Enum.java:273) ~[?:?] {}
-	at yezi.skillablereforged.common.commands.skills.Skill.valueOf(Skill.java:3) ~[%23196!/:?] {re:classloading}
+	at yezi.skillablereforged.common.skills.Skill.valueOf(Skill.java:3) ~[%23196!/:?] {re:classloading}
 	at yezi.skillablereforged.Config.parseSkillLocks(Config.java:85) ~[%23196!/:?] {re:classloading}
 	at yezi.skillablereforged.Config.load(Config.java:56) ~[%23196!/:?] {re:classloading}
 	at yezi.skillablereforged.Skillablereforged.commonSetup(Skillablereforged.java:48) ~[%23196!/:?] {re:classloading}

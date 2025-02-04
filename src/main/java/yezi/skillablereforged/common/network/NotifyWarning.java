@@ -9,7 +9,7 @@ import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.PacketDistributor;
 import yezi.skillablereforged.Skillablereforged;
 import yezi.skillablereforged.client.Overlay;
-import yezi.skillablereforged.common.commands.skills.RequirementType;
+import yezi.skillablereforged.common.skills.RequirementType;
 
 import java.util.function.Supplier;
 

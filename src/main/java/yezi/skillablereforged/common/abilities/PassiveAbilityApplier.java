@@ -1,9 +1,10 @@
-package yezi.skillablereforged.common.commands.abilities;
+package yezi.skillablereforged.common.abilities;
 
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
 import org.apache.commons.lang3.tuple.Pair;
 import yezi.skillablereforged.common.Listener.ConcentratedFeedingAbilityListener;
+import yezi.skillablereforged.common.Listener.GrazieryPassive0Listener;
 
 import java.util.List;
 
@@ -129,8 +130,8 @@ public class PassiveAbilityApplier {
     }
     private void applyGrazieryPassive1() {
         System.out.println("应用 graziery 被动能力, 索引: 1");
-        if (isGrazieryPassive0Active) return;
-        isGrazieryPassive0Active = true;
+        if (isRidingAbilityActive) return;
+        isRidingAbilityActive = true;
         MinecraftForge.EVENT_BUS.register(new ConcentratedFeedingAbilityListener());
     }
     private void applyGrazieryPassive2() {

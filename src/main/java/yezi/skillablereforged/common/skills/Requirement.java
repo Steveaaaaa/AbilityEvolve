@@ -1,4 +1,4 @@
-package yezi.skillablereforged.common.commands.skills;
+package yezi.skillablereforged.common.skills;
 
 public class Requirement {
     public final Skill skill;

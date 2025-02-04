@@ -6,7 +6,7 @@ import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import yezi.skillablereforged.Config;
 import yezi.skillablereforged.common.capabilities.SkillModel;
-import yezi.skillablereforged.common.commands.skills.Skill;
+import yezi.skillablereforged.common.skills.Skill;
 import yezi.skillablereforged.common.network.SyncToClient;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;

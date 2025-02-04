@@ -1,4 +1,4 @@
-package yezi.skillablereforged.common.commands.abilities;
+package yezi.skillablereforged.common.abilities;
 
 import org.apache.commons.lang3.tuple.Pair;
 import net.minecraft.world.entity.player.Player;

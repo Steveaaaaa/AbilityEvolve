@@ -3,9 +3,9 @@ package yezi.skillablereforged.common.network;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkEvent;
-import yezi.skillablereforged.common.commands.abilities.Ability;
-import yezi.skillablereforged.common.commands.abilities.AbilityManager;
-import yezi.skillablereforged.common.commands.abilities.AidSupportAbility;
+import yezi.skillablereforged.common.abilities.Ability;
+import yezi.skillablereforged.common.abilities.AbilityManager;
+import yezi.skillablereforged.common.abilities.AidSupportAbility;
 
 import java.util.function.Supplier;
 
