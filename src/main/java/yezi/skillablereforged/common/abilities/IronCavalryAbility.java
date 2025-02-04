@@ -16,8 +16,6 @@ public class IronCavalryAbility extends Ability {
     private static final String name = "iron_cavalry";
     private static final String description = "When you ride, increase your damage.";
     private static final int requirementGraziery = 16;
-    private static final int[] ATTACK_BONUS = {25, 30, 35, 40, 45, 50, 55, 60, 65, 70};
-    private static final int[] ARMOR_BONUS = {30,35,40,45,50,60,75,80,100};
     GetAbilityLevel getAbilityLevel = new GetAbilityLevel();
     public IronCavalryAbility()
     {
@@ -39,9 +37,12 @@ public class IronCavalryAbility extends Ability {
         );
     }
 
+    private static final int[] ATTACK_BONUS = {25, 30, 35, 40, 45, 50, 55, 60, 65, 70};
+    private static final int[] ARMOR_BONUS = {30,35,40,45,50,60,75,80,100};
+
     private static final UUID ATTACK_BONUS_UUID = UUID.fromString("d1b4ec21-cfa4-49d4-b7e3-d6937bb9f1b9");
 
-    int abilityLevel = getAbilityLevel.getAbilityLevel(SkillModel.get().getSkillLevel(Skill.GRAZIERY), requirementGraziery+1);
+    int abilityLevel = getAbilityLevel.getAbilityLevelGraziery3(SkillModel.get().getSkillLevel(Skill.GRAZIERY), requirementGraziery);
     public void applyAttackBonus(Player player){
         AttributeInstance attackAttr = player.getAttribute(Attributes.ATTACK_DAMAGE);
         if (attackAttr != null) {
