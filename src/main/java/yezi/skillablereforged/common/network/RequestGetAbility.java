@@ -3,7 +3,6 @@ package yezi.skillablereforged.common.network;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkEvent;
-import yezi.skillablereforged.common.capabilities.AbilityModel;
 import yezi.skillablereforged.common.commands.abilities.Ability;
 import yezi.skillablereforged.common.commands.abilities.AbilityManager;
 import yezi.skillablereforged.common.commands.abilities.AidSupportAbility;
@@ -30,16 +29,10 @@ public class RequestGetAbility {
         context.get().enqueueWork(() -> {
             ServerPlayer player = context.get().getSender();
             assert player != null;
-
-            AbilityModel abilityModel = AbilityModel.get(player);
             AbilityManager abilityManager = new AbilityManager(player);
             Ability ability = getAbilityByName(this.name);  // 根据 id 获取对应的 Ability 实例
             abilityManager.getAbility(ability.abilityType, ability.index, ability.skillPointCost);
 
-        /*    if (ability.skillPointCost <= abilityModel.abilityPoint - ability.skillPointCost) {
-                abilityModel.increaseAbilityLevel(ability);
-                SyncToClient.send(player);
-            }*/
         });
         context.get().setPacketHandled(true);
     }

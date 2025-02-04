@@ -18,12 +18,10 @@ import yezi.skillablereforged.client.Overlay;
 import yezi.skillablereforged.client.Tooltips;
 import yezi.skillablereforged.common.CuriosCompat;
 import yezi.skillablereforged.common.EventHandler;
+import yezi.skillablereforged.common.capabilities.AbilityModel;
 import yezi.skillablereforged.common.capabilities.SkillModel;
 import yezi.skillablereforged.common.commands.Commands;
-import yezi.skillablereforged.common.network.NotifyWarning;
-import yezi.skillablereforged.common.network.RequestLevelUp;
-import yezi.skillablereforged.common.network.SyncSkillConfigPacket;
-import yezi.skillablereforged.common.network.SyncToClient;
+import yezi.skillablereforged.common.network.*;
 import yezi.skillablereforged.event.ClientEvents;
 
 import java.util.Optional;
@@ -49,10 +47,12 @@ public class Skillablereforged
         Config.load();
         NETWORK = NetworkRegistry.newSimpleChannel(new ResourceLocation("skillablereforged", "main_channel"), () -> "1.0", (s) -> true, (s) -> true);
         NETWORK.registerMessage(1, SyncToClient.class, SyncToClient::encode, SyncToClient::new, SyncToClient::handle, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
-        NETWORK.registerMessage(2, RequestLevelUp.class, RequestLevelUp::encode, RequestLevelUp::new, RequestLevelUp::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
-        NETWORK.registerMessage(3, NotifyWarning.class, NotifyWarning::encode, NotifyWarning::new, NotifyWarning::handle, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
-        NETWORK.registerMessage(4, SyncSkillConfigPacket.class, SyncSkillConfigPacket::toBytes, SyncSkillConfigPacket::new, SyncSkillConfigPacket::handle);
+        NETWORK.registerMessage(2, RequestGetAbility.class, RequestGetAbility::encode, RequestGetAbility::new, RequestGetAbility::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
+        NETWORK.registerMessage(3, RequestLevelUp.class, RequestLevelUp::encode, RequestLevelUp::new, RequestLevelUp::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
+        NETWORK.registerMessage(4, NotifyWarning.class, NotifyWarning::encode, NotifyWarning::new, NotifyWarning::handle, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
+        NETWORK.registerMessage(5, SyncSkillConfigPacket.class, SyncSkillConfigPacket::toBytes, SyncSkillConfigPacket::new, SyncSkillConfigPacket::handle);
         MinecraftForge.EVENT_BUS.register(new EventHandler());
+    //    MinecraftForge.EVENT_BUS.register(new GrazieryPassive0Listener());
         MinecraftForge.EVENT_BUS.register(new Commands());
         if (ModList.get().isLoaded("curios")) {
             MinecraftForge.EVENT_BUS.register(new CuriosCompat());
@@ -62,6 +62,7 @@ public class Skillablereforged
 
     public void initCaps(RegisterCapabilitiesEvent event) {
         event.register(SkillModel.class);
+        event.register(AbilityModel.class);
     }
 
     private void clientSetup(FMLClientSetupEvent event) {

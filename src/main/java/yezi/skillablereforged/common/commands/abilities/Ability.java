@@ -1,7 +1,5 @@
 package yezi.skillablereforged.common.commands.abilities;
 
-import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.ItemStack;
 import yezi.skillablereforged.common.commands.skills.Requirement;
 
 public abstract class Ability {
@@ -37,5 +35,5 @@ public abstract class Ability {
         this.Passive = true;
     }
 
-    public abstract void onItemUse(Player player, ItemStack itemStack);
+  //  public abstract void onItemUse(Player player, ItemStack itemStack);
 }

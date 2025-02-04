@@ -15,7 +15,6 @@ import java.util.List;
 import java.util.Map;
 
 public class AidSupportAbility extends Ability {
-  //  private static final Requirement[] CACHED_REQUIREMENTS = loadRequirements();
     private static final int requirementGraziery = 12;
     public AidSupportAbility() {
         super(
@@ -42,7 +41,6 @@ public class AidSupportAbility extends Ability {
             Items.HAY_BLOCK, List.of(EntityType.LLAMA),
             Items.GOLDEN_CARROT, List.of(EntityType.PIG)
     );
-    @Override
     public void onItemUse(Player player, ItemStack itemStack) {
 
         if (skillModel.getSkillLevel(skill) >= requirementGraziery) {

@@ -3,12 +3,14 @@ package yezi.skillablereforged.common.commands.abilities;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
 import org.apache.commons.lang3.tuple.Pair;
+import yezi.skillablereforged.common.Listener.ConcentratedFeedingAbilityListener;
 
 import java.util.List;
 
 public class PassiveAbilityApplier {
 
     private boolean isGrazieryPassive0Active = false;
+    private boolean isRidingAbilityActive = false;
     private final AbilityManager abilityManager;
   //  private final AidSupportAbility aidSupportAbility = new AidSupportAbility();
 
@@ -128,7 +130,9 @@ public class PassiveAbilityApplier {
     }
     private void applyGrazieryPassive1() {
         System.out.println("应用 graziery 被动能力, 索引: 1");
-
+        if (isGrazieryPassive0Active) return;
+        isGrazieryPassive0Active = true;
+        MinecraftForge.EVENT_BUS.register(new ConcentratedFeedingAbilityListener());
     }
     private void applyGrazieryPassive2() {
         System.out.println("应用 graziery 被动能力, 索引: 2");
