@@ -23,35 +23,35 @@ public class SyncSkillConfigPacket {
     private final Map<String, Requirement[]> skillLocks;
     private final Map<String, Requirement[]> craftSkillLocks;
     private final Map<String, Requirement[]> attackSkillLocks;
-    private final Map<String, Requirement[]> abilityLocks;
+ //   private final Map<String, Requirement[]> abilityLocks;
 
-    public SyncSkillConfigPacket(Map<String, Requirement[]> skillLocks, Map<String, Requirement[]> craftSkillLocks, Map<String, Requirement[]> attackSkillLocks, Map<String,Requirement[]> abilityLocks) {
+    public SyncSkillConfigPacket(Map<String, Requirement[]> skillLocks, Map<String, Requirement[]> craftSkillLocks, Map<String, Requirement[]> attackSkillLocks) {
         this.skillLocks = skillLocks;
         this.craftSkillLocks = craftSkillLocks;
         this.attackSkillLocks = attackSkillLocks;
-        this.abilityLocks = abilityLocks;
-        LOGGER.info("SyncSkillConfigPacket created with skillLocks: " + skillLocks + ", craftSkillLocks: " + craftSkillLocks + ", attackSkillLocks: " + attackSkillLocks + ", abilityLocks: " + abilityLocks);
+   //     this.abilityLocks = abilityLocks;
+        LOGGER.info("SyncSkillConfigPacket created with skillLocks: " + skillLocks + ", craftSkillLocks: " + craftSkillLocks + ", attackSkillLocks: " + attackSkillLocks);
     }
 
     public SyncSkillConfigPacket(FriendlyByteBuf buf) {
         String skillLocksJson = buf.readUtf();
         String craftSkillLocksJson = buf.readUtf();
         String attackSkillLocksJson = buf.readUtf();
-        String abilityLocksJson = buf.readUtf();
+    //    String abilityLocksJson = buf.readUtf();
         Type type = Config.getSkillLocksType();
         this.skillLocks = (Map)(new Gson()).fromJson(skillLocksJson, type);
         this.craftSkillLocks = (Map)(new Gson()).fromJson(craftSkillLocksJson, type);
         this.attackSkillLocks = (Map)(new Gson()).fromJson(attackSkillLocksJson, type);
-        this.abilityLocks = (Map)(new Gson()).fromJson(abilityLocksJson, type);
-        LOGGER.info("SyncSkillConfigPacket read from buffer with skillLocks: " + this.skillLocks + ", craftSkillLocks: " + this.craftSkillLocks + ", attackSkillLocks: " + this.attackSkillLocks + ", abilityLocks: " + this.abilityLocks);
+    //    this.abilityLocks = (Map)(new Gson()).fromJson(abilityLocksJson, type);
+        LOGGER.info("SyncSkillConfigPacket read from buffer with skillLocks: " + this.skillLocks + ", craftSkillLocks: " + this.craftSkillLocks + ", attackSkillLocks: " + this.attackSkillLocks);
     }
 
     public void toBytes(FriendlyByteBuf buf) {
         buf.writeUtf((new Gson()).toJson(this.skillLocks));
         buf.writeUtf((new Gson()).toJson(this.craftSkillLocks));
         buf.writeUtf((new Gson()).toJson(this.attackSkillLocks));
-        buf.writeUtf((new Gson()).toJson(this.abilityLocks));
-        LOGGER.info("SyncSkillConfigPacket written to buffer with skillLocks: " + this.skillLocks + ", craftSkillLocks: " + this.craftSkillLocks + ", attackSkillLocks: " + this.attackSkillLocks + ", abilityLocks: " + this.abilityLocks);
+      //  buf.writeUtf((new Gson()).toJson(this.abilityLocks));
+        LOGGER.info("SyncSkillConfigPacket written to buffer with skillLocks: " + this.skillLocks + ", craftSkillLocks: " + this.craftSkillLocks + ", attackSkillLocks: " + this.attackSkillLocks);
     }
 
     public static void handle(SyncSkillConfigPacket msg, Supplier<NetworkEvent.Context> ctx) {
@@ -59,7 +59,7 @@ public class SyncSkillConfigPacket {
             Config.setSkillLocks(msg.skillLocks);
             Config.setCraftSkillLocks(msg.craftSkillLocks);
             Config.setAttackSkillLocks(msg.attackSkillLocks);
-            Config.setAbilityLocks(msg.abilityLocks);
+    //        Config.setAbilityLocks(msg.abilityLocks);
             LOGGER.info("Skill configuration updated on the client.");
             Minecraft.getInstance().execute(() -> {
                 LOGGER.info("Refreshing tooltips due to configuration update.");
@@ -77,8 +77,8 @@ public class SyncSkillConfigPacket {
         Map<String, Requirement[]> skillLocks = Config.getSkillLocks();
         Map<String, Requirement[]> craftSkillLocks = Config.getCraftSkillLocks();
         Map<String, Requirement[]> attackSkillLocks = Config.getAttackSkillLocks();
-        Map<String, Requirement[]> abilityLocks = Config.getAbilityLocks();
-        SyncSkillConfigPacket packet = new SyncSkillConfigPacket(skillLocks, craftSkillLocks, attackSkillLocks, abilityLocks);
+   //     Map<String, Requirement[]> abilityLocks = Config.getAbilityLocks();
+        SyncSkillConfigPacket packet = new SyncSkillConfigPacket(skillLocks, craftSkillLocks, attackSkillLocks);
         Skillablereforged.NETWORK.send(PacketDistributor.ALL.noArg(), packet);
         LOGGER.info("Sent SyncSkillConfigPacket to all clients.");
     }

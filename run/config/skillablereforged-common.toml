@@ -16,4 +16,7 @@ maximumLevel = 32
 #Format: key=value
 #Valid values: attack, defense, mining, gathering, farming, building, agility, magic
 skillAliases = ["defense=defense"]
+#Skills can grant one skill point every X levels.
+#Range: 0 ~ 32
+abilityPointIncrease = 2
 

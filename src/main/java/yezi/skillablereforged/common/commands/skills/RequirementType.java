@@ -8,8 +8,8 @@ import java.util.function.Function;
 public enum RequirementType {
     USE(Config::getRequirements),
     CRAFT(Config::getCraftRequirements),
-    ATTACK(Config::getEntityAttackRequirements),
-    ABILITY(Config::getAbilityRequirements);
+    ATTACK(Config::getEntityAttackRequirements);
+  //  ABILITY(Config::getAbilityRequirements);
 
     private final Function<ResourceLocation, Requirement[]> requirementMap;
 

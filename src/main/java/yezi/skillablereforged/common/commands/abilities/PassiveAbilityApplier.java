@@ -12,7 +12,6 @@ public class PassiveAbilityApplier {
     private boolean isGrazieryPassive0Active = false;
     private boolean isRidingAbilityActive = false;
     private final AbilityManager abilityManager;
-  //  private final AidSupportAbility aidSupportAbility = new AidSupportAbility();
 
     public PassiveAbilityApplier(Player player) {
         this.abilityManager = new AbilityManager(player);
