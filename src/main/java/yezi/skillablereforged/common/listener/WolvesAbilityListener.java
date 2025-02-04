@@ -1,0 +1,38 @@
+package yezi.skillablereforged.common.listener;
+
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.animal.Wolf;
+import net.minecraft.world.entity.player.Player;
+import net.minecraftforge.event.entity.living.LivingAttackEvent;
+import net.minecraftforge.event.entity.living.LivingChangeTargetEvent;
+import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import yezi.skillablereforged.common.abilities.WolvesAbility;
+import java.util.Random;
+
+public class WolvesAbilityListener {
+    private final WolvesAbility wolvesAbility = new WolvesAbility();
+    private static final Random random = new Random();
+
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public void onWolfAttack(LivingChangeTargetEvent event) {
+        if (!(event.getEntity() instanceof Wolf wolf)) return;
+        if (!wolf.isTame() || !(wolf.getOwner() instanceof Player)) return;
+        wolvesAbility.applyEffect(wolf);
+    }
+    @SubscribeEvent
+    public void onAttack(LivingAttackEvent event) {
+        LivingEntity target = event.getEntity();
+        if (target instanceof Wolf) {
+            WolvesAbility wolvesAbility = new WolvesAbility();
+            int abilityLevel = wolvesAbility.getAbilityLevel();
+
+            if (abilityLevel > 0) {
+                int dodgePercent = WolvesAbility.DODGE_PERCENT[abilityLevel];
+                if (random.nextInt(100) < dodgePercent) {
+                    event.setCanceled(true);
+                }
+            }
+        }
+    }
+}

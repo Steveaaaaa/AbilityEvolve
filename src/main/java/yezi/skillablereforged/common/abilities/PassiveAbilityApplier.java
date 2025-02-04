@@ -3,8 +3,9 @@ package yezi.skillablereforged.common.abilities;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
 import org.apache.commons.lang3.tuple.Pair;
-import yezi.skillablereforged.common.Listener.ConcentratedFeedingAbilityListener;
-import yezi.skillablereforged.common.Listener.GrazieryPassive0Listener;
+import yezi.skillablereforged.common.listener.ConcentratedFeedingAbilityListener;
+import yezi.skillablereforged.common.listener.GrazieryPassive0Listener;
+import yezi.skillablereforged.common.listener.WolvesAbilityListener;
 
 import java.util.List;
 
@@ -12,6 +13,7 @@ public class PassiveAbilityApplier {
 
     private boolean isGrazieryPassive0Active = false;
     private boolean isRidingAbilityActive = false;
+    private boolean isWolvesAbilityActive = false;
     private final AbilityManager abilityManager;
 
     public PassiveAbilityApplier(Player player) {
@@ -24,7 +26,6 @@ public class PassiveAbilityApplier {
         for (Pair<String, Integer> ability : unlockedAbilities) {
             String abilityType = ability.getLeft();
             int index = ability.getRight();
-
             switch (abilityType) {
                 case "graziery" -> {
                     if (index == 0)
@@ -123,13 +124,13 @@ public class PassiveAbilityApplier {
         }
     }
     private void applyGrazieryPassive0() {
-        System.out.println("应用 graziery 被动能力, 索引: 0");
+        System.out.println("援护生效");
         if (isGrazieryPassive0Active) return;
         isGrazieryPassive0Active = true;
         MinecraftForge.EVENT_BUS.register(new GrazieryPassive0Listener());
     }
     private void applyGrazieryPassive1() {
-        System.out.println("应用 graziery 被动能力, 索引: 1");
+        System.out.println("精饲生效");
         if (isRidingAbilityActive) return;
         isRidingAbilityActive = true;
         MinecraftForge.EVENT_BUS.register(new ConcentratedFeedingAbilityListener());
@@ -139,8 +140,10 @@ public class PassiveAbilityApplier {
 
     }
     private void applyGrazieryPassive3() {
-        System.out.println("应用 graziery 被动能力, 索引: 3");
-
+        System.out.println("狼群生效");
+        if (isWolvesAbilityActive) return;
+        isWolvesAbilityActive = true;
+        MinecraftForge.EVENT_BUS.register(new WolvesAbilityListener());
     }
 
     private void applyMiningPassive0() {

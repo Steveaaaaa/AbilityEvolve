@@ -41,7 +41,6 @@ public class Config {
     private static Map<String, Requirement[]> skillLocks = new HashMap<>();
     private static Map<String, Requirement[]> craftSkillLocks = new HashMap<>();
     private static Map<String, Requirement[]> attackSkillLocks = new HashMap<>();
-  //  private static Map<String, Requirement[]> abilityLocks = new HashMap<>();
 
     public Config() {
     }
@@ -56,11 +55,9 @@ public class Config {
         Map<String, Map<String, List<String>>> skillData = loadJsonConfig(FMLPaths.CONFIGDIR.get().resolve("skillablereforged/skill_locks.json").toString(), "{\n  \"skillLocks\": {\n    \"minecraft:iron_sword\": [\"attack:5\"],\n    \"minecraft:iron_shovel\": [\"gathering:5\"],\n    \"minecraft:iron_pickaxe\": [\"mining:5\"],\n    \"minecraft:iron_axe\": [\"gathering:5\"],\n    \"minecraft:iron_hoe\": [\"farming:5\"],\n    \"minecraft:iron_helmet\": [\"defense:5\"],\n    \"minecraft:iron_chestplate\": [\"defense:5\"],\n    \"minecraft:iron_leggings\": [\"defense:5\"],\n    \"minecraft:iron_boots\": [\"defense:5\"],\n    \"minecraft:diamond_sword\": [\"attack:15\"],\n    \"minecraft:diamond_shovel\": [\"gathering:15\"],\n    \"minecraft:diamond_pickaxe\": [\"mining:15\"],\n    \"minecraft:diamond_axe\": [\"gathering:15\"],\n    \"minecraft:diamond_hoe\": [\"farming:15\"],\n    \"minecraft:diamond_helmet\": [\"defense:15\"],\n    \"minecraft:diamond_chestplate\": [\"defense:15\"],\n    \"minecraft:diamond_leggings\": [\"defense:15\"],\n    \"minecraft:diamond_boots\": [\"defense:15\"],\n    \"minecraft:netherite_sword\": [\"attack:30\"],\n    \"minecraft:netherite_shovel\": [\"gathering:30\"],\n    \"minecraft:netherite_pickaxe\": [\"mining:30\"],\n    \"minecraft:netherite_axe\": [\"gathering:30\"],\n    \"minecraft:netherite_hoe\": [\"farming:30\"],\n    \"minecraft:netherite_helmet\": [\"defense:30\"],\n    \"minecraft:netherite_chestplate\": [\"defense:30\"],\n    \"minecraft:netherite_leggings\": [\"defense:30\"],\n    \"minecraft:netherite_boots\": [\"defense:30\"]\n  }\n}\n");
         Map<String, Map<String, List<String>>> craftData = loadJsonConfig(FMLPaths.CONFIGDIR.get().resolve("skillablereforged/craft_skill_locks.json").toString(), "{\n  \"craftSkillLocks\": {}\n}\n");
         Map<String, Map<String, List<String>>> attackData = loadJsonConfig(FMLPaths.CONFIGDIR.get().resolve("skillablereforged/attack_skill_locks.json").toString(), "{\n  \"attackSkillLocks\": {\n    \"minecraft:zombie\": [\"attack:2\"],\n    \"minecraft:skeleton\": [\"attack:2\"]\n  }\n}\n");
-    //    Map<String, Map<String, List<String>>> abilityData = loadJsonConfig(FMLPaths.CONFIGDIR.get().resolve("skillablereforged/ability_locks.json").toString(), "{\n  \"abilityLocks\": {}\n}\n");
         skillLocks = parseSkillLocks((Map)skillData.get("skillLocks"));
         craftSkillLocks = parseSkillLocks((Map)craftData.get("craftSkillLocks"));
         attackSkillLocks = parseSkillLocks((Map)attackData.get("attackSkillLocks"));
-    //    abilityLocks = parseSkillLocks((Map)abilityData.get("abilityLocks"));
     }
 
     private static Map<String, Requirement[]> parseSkillLocks(Map<String, List<String>> data) {
@@ -261,7 +258,7 @@ public class Config {
         builder.comment("List of substitutions to perform in names in skill lock lists.", "Useful if you're using a resource pack to change the names of skills, this config doesn't affect gameplay, just accepted values in other configs so it's easier to think about", "Format: key=value", "Valid values: attack, defense, mining, gathering, farming, building, agility, magic");
         SKILL_ALIAS = builder.defineList("skillAliases", List.of("defense=defense"), (obj) -> true);
         builder.comment("Skills can grant one skill point every X levels.");
-        ABILITY_POINT_INCREASE = builder.defineInRange("abilityPointIncrease", 2, 0, 32);
+        ABILITY_POINT_INCREASE = builder.defineInRange("abilityPointIncrease", 2, 1, 32);
         CONFIG_SPEC = builder.build();
     }
 }

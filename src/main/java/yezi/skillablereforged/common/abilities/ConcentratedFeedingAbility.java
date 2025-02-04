@@ -10,6 +10,8 @@ import yezi.skillablereforged.common.skills.Skill;
 import java.util.Map;
 
 public class ConcentratedFeedingAbility extends Ability{
+    private static final String name = "concentrated_feeding";
+    private static final String description = "Strengthen the horse you ride.";
     private static final int JUMP_BOOST_LEVEL = 2;
     private static final int SPEED_LEVEL = 3;
     private static final int requirementGraziery = 8;
@@ -27,8 +29,8 @@ public class ConcentratedFeedingAbility extends Ability{
     );
     public ConcentratedFeedingAbility() {
         super(
-                "concentrated_feeding",
-                "Strengthen the horse you ride.",
+                name,
+                description,
                 new Requirement[]{new Requirement(Skill.GRAZIERY, requirementGraziery),new Requirement(Skill.AGILITY,4)},
                 "graziery", 1, 4, true
         );

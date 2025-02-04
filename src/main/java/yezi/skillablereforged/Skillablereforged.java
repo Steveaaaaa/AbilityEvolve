@@ -47,10 +47,11 @@ public class Skillablereforged
         Config.load();
         NETWORK = NetworkRegistry.newSimpleChannel(new ResourceLocation("skillablereforged", "main_channel"), () -> "1.0", (s) -> true, (s) -> true);
         NETWORK.registerMessage(1, SyncToClient.class, SyncToClient::encode, SyncToClient::new, SyncToClient::handle, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
-        NETWORK.registerMessage(2, RequestGetAbility.class, RequestGetAbility::encode, RequestGetAbility::new, RequestGetAbility::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
-        NETWORK.registerMessage(3, RequestLevelUp.class, RequestLevelUp::encode, RequestLevelUp::new, RequestLevelUp::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
-        NETWORK.registerMessage(4, NotifyWarning.class, NotifyWarning::encode, NotifyWarning::new, NotifyWarning::handle, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
-        NETWORK.registerMessage(5, SyncSkillConfigPacket.class, SyncSkillConfigPacket::toBytes, SyncSkillConfigPacket::new, SyncSkillConfigPacket::handle);
+        NETWORK.registerMessage(2, AbilitySyncToClient.class, AbilitySyncToClient::encode, AbilitySyncToClient::new, AbilitySyncToClient::handle, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
+        NETWORK.registerMessage(3, RequestGetAbility.class, RequestGetAbility::encode, RequestGetAbility::new, RequestGetAbility::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
+        NETWORK.registerMessage(4, RequestLevelUp.class, RequestLevelUp::encode, RequestLevelUp::new, RequestLevelUp::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
+        NETWORK.registerMessage(5, NotifyWarning.class, NotifyWarning::encode, NotifyWarning::new, NotifyWarning::handle, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
+        NETWORK.registerMessage(6, SyncSkillConfigPacket.class, SyncSkillConfigPacket::toBytes, SyncSkillConfigPacket::new, SyncSkillConfigPacket::handle);
         MinecraftForge.EVENT_BUS.register(new EventHandler());
     //    MinecraftForge.EVENT_BUS.register(new GrazieryPassive0Listener());
         MinecraftForge.EVENT_BUS.register(new Commands());

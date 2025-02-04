@@ -3,9 +3,8 @@ package yezi.skillablereforged.common.network;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkEvent;
-import yezi.skillablereforged.common.abilities.Ability;
-import yezi.skillablereforged.common.abilities.AbilityManager;
-import yezi.skillablereforged.common.abilities.AidSupportAbility;
+import yezi.skillablereforged.Skillablereforged;
+import yezi.skillablereforged.common.abilities.*;
 
 import java.util.function.Supplier;
 
@@ -30,16 +29,21 @@ public class RequestGetAbility {
             ServerPlayer player = context.get().getSender();
             assert player != null;
             AbilityManager abilityManager = new AbilityManager(player);
-            Ability ability = getAbilityByName(this.name);  // 根据 id 获取对应的 Ability 实例
+            Ability ability = getAbilityByName(this.name);
             abilityManager.getAbility(ability.abilityType, ability.index, ability.skillPointCost);
-
+            AbilitySyncToClient.send(player);
         });
         context.get().setPacketHandled(true);
     }
     private Ability getAbilityByName(String name){
-        switch (name){
-            case "aid_support": return new AidSupportAbility();
-            default: throw new IllegalArgumentException("Invalid ability name");
-        }
+        return switch (name) {
+            case "aid_support" -> new AidSupportAbility();
+            case "concentrated_feeding" -> new ConcentratedFeedingAbility();
+            case "wolves" -> new WolvesAbility();
+            default -> throw new IllegalArgumentException("Invalid ability name");
+        };
+    }
+    public static void send(Ability ability){
+        Skillablereforged.NETWORK.sendToServer(new RequestGetAbility(ability));
     }
 }

@@ -17,9 +17,7 @@ public enum RequirementType {
         this.requirementMap = requirementMap;
     }
 
-    // 获取要求的方法
     public Requirement[] getRequirements(ResourceLocation resource) {
-        // 返回对应的 Requirement[]
         return this.requirementMap.apply(resource);
     }
     public Requirement[] getRequirements(String name) {

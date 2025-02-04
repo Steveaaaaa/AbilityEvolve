@@ -26,6 +26,7 @@ import yezi.skillablereforged.Config;
 import yezi.skillablereforged.common.capabilities.SkillModel;
 import yezi.skillablereforged.common.capabilities.SkillProvider;
 import yezi.skillablereforged.common.abilities.PassiveAbilityApplier;
+import yezi.skillablereforged.common.network.AbilitySyncToClient;
 import yezi.skillablereforged.common.network.SyncToClient;
 
 import java.util.HashMap;
@@ -34,7 +35,7 @@ import java.util.UUID;
 
 public class EventHandler {
 
-    private static final int INTERVAL_TICKS = 100; // 5秒 (20 ticks = 1秒)
+    private static final int INTERVAL_TICKS = 100; // 5秒
     private static int tickCounter = 0;
     private SkillModel lastDiedPlayerSkills = new SkillModel();
     private static final Map<UUID, PassiveAbilityApplier> abilityAppliers = new HashMap<>();
@@ -110,8 +111,8 @@ public class EventHandler {
             priority = EventPriority.HIGHEST
     )
     public void onChangeEquipment(LivingEquipmentChangeEvent event) {
-        LivingEntity var3 = event.getEntity();
-        if (var3 instanceof Player player) {
+        LivingEntity entity = event.getEntity();
+        if (entity instanceof Player player) {
             if (!player.isCreative() && event.getSlot().getType() == Type.ARMOR) {
                 ItemStack item = event.getTo();
                 if (!SkillModel.get(player).canUseItem(player, item)) {
@@ -133,8 +134,8 @@ public class EventHandler {
 
     @SubscribeEvent
     public void onPlayerDeath(LivingDeathEvent event) {
-        LivingEntity var3 = event.getEntity();
-        if (var3 instanceof Player player) {
+        LivingEntity entity = event.getEntity();
+        if (entity instanceof Player player) {
             if (Config.getDeathReset()) {
                 SkillModel.get(player).skillLevels = new int[]{1, 1, 1, 1, 1, 1, 1, 1};
             }
@@ -162,17 +163,20 @@ public class EventHandler {
     @SubscribeEvent
     public void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
         SyncToClient.send(event.getEntity());
+        AbilitySyncToClient.send(event.getEntity());
     }
 
     @SubscribeEvent
     public void onPlayerRespawn(PlayerEvent.PlayerRespawnEvent event) {
         SyncToClient.send(event.getEntity());
+        AbilitySyncToClient.send(event.getEntity());
     }
 
     @SubscribeEvent
     public void onChangeDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
         if (!event.getEntity().isSpectator()) {
             SyncToClient.send(event.getEntity());
+            AbilitySyncToClient.send(event.getEntity());
         }
     }
     @SubscribeEvent
@@ -180,7 +184,7 @@ public class EventHandler {
         if (event.phase == TickEvent.Phase.END) {
             tickCounter++;
             if (tickCounter >= INTERVAL_TICKS) {
-                tickCounter = 0; // 重置计时
+                tickCounter = 0;
                 executePassiveAbilities();
             }
         }

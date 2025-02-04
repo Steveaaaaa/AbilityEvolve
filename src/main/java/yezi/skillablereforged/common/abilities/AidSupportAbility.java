@@ -13,13 +13,16 @@ import yezi.skillablereforged.common.skills.Skill;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 public class AidSupportAbility extends Ability {
+    private static final String name = "aid_support";
+    private static final String description = "Enhance the nearby corresponding fed creatures.";
     private static final int requirementGraziery = 12;
     public AidSupportAbility() {
         super(
-                "aid_support",
-                "Enhance the nearby corresponding fed creatures.",
+                name,
+                description,
                 new Requirement[]{new Requirement(Skill.GRAZIERY, requirementGraziery),new Requirement(Skill.FARMING,8)},
                 "graziery", 0, 6, true
         );
@@ -80,10 +83,10 @@ public class AidSupportAbility extends Ability {
 
         public void start(int duration, int interval) {
             this.remainingTime = duration;
-            level.getServer().submitAsync(() -> {
+            Objects.requireNonNull(level.getServer()).submitAsync(() -> {
                 while (remainingTime > 0) {
                     try {
-                        Thread.sleep(interval * 50L); // Convert ticks to milliseconds
+                        Thread.sleep(interval * 50L);
                     } catch (InterruptedException e) {
                         return;
                     }
