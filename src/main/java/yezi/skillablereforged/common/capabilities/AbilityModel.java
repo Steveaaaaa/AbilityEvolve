@@ -32,21 +32,6 @@ public class AbilityModel {
             return new AbilityModel(); // 确保返回一个有效的实例
         });
     }
-    /*public void setAbility(Ability ability){
-        switch (ability.abilityType) {
-            case 0:
-                if (ability.index == 0)
-                    this.grazieryLock[ability.index] = 1;
-                else if (ability.index == 1)
-                    this.grazieryLock[ability.index] = 1;
-                else if (ability.index == 2)
-                    this.grazieryLock[ability.index] = 1;
-                else if (ability.index == 3)
-                    this.grazieryLock[ability.index] = 1;
-            case 1:
-
-        }
-    }*/
     public CompoundTag serializeNBT() {
         CompoundTag tag = new CompoundTag();
         tag.putIntArray("grazieryLock", this.grazieryLock);
