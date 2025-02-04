@@ -5,6 +5,7 @@ import net.minecraftforge.common.MinecraftForge;
 import org.apache.commons.lang3.tuple.Pair;
 import yezi.skillablereforged.common.listener.ConcentratedFeedingAbilityListener;
 import yezi.skillablereforged.common.listener.GrazieryPassive0Listener;
+import yezi.skillablereforged.common.listener.IronCavalryListener;
 import yezi.skillablereforged.common.listener.WolvesAbilityListener;
 
 import java.util.List;
@@ -14,6 +15,7 @@ public class PassiveAbilityApplier {
     private boolean isGrazieryPassive0Active = false;
     private boolean isRidingAbilityActive = false;
     private boolean isWolvesAbilityActive = false;
+    private boolean isIronCavalryAbilityActive = false;
     private final AbilityManager abilityManager;
 
     public PassiveAbilityApplier(Player player) {
@@ -137,7 +139,9 @@ public class PassiveAbilityApplier {
     }
     private void applyGrazieryPassive2() {
         System.out.println("应用 graziery 被动能力, 索引: 2");
-
+        if (isIronCavalryAbilityActive) return;
+        isIronCavalryAbilityActive = true;
+        MinecraftForge.EVENT_BUS.register(new IronCavalryListener());
     }
     private void applyGrazieryPassive3() {
         System.out.println("狼群生效");
