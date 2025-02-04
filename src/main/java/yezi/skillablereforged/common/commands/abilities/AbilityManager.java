@@ -51,8 +51,8 @@ public class AbilityManager {
                 case "shooting" -> abilityModel.shootingLock[index] = 1;
                 default -> LOGGER.error("Invalid ability type: {}", abilityType);
             }
+            abilityModel.abilityPointCosts += skillPointCost;
         }
-        abilityModel.abilityPointCosts += skillPointCost;
     }
     public List<Pair<String, Integer>> getUnlockedPassiveAbilities() {
         List<Pair<String, Integer>> unlockedAbilities = new ArrayList<>();
@@ -72,7 +72,7 @@ public class AbilityManager {
     }
     private void checkUnlockedAbilities(int[] abilityGroup, String abilityType, List<Pair<String, Integer>> list) {
         for (int i = 0; i < abilityGroup.length; i++) {
-            if (abilityGroup[i] == 1) { // 该能力已解锁
+            if (abilityGroup[i] == 1) {
                 list.add(Pair.of(abilityType, i));
             }
         }

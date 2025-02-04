@@ -3,7 +3,6 @@ package yezi.skillablereforged.common.capabilities;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.util.LazyOptional;
-import yezi.skillablereforged.common.commands.abilities.Ability;
 
 import static com.mojang.text2speech.Narrator.LOGGER;
 
@@ -33,7 +32,7 @@ public class AbilityModel {
             return new AbilityModel(); // 确保返回一个有效的实例
         });
     }
-    public void setAbility(Ability ability){
+    /*public void setAbility(Ability ability){
         switch (ability.abilityType) {
             case 0:
                 if (ability.index == 0)
@@ -47,7 +46,7 @@ public class AbilityModel {
             case 1:
 
         }
-    }
+    }*/
     public CompoundTag serializeNBT() {
         CompoundTag tag = new CompoundTag();
         tag.putIntArray("grazieryLock", this.grazieryLock);
@@ -77,5 +76,20 @@ public class AbilityModel {
         this.shootingLock = nbt.getIntArray("shootingLock");
         this.abilityPoint = nbt.getInt("abilityPoint");
         this.abilityPointCosts = nbt.getInt("abilityPointCost");
+    }
+    public int getAbilitySkillIndex(String abilityType){
+        return switch (abilityType) {
+            case "graziery" -> 0;
+            case "mining" -> 1;
+            case "gathering" -> 2;
+            case "attack" -> 3;
+            case "defense" -> 4;
+            case "building" -> 5;
+            case "farming" -> 6;
+            case "agility" -> 7;
+            case "magic" -> 8;
+            case "shooting" -> 9;
+            default -> -1;
+        };
     }
 }

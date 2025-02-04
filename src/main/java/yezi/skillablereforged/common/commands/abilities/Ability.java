@@ -8,14 +8,14 @@ public abstract class Ability {
     public final String name;
     public final String description;
     public final Requirement[] requiredSkill;
-    public final int abilityType;
+    public final String abilityType;
     public final int index;
     public final int skillPointCost;
     public int abilityLevel;
     public int isUnlocked;
     public boolean canUnlock;
     public boolean Passive;
-    public Ability(String name, String description, Requirement[] requiredSkill,int abilityType,int index, int skillPointCost, boolean passive) {
+    public Ability(String name, String description, Requirement[] requiredSkill,String abilityType,int index, int skillPointCost, boolean passive) {
         this.name = name;
         this.description = description;
         this.requiredSkill = requiredSkill;

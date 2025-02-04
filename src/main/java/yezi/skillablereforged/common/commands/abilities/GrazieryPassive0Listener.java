@@ -9,11 +9,9 @@ public class GrazieryPassive0Listener {
     private final AidSupportAbility aidSupportAbility = new AidSupportAbility();
 
     @SubscribeEvent
-    public void onPlayerFeedAnimal(PlayerInteractEvent.RightClickItem event) {
+    public void onPlayerFeed(PlayerInteractEvent.RightClickItem event) {
         Player player = event.getEntity();
         ItemStack itemStack = event.getItemStack();
-
-        // 调用 AidSupportAbility 处理喂食逻辑
         aidSupportAbility.onItemUse(player, itemStack);
     }
 }

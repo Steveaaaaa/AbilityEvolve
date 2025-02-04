@@ -9,20 +9,20 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import yezi.skillablereforged.common.capabilities.SkillModel;
 import yezi.skillablereforged.common.commands.skills.Requirement;
-import yezi.skillablereforged.common.commands.skills.RequirementType;
 import yezi.skillablereforged.common.commands.skills.Skill;
 
 import java.util.List;
 import java.util.Map;
 
 public class AidSupportAbility extends Ability {
-    private static final Requirement[] CACHED_REQUIREMENTS = loadRequirements();
+  //  private static final Requirement[] CACHED_REQUIREMENTS = loadRequirements();
+    private static final int requirementGraziery = 12;
     public AidSupportAbility() {
         super(
                 "aid_support",
-                "使用物品强化周围生物",
-                CACHED_REQUIREMENTS,
-                0, 0, 6, true
+                "Enhance the nearby corresponding fed creatures.",
+                new Requirement[]{new Requirement(Skill.GRAZIERY, requirementGraziery),new Requirement(Skill.FARMING,8)},
+                "graziery", 0, 6, true
         );
     }
 
@@ -33,7 +33,7 @@ public class AidSupportAbility extends Ability {
     private static final double TOTAL_HEAL_PERCENT = 0.20; // 持续期间总共恢复 20%
 
     SkillModel skillModel = SkillModel.get();
-    Skill skill = Skill.values()[abilityType];
+    Skill skill = Skill.values()[ Skill.GRAZIERY.ordinal()];
     private static final Map<Item, List<EntityType<?>>> FEEDING_MAP = Map.of(
             Items.SNOW_BLOCK, List.of(EntityType.SNOW_GOLEM),
             Items.IRON_INGOT, List.of(EntityType.IRON_GOLEM),
@@ -42,26 +42,13 @@ public class AidSupportAbility extends Ability {
             Items.HAY_BLOCK, List.of(EntityType.LLAMA),
             Items.GOLDEN_CARROT, List.of(EntityType.PIG)
     );
-
- //   private static final int requirement = 12;
-
-    private static Requirement[] loadRequirements() {
-       // Requirement[] abilityRequirements = RequirementType.ABILITY.getRequirements("aid_support");
-        return RequirementType.ABILITY.getRequirements("aid_support");
-    }
-
     @Override
     public void onItemUse(Player player, ItemStack itemStack) {
-        int requiredLevel = 0;
-        for (Requirement req : CACHED_REQUIREMENTS) {
-            if (req.skill == Skill.GRAZIERY) { // 查找 graziery 对应的要求
-                requiredLevel = req.level;
-                break;
-            }
-        }
-        if (skillModel.getSkillLevel(skill) >= requiredLevel) {
-            abilityLevel = skillModel.getSkillLevel(skill) - requiredLevel;
-        }
+
+        if (skillModel.getSkillLevel(skill) >= requirementGraziery) {
+            abilityLevel = skillModel.getSkillLevel(skill) - requirementGraziery;
+        }else
+            abilityLevel = 1;
         double HEAL_PERCENTAGE = 0.5 + abilityLevel * 0.1;
         if (!FEEDING_MAP.containsKey(itemStack.getItem())) return;
         List<EntityType<?>> targetType = FEEDING_MAP.get(itemStack.getItem());
@@ -111,23 +98,3 @@ public class AidSupportAbility extends Ability {
         }
     }
 }
-
-   /* public void activate(Player player, ItemStack usedItem) {
-        if (skillModel.getSkillLevel(skill) >= requirement){
-            abilityLevel = skillModel.getSkillLevel(skill) - requirement;
-        }
-        Level world = player.level();
-        AABB range = new AABB(player.blockPosition()).inflate(BASE_RADIUS);
-        List<LivingEntity> entities = world.getEntitiesOfClass(LivingEntity.class, range);
-
-        for (LivingEntity entity : entities) {
-            double healAmount = entity.getMaxHealth() * (BASE_HEAL_PERCENT + abilityLevel * 0.01); // 每级增加 1% 回复
-            entity.heal((float) healAmount);
-        }
-        if (usedItem.getItem() == Items.GOLDEN_CARROT || usedItem.getItem() == Items.GOLDEN_APPLE) {
-            for (LivingEntity entity : entities) {
-                if (entity instanceof Pig || entity instanceof Horse || entity instanceof Donkey) {
-                    entity.addEffect(new MobEffectInstance(MobEffects.ABSORPTION, 500, 50));
-                }
-            }
-        }*/
