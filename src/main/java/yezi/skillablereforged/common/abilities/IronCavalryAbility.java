@@ -38,7 +38,7 @@ public class IronCavalryAbility extends Ability {
     }
 
     private static final int[] ATTACK_BONUS = {25, 30, 35, 40, 45, 50, 55, 60, 65, 70};
-    private static final int[] ARMOR_BONUS = {30,35,40,45,50,60,75,80,100};
+    private static final int[] ARMOR_BONUS = {30, 35, 40, 45, 50, 60, 75, 80, 100};
 
     private static final UUID ATTACK_BONUS_UUID = UUID.fromString("d1b4ec21-cfa4-49d4-b7e3-d6937bb9f1b9");
 

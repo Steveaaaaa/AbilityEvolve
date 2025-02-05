@@ -16,6 +16,7 @@ public class PassiveAbilityApplier {
     private boolean isAssociatedOreAbilityActive = false;
     private boolean isGreedyAbilityActive = false;
     private boolean isExplosiveAbilityActive = false;
+    private boolean isPanningAbilityActive = false;
     private final AbilityManager abilityManager;
 
     public PassiveAbilityApplier(Player player) {
@@ -169,8 +170,10 @@ public class PassiveAbilityApplier {
         MinecraftForge.EVENT_BUS.register(new ExplosiveMiningListener());
     }
     private void applyGatheringPassive0() {
-        System.out.println("应用 gathering 被动能力, 索引: 0");
-
+        System.out.println("淘金生效");
+        if (isPanningAbilityActive) return;
+        isPanningAbilityActive = true;
+        MinecraftForge.EVENT_BUS.register(new PanningListener());
     }
     private void applyGatheringPassive1() {
         System.out.println("应用 gathering 被动能力, 索引: 1");
