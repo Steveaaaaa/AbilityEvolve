@@ -6,6 +6,7 @@ import net.minecraft.world.entity.LivingEntity;
 import yezi.skillablereforged.common.capabilities.SkillModel;
 import yezi.skillablereforged.common.skills.Requirement;
 import yezi.skillablereforged.common.skills.Skill;
+import yezi.skillablereforged.common.utils.GetAbilityLevel;
 
 import java.util.Map;
 
@@ -15,6 +16,9 @@ public class ConcentratedFeedingAbility extends Ability{
     private static final int JUMP_BOOST_LEVEL = 2;
     private static final int SPEED_LEVEL = 3;
     private static final int requirementGraziery = 8;
+    int skillLevel = SkillModel.get().getSkillLevel(Skill.GRAZIERY);
+    GetAbilityLevel getAbilityLevel = new GetAbilityLevel();
+    int abilityLevel = getAbilityLevel.getAbilityLevelGraziery1(skillLevel,requirementGraziery);
     private static final Map<Integer, Double[]> map = Map.of(
             1, new Double[]{0.21250, 0.66667},
             2, new Double[]{0.21989, 0.68636},
@@ -35,11 +39,8 @@ public class ConcentratedFeedingAbility extends Ability{
                 "graziery", 1, 4, true
         );
     }
-    int skillLevel = SkillModel.get().getSkillLevel(Skill.GRAZIERY);
+ //   int skillLevel = SkillModel.get().getSkillLevel(Skill.GRAZIERY);
     public Double[] getStandard(){
-        if (skillLevel > requirementGraziery){
-            abilityLevel = skillLevel - requirementGraziery;
-        }else abilityLevel = 1;
         return map.get(abilityLevel);
     }
 

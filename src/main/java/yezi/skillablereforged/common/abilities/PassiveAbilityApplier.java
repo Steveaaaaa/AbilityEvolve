@@ -14,6 +14,8 @@ public class PassiveAbilityApplier {
     private boolean isWolvesAbilityActive = false;
     private boolean isIronCavalryAbilityActive = false;
     private boolean isAssociatedOreAbilityActive = false;
+    private boolean isGreedyAbilityActive = false;
+    private boolean isExplosiveAbilityActive = false;
     private final AbilityManager abilityManager;
 
     public PassiveAbilityApplier(Player player) {
@@ -155,12 +157,16 @@ public class PassiveAbilityApplier {
         MinecraftForge.EVENT_BUS.register(new AssociatedOreListener());
     }
     private void applyMiningPassive1() {
-        System.out.println("应用 mining 被动能力, 索引: 1");
-
+        System.out.println("贪婪生效");
+        if (isGreedyAbilityActive) return;
+        isGreedyAbilityActive = true;
+        MinecraftForge.EVENT_BUS.register(new GreedyListener());
     }
     private void applyMiningPassive2() {
-        System.out.println("应用 mining 被动能力, 索引: 2");
-
+        System.out.println("爆破掘进生效");
+        if (isExplosiveAbilityActive) return;
+        isExplosiveAbilityActive = true;
+        MinecraftForge.EVENT_BUS.register(new ExplosiveMiningListener());
     }
     private void applyGatheringPassive0() {
         System.out.println("应用 gathering 被动能力, 索引: 0");

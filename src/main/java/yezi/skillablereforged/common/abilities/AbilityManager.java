@@ -12,9 +12,11 @@ import static com.mojang.text2speech.Narrator.LOGGER;
 public class AbilityManager {
     private final AbilityModel abilityModel;
 
+
     public AbilityManager(Player player) {
         this.abilityModel = AbilityModel.get(player);
     }
+
 
     public boolean checkForGetAbility(String abilityType, int index, int skillPointCost) {
         int[] abilityGroup = getAbilityGroupBySkill(abilityType);

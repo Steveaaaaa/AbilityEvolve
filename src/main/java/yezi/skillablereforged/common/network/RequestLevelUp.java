@@ -5,6 +5,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkEvent;
 import yezi.skillablereforged.Config;
 import yezi.skillablereforged.Skillablereforged;
+import yezi.skillablereforged.common.capabilities.AbilityModel;
 import yezi.skillablereforged.common.capabilities.SkillModel;
 import yezi.skillablereforged.common.skills.Skill;
 
@@ -30,7 +31,7 @@ public class RequestLevelUp {
             ServerPlayer player = context.get().getSender();
 
             assert player != null;
-
+            AbilityModel abilityModel = AbilityModel.get(player);
             SkillModel skillModel = SkillModel.get(player);
             Skill skill = Skill.values()[this.skill];
             int level = Config.getStartCost() + (skillModel.getSkillLevel(skill) - 1) * Config.getCostIncrease();
@@ -47,7 +48,11 @@ public class RequestLevelUp {
             if (skillModel.getSkillLevel(skill) < Config.getMaxLevel() && (player.totalExperience >= cost)) {
                 player.giveExperiencePoints(-cost);
                 skillModel.increaseSkillLevel(skill);
+                for (int i = 0; i < skillModel.skillLevels.length; i++){
+                    abilityModel.abilityPoint = (abilityModel.abilityPoint + skillModel.skillLevels[i] - skillModel.skillLevels.length)/Config.getAbilityPointIncrease();
+                }
                 SyncToClient.send(player);
+                AbilitySyncToClient.send(player);
             }
 
         });

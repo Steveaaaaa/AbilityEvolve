@@ -17,7 +17,6 @@ public class AssociatedOreAbility extends Ability{
     private static final String name = "associated_ore";
     private static final String description = "Mining with a non-enchanted pickaxe has a chance to drop related ores.";
     private static final int requirement = 12;
-    public final double dropChance = 0.25;
     private static final Random random = new Random();
     GetAbilityLevel getAbilityLevel = new GetAbilityLevel();
     public int abilityLevel = getAbilityLevel.getAbilityLevelMining3(SkillModel.get().getSkillLevel(Skill.MINING), requirement);
@@ -40,13 +39,7 @@ public class AssociatedOreAbility extends Ability{
                 true
         );
     }
-  /*  public final Map<Block, Item> extraDrops = new HashMap<>();
-    {
-        extraDrops.put(Blocks.COAL_ORE, Items.COAL); // 煤矿 → 煤炭
-        extraDrops.put(Blocks.COPPER_ORE, Items.RAW_IRON); // 铜矿 → 粗铁
-        extraDrops.put(Blocks.IRON_ORE, Items.RAW_GOLD); // 铁矿 → 粗金
-        extraDrops.put(Blocks.NETHER_GOLD_ORE, Items.RAW_GOLD); // 下界金矿 → 粗金
-    }*/
+    public final double dropChance = 0.25;
     public void NormalCoalDrop(BlockEvent.BreakEvent event){
             Block.popResource(event.getPlayer().level(), event.getPos(), new ItemStack(Items.COAL));
     }

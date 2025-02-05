@@ -10,6 +10,7 @@ import net.minecraft.world.level.Level;
 import yezi.skillablereforged.common.capabilities.SkillModel;
 import yezi.skillablereforged.common.skills.Requirement;
 import yezi.skillablereforged.common.skills.Skill;
+import yezi.skillablereforged.common.utils.GetAbilityLevel;
 
 import java.util.List;
 import java.util.Map;
@@ -34,8 +35,9 @@ public class AidSupportAbility extends Ability {
     private static final int HEAL_INTERVAL = 100; // 每 5s 触发一次 (20 ticks = 1s)
     private static final double TOTAL_HEAL_PERCENT = 0.20; // 持续期间总共恢复 20%
 
-    SkillModel skillModel = SkillModel.get();
-    Skill skill = Skill.values()[ Skill.GRAZIERY.ordinal()];
+    GetAbilityLevel getAbilityLevel = new GetAbilityLevel();
+    int skillLevel = SkillModel.get().getSkillLevel(Skill.GRAZIERY);
+    int abilityLevel = getAbilityLevel.getAbilityLevelGraziery1(skillLevel, requirementGraziery);
     private static final Map<Item, List<EntityType<?>>> FEEDING_MAP = Map.of(
             Items.SNOW_BLOCK, List.of(EntityType.SNOW_GOLEM),
             Items.IRON_INGOT, List.of(EntityType.IRON_GOLEM),
@@ -45,11 +47,6 @@ public class AidSupportAbility extends Ability {
             Items.GOLDEN_CARROT, List.of(EntityType.PIG)
     );
     public void onItemUse(Player player, ItemStack itemStack) {
-
-        if (skillModel.getSkillLevel(skill) >= requirementGraziery) {
-            abilityLevel = skillModel.getSkillLevel(skill) - requirementGraziery;
-        }else
-            abilityLevel = 1;
         double HEAL_PERCENTAGE = 0.5 + abilityLevel * 0.1;
         if (!FEEDING_MAP.containsKey(itemStack.getItem())) return;
         List<EntityType<?>> targetType = FEEDING_MAP.get(itemStack.getItem());

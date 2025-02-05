@@ -29,7 +29,7 @@ public class AbilityModel {
 
         return abilityModelOptional.orElseGet(() -> {
             LOGGER.warn("Player " + player.getName().getString() + " does not have an Ability Model, creating default.");
-            return new AbilityModel(); // 确保返回一个有效的实例
+            return new AbilityModel();
         });
     }
     public CompoundTag serializeNBT() {

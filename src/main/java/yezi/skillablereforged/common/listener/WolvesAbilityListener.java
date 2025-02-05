@@ -14,7 +14,7 @@ public class WolvesAbilityListener {
     private final WolvesAbility wolvesAbility = new WolvesAbility();
     private static final Random random = new Random();
 
-    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    @SubscribeEvent(priority = EventPriority.NORMAL)
     public void onWolfAttack(LivingChangeTargetEvent event) {
         if (!(event.getEntity() instanceof Wolf wolf)) return;
         if (!wolf.isTame() || !(wolf.getOwner() instanceof Player)) return;
@@ -24,14 +24,9 @@ public class WolvesAbilityListener {
     public void onAttack(LivingAttackEvent event) {
         LivingEntity target = event.getEntity();
         if (target instanceof Wolf) {
-            WolvesAbility wolvesAbility = new WolvesAbility();
-            int abilityLevel = wolvesAbility.getAbilityLevel();
-
-            if (abilityLevel > 0) {
-                int dodgePercent = WolvesAbility.DODGE_PERCENT[abilityLevel];
-                if (random.nextInt(100) < dodgePercent) {
-                    event.setCanceled(true);
-                }
+            int dodgePercent = WolvesAbility.DODGE_PERCENT[wolvesAbility.abilityLevel];
+            if (random.nextInt(100) < dodgePercent) {
+                event.setCanceled(true);
             }
         }
     }

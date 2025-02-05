@@ -38,7 +38,6 @@ public class SkillModel implements INBTSerializable<CompoundTag> {
 
     public void addExperience(Skill skill, int experience) {
         this.skillExperience[skill.index] += experience;
-  //      var10000[var10001] += experience;
         this.checkForLevelUp(skill);
     }
 
