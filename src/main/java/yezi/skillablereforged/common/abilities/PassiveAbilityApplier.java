@@ -3,6 +3,7 @@ package yezi.skillablereforged.common.abilities;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
 import org.apache.commons.lang3.tuple.Pair;
+import yezi.skillablereforged.common.effects.StunEffect;
 import yezi.skillablereforged.common.listener.*;
 
 import java.util.List;
@@ -18,6 +19,10 @@ public class PassiveAbilityApplier {
     private boolean isExplosiveAbilityActive = false;
     private boolean isPanningAbilityActive = false;
     private boolean isRapidStabAbilityActive = false;
+    private boolean isBlindsideAbilityActive = false;
+    private boolean isLeapStrikeAbilityActive = false;
+    private boolean isExposeWeaknessAbilityActive = false;
+    private boolean isStunEffectActive = false;
     private final AbilityManager abilityManager;
 
     public PassiveAbilityApplier(Player player) {
@@ -191,16 +196,27 @@ public class PassiveAbilityApplier {
         MinecraftForge.EVENT_BUS.register(new RapidStabListener());
     }
     private void applyAttackPassive1() {
-        System.out.println("应用 attack 被动能力, 索引: 1");
-
+        System.out.println("攻其不备生效");
+        if (isBlindsideAbilityActive) return;
+        isBlindsideAbilityActive = true;
+        MinecraftForge.EVENT_BUS.register(new BlindsideListener());
     }
     private void applyAttackPassive2() {
-        System.out.println("应用 attack 被动能力, 索引: 2");
-
+        System.out.println("跃斩生效");
+        if (isLeapStrikeAbilityActive) return;
+        isLeapStrikeAbilityActive = true;
+        if (!isStunEffectActive)
+            isStunEffectActive = true;
+        MinecraftForge.EVENT_BUS.register(new LeapStrikeListener());
+        MinecraftForge.EVENT_BUS.register(new StunEffect());
     }
     private void applyAttackPassive3() {
-        System.out.println("应用 attack 被动能力, 索引: 3");
-
+        System.out.println("直取要害生效");
+        if (isExposeWeaknessAbilityActive) return;
+        isExposeWeaknessAbilityActive = true;
+        if (!isStunEffectActive)
+            isStunEffectActive = true;
+        MinecraftForge.EVENT_BUS.register(new ExposeWeaknessListener());
     }
     private void applyDefensePassive0() {
         System.out.println("应用 defense 被动能力, 索引: 0");

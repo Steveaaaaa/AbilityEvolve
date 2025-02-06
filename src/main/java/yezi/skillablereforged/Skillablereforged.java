@@ -54,13 +54,16 @@ public class Skillablereforged
         NETWORK.registerMessage(4, RequestLevelUp.class, RequestLevelUp::encode, RequestLevelUp::new, RequestLevelUp::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
         NETWORK.registerMessage(5, NotifyWarning.class, NotifyWarning::encode, NotifyWarning::new, NotifyWarning::handle, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
         NETWORK.registerMessage(6, SyncSkillConfigPacket.class, SyncSkillConfigPacket::toBytes, SyncSkillConfigPacket::new, SyncSkillConfigPacket::handle);
+        NETWORK.registerMessage(7, StartChargePacket.class, StartChargePacket::encode, StartChargePacket::decode, StartChargePacket::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
+        NETWORK.registerMessage(8, ChargeTickPacket.class, ChargeTickPacket::encode, ChargeTickPacket::decode, ChargeTickPacket::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
+        NETWORK.registerMessage(9, PerformLeapPacket.class, PerformLeapPacket::encode, PerformLeapPacket::decode, PerformLeapPacket::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
         MinecraftForge.EVENT_BUS.register(new EventHandler());
     //    MinecraftForge.EVENT_BUS.register(new GrazieryPassive0Listener());
         MinecraftForge.EVENT_BUS.register(new Commands());
+        LeapStrikeNetworkHandler.register();
         if (ModList.get().isLoaded("curios")) {
             MinecraftForge.EVENT_BUS.register(new CuriosCompat());
         }
-
     }
 
     public void initCaps(RegisterCapabilitiesEvent event) {
