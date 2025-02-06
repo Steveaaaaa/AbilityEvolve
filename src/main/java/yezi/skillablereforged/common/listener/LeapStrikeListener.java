@@ -42,6 +42,7 @@ public class LeapStrikeListener {
     @SubscribeEvent
     public void onAttack(LivingAttackEvent event) {
         if (!(event.getSource().getEntity() instanceof ServerPlayer player)) return;
+        if (player.isFallFlying() || player.getAbilities().flying) return;
         if (player.onGround()){
             ability.onPlayerLand(player);
             return;

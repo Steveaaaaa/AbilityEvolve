@@ -16,7 +16,7 @@ public class PerformLeapPacket {
             ServerPlayer player = ctx.get().getSender();
             if (player != null) {
                 LeapStrikeAbility ability = new LeapStrikeAbility();
-                    ability.performLeap(player);
+                ability.performLeap(player);
             }
         });
         ctx.get().setPacketHandled(true);
