@@ -17,6 +17,7 @@ public class PassiveAbilityApplier {
     private boolean isGreedyAbilityActive = false;
     private boolean isExplosiveAbilityActive = false;
     private boolean isPanningAbilityActive = false;
+    private boolean isRapidStabAbilityActive = false;
     private final AbilityManager abilityManager;
 
     public PassiveAbilityApplier(Player player) {
@@ -184,8 +185,10 @@ public class PassiveAbilityApplier {
 
     }
     private void applyAttackPassive0() {
-        System.out.println("应用 attack 被动能力, 索引: 0");
-
+        System.out.println("迅刺生效");
+        if (isRapidStabAbilityActive) return;
+        isRapidStabAbilityActive = true;
+        MinecraftForge.EVENT_BUS.register(new RapidStabListener());
     }
     private void applyAttackPassive1() {
         System.out.println("应用 attack 被动能力, 索引: 1");

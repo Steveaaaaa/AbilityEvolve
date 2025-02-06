@@ -53,9 +53,11 @@ public class GreedyAbility extends Ability{
             int range = 3;
             for (BlockPos p : BlockPos.betweenClosed(pos.offset(-range, -range, -range), pos.offset(range, range, range))) {
                 BlockState state = player.level().getBlockState(p);
-                if (!state.isAir()) {
-                    player.level().destroyBlock(p, true, player);
+                ItemStack tool = player.getMainHandItem();
+                if (state.isAir() || !tool.isCorrectToolForDrops(state)) {
+                    continue;
                 }
+                player.level().destroyBlock(p, true, player);
             }
         }
     }

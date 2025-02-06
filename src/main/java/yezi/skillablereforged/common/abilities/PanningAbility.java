@@ -16,7 +16,7 @@ public class PanningAbility extends Ability {
     private static final int requirement = 12;
     GetAbilityLevel getAbilityLevel = new GetAbilityLevel();
 
-    public int abilityLevel = getAbilityLevel.getAbilityLevelMining2(SkillModel.get().getSkillLevel(Skill.MINING), requirement);
+    public int abilityLevel = getAbilityLevel.getAbilityLevelGathering2(SkillModel.get().getSkillLevel(Skill.GATHERING), requirement);
     public PanningAbility()
     {
         super(

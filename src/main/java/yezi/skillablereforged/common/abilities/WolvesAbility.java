@@ -48,15 +48,6 @@ public class WolvesAbility extends Ability{
         );
     }
     private static final UUID ATTACK_BONUS_UUID = UUID.fromString("e62b68fc-0b1c-4a49-9f23-984d8f4e1e77");
- /*   public int getAbilityLevel() {
-        if (skillLevel > requirementGraziery) {
-            abilityLevel = skillLevel - requirementGraziery;
-        } else {
-            abilityLevel = 1;
-        }
-        return abilityLevel;
-    }*/
-
     public void applyEffect(Wolf wolf) {
         if (wolf == null) return;
     //    int abilityLevel = getAbilityLevel();
