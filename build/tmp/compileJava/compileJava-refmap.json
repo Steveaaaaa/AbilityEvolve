@@ -1,11 +1,19 @@
 {
   "mappings": {
+    "yezi/skillablereforged/mixin/PlayerChargeJumpMixin": {
+      "tick": "Lnet/minecraft/world/entity/player/Player;m_8119_()V",
+      "jumpFromGround": "Lnet/minecraft/world/entity/player/Player;m_6135_()V"
+    },
     "yezi/skillablereforged/mixin/CraftingContainerMixin": {
       "slotChangedCraftingGrid": "Lnet/minecraft/world/inventory/CraftingMenu;m_150546_(Lnet/minecraft/world/inventory/AbstractContainerMenu;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/inventory/CraftingContainer;Lnet/minecraft/world/inventory/ResultContainer;)V"
     }
   },
   "data": {
     "searge": {
+      "yezi/skillablereforged/mixin/PlayerChargeJumpMixin": {
+        "tick": "Lnet/minecraft/world/entity/player/Player;m_8119_()V",
+        "jumpFromGround": "Lnet/minecraft/world/entity/player/Player;m_6135_()V"
+      },
       "yezi/skillablereforged/mixin/CraftingContainerMixin": {
         "slotChangedCraftingGrid": "Lnet/minecraft/world/inventory/CraftingMenu;m_150546_(Lnet/minecraft/world/inventory/AbstractContainerMenu;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/inventory/CraftingContainer;Lnet/minecraft/world/inventory/ResultContainer;)V"
       }

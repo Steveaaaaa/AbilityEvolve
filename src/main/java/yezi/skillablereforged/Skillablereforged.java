@@ -1,5 +1,6 @@
 package yezi.skillablereforged;
 
+import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.capabilities.RegisterCapabilitiesEvent;
@@ -14,11 +15,12 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.minecraftforge.network.NetworkDirection;
 import net.minecraftforge.network.NetworkRegistry;
 import net.minecraftforge.network.simple.SimpleChannel;
+import org.slf4j.Logger;
+import org.spongepowered.asm.launch.MixinBootstrap;
 import yezi.skillablereforged.client.Keybind;
 import yezi.skillablereforged.client.Overlay;
 import yezi.skillablereforged.client.Tooltips;
 import yezi.skillablereforged.common.CuriosCompat;
-import yezi.skillablereforged.common.EventHandler;
 import yezi.skillablereforged.common.capabilities.AbilityModel;
 import yezi.skillablereforged.common.capabilities.SkillModel;
 import yezi.skillablereforged.common.commands.Commands;
@@ -35,8 +37,11 @@ public class Skillablereforged
 {
     public static final String MOD_ID = "skillablereforged";
     public static SimpleChannel NETWORK;
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public Skillablereforged() {
+        LOGGER.info("模组已加载！");
+        MixinBootstrap.init();
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
@@ -54,13 +59,9 @@ public class Skillablereforged
         NETWORK.registerMessage(4, RequestLevelUp.class, RequestLevelUp::encode, RequestLevelUp::new, RequestLevelUp::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
         NETWORK.registerMessage(5, NotifyWarning.class, NotifyWarning::encode, NotifyWarning::new, NotifyWarning::handle, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
         NETWORK.registerMessage(6, SyncSkillConfigPacket.class, SyncSkillConfigPacket::toBytes, SyncSkillConfigPacket::new, SyncSkillConfigPacket::handle);
-        NETWORK.registerMessage(7, StartChargePacket.class, StartChargePacket::encode, StartChargePacket::decode, StartChargePacket::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
-        NETWORK.registerMessage(8, ChargeTickPacket.class, ChargeTickPacket::encode, ChargeTickPacket::decode, ChargeTickPacket::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
-        NETWORK.registerMessage(9, PerformLeapPacket.class, PerformLeapPacket::encode, PerformLeapPacket::decode, PerformLeapPacket::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
-        MinecraftForge.EVENT_BUS.register(new EventHandler());
+     //   MinecraftForge.EVENT_BUS.register(new EventHandler());
     //    MinecraftForge.EVENT_BUS.register(new GrazieryPassive0Listener());
         MinecraftForge.EVENT_BUS.register(new Commands());
-        LeapStrikeNetworkHandler.register();
         if (ModList.get().isLoaded("curios")) {
             MinecraftForge.EVENT_BUS.register(new CuriosCompat());
         }

@@ -3,6 +3,7 @@ package yezi.skillablereforged.common.abilities;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
 import org.apache.commons.lang3.tuple.Pair;
+import yezi.skillablereforged.Skillablereforged;
 import yezi.skillablereforged.common.effects.StunEffect;
 import yezi.skillablereforged.common.listener.*;
 
@@ -27,11 +28,11 @@ public class PassiveAbilityApplier {
 
     public PassiveAbilityApplier(Player player) {
         this.abilityManager = new AbilityManager(player);
-      //  MinecraftForge.EVENT_BUS.register(this);
+        //  MinecraftForge.EVENT_BUS.register(this);
     }
     public void applyUnlockedAbilities() {
         List<Pair<String, Integer>> unlockedAbilities = abilityManager.getUnlockedPassiveAbilities();
-
+        Skillablereforged.LOGGER.info("解锁的被动能力: " + unlockedAbilities);
         for (Pair<String, Integer> ability : unlockedAbilities) {
             String abilityType = ability.getLeft();
             int index = ability.getRight();
@@ -202,11 +203,11 @@ public class PassiveAbilityApplier {
         MinecraftForge.EVENT_BUS.register(new BlindsideListener());
     }
     private void applyAttackPassive2() {
-        System.out.println("跃斩生效");
         if (isLeapStrikeAbilityActive) return;
         isLeapStrikeAbilityActive = true;
         if (!isStunEffectActive)
             isStunEffectActive = true;
+        Skillablereforged.LOGGER.info("applyAttackPassive2");
         MinecraftForge.EVENT_BUS.register(new LeapStrikeListener());
         MinecraftForge.EVENT_BUS.register(new StunEffect());
     }

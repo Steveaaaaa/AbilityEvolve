@@ -50,27 +50,6 @@ public class LeapStrikeAbility extends Ability{
         levelEffects.put(9, new Pair<>(2.35, 2.8));
         levelEffects.put(10, new Pair<>(2.5, 3.0));
     }
-    public void startCharging(ServerPlayer player) {
-        chargeMap.put(player.getUUID(), 0);
-    }
-    public void chargeTick(ServerPlayer player) {
-        UUID uuid = player.getUUID();
-        if (chargeMap.containsKey(uuid)) {
-            int chargeTime = chargeMap.get(uuid) + 1;
-            chargeMap.put(uuid, Math.min(chargeTime, maxChargeTime));
-        }
-    }
-    public void performLeap(ServerPlayer player) {
-        UUID uuid = player.getUUID();
-        if (!chargeMap.containsKey(uuid)) return;
-        int chargeTime = chargeMap.get(uuid);
-        double jumpPower = 0.5 + (chargeTime / (double) maxChargeTime) * 3.0;
-        player.setDeltaMovement(player.getDeltaMovement().x, jumpPower, player.getDeltaMovement().z);
-        player.fallDistance = 0;
-        chargeMap.remove(uuid);
-        leapingPlayers.add(uuid);
-        jumpingPlayers.add(uuid);
-    }
     public void triggerLeapStrike(ServerPlayer player, LivingEntity target) {
         UUID uuid = player.getUUID();
         if (!levelEffects.containsKey(abilityLevel)) return;

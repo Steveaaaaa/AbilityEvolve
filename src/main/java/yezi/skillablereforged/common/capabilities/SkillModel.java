@@ -91,6 +91,10 @@ public class SkillModel implements INBTSerializable<CompoundTag> {
     }
 
     public static SkillModel get(Player player) {
+        if (player == null) {
+            return null;
+        }
+
         LazyOptional<SkillModel> skillModelOptional = player.getCapability(SkillCapability.INSTANCE);
 
         if (!skillModelOptional.isPresent()) {
