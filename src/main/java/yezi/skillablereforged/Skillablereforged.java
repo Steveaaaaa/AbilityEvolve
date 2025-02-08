@@ -25,6 +25,7 @@ import yezi.skillablereforged.common.capabilities.AbilityModel;
 import yezi.skillablereforged.common.capabilities.SkillModel;
 import yezi.skillablereforged.common.commands.Commands;
 import yezi.skillablereforged.common.network.*;
+import yezi.skillablereforged.common.utils.ParticleSpawner;
 import yezi.skillablereforged.event.ClientEvents;
 
 import java.util.Optional;
@@ -62,6 +63,7 @@ public class Skillablereforged
      //   MinecraftForge.EVENT_BUS.register(new EventHandler());
     //    MinecraftForge.EVENT_BUS.register(new GrazieryPassive0Listener());
         MinecraftForge.EVENT_BUS.register(new Commands());
+        MinecraftForge.EVENT_BUS.register(ParticleSpawner.class);
         if (ModList.get().isLoaded("curios")) {
             MinecraftForge.EVENT_BUS.register(new CuriosCompat());
         }

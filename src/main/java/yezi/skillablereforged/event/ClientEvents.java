@@ -1,15 +1,17 @@
 package yezi.skillablereforged.event;
 
-import yezi.skillablereforged.Config;
-import yezi.skillablereforged.client.Overlay;
-import yezi.skillablereforged.client.screen.SkillScreen;
-import yezi.skillablereforged.client.screen.buttons.KeyBinding;
 import net.minecraft.client.Minecraft;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import yezi.skillablereforged.client.Overlay;
+import yezi.skillablereforged.client.screen.SkillScreen;
+import yezi.skillablereforged.client.screen.buttons.KeyBinding;
+import yezi.skillablereforged.common.Particles.ParticleInit;
+import yezi.skillablereforged.common.Particles.YellowStarParticleProvider;
 
 @EventBusSubscriber(
         modid = "skillablereforged",
@@ -31,5 +33,9 @@ public class ClientEvents {
     @SubscribeEvent
     public static void registerOverlay(RegisterGuiOverlaysEvent event) {
         event.registerAboveAll("skill_page", new Overlay());
+    }
+    @SubscribeEvent
+    public static void registerParticles(RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(ParticleInit.YELLOW_STAR.get(), YellowStarParticleProvider::new);
     }
 }

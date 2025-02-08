@@ -4,12 +4,14 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.phys.AABB;
+import yezi.skillablereforged.Skillablereforged;
 import yezi.skillablereforged.common.capabilities.SkillModel;
 import yezi.skillablereforged.common.effects.StunEffect;
 import yezi.skillablereforged.common.skills.Requirement;
 import yezi.skillablereforged.common.skills.Skill;
 import yezi.skillablereforged.common.utils.GetAbilityLevel;
 import yezi.skillablereforged.common.utils.Pair;
+import yezi.skillablereforged.common.utils.ParticleSpawner;
 
 import java.util.*;
 
@@ -20,9 +22,7 @@ public class LeapStrikeAbility extends Ability{
     GetAbilityLevel getAbilityLevel = new GetAbilityLevel();
 
     public int abilityLevel = getAbilityLevel.getAbilityLevelAttack2(SkillModel.get().getSkillLevel(Skill.ATTACK), requirement);
-    private final int maxChargeTime = 20;
-    private final Map<UUID, Integer> chargeMap = new HashMap<>();
-    private final Set<UUID> leapingPlayers = new HashSet<>();
+    public   Set<UUID> leapingPlayers = new HashSet<>();
     private final Set<UUID> jumpingPlayers = new HashSet<>();
     private final Map<Integer, Pair<Double, Double>> levelEffects = new HashMap<>(); // 存储伤害加成和眩晕的对应关系
     public LeapStrikeAbility()
@@ -52,21 +52,26 @@ public class LeapStrikeAbility extends Ability{
     }
     public void triggerLeapStrike(ServerPlayer player, LivingEntity target) {
         UUID uuid = player.getUUID();
-        if (!levelEffects.containsKey(abilityLevel)) return;
-        if (!leapingPlayers.contains(uuid)) return;
-        Pair<Double, Double> effect = levelEffects.get(abilityLevel);
+        if (!levelEffects.containsKey(abilityLevel) || player.onGround()) return;
+        leapingPlayers.add(uuid);
+        Skillablereforged.LOGGER.info("获取到对应等级效果");
 
+        Pair<Double, Double> effect = levelEffects.get(abilityLevel);
         double damageMultiplier = effect.getLeft();
         double stunDuration = effect.getRight();
-
         double baseDamage = player.getAttributeValue(Attributes.ATTACK_DAMAGE);
 
-        target.hurt(player.damageSources().playerAttack(player), (float) (baseDamage * (damageMultiplier - 1.0)));
+      //  target.hurt(player.damageSources().playerAttack(player), (float) (baseDamage * (damageMultiplier - 1.0)));
+        Skillablereforged.LOGGER.info("跃斩伤害：" + baseDamage + baseDamage * (damageMultiplier - 1.0));
+
+        ParticleSpawner.spawnImpactParticles(target.position());
 
         AABB area = new AABB(target.blockPosition()).inflate(5.0);
         List<LivingEntity> entities = player.level().getEntitiesOfClass(LivingEntity.class, area, e -> e != player);
 
         for (LivingEntity entity : entities) {
+            Skillablereforged.LOGGER.info("晕眩目标：" + entity.getName().getString());
+            entity.hurt(player.damageSources().playerAttack(player), (float) (baseDamage * (damageMultiplier - 1.0)));
             applyStun(entity, stunDuration);
         }
         leapingPlayers.remove(uuid);
@@ -75,10 +80,10 @@ public class LeapStrikeAbility extends Ability{
         StunEffect.apply(entity, duration);
     }
     public void onPlayerLand(ServerPlayer player) {
-        UUID uuid = player.getUUID();
-        if (leapingPlayers.contains(uuid)|| jumpingPlayers.contains(uuid)) {
-            leapingPlayers.remove(uuid);
-            jumpingPlayers.remove(uuid);
-        }
+       // UUID uuid = player.getUUID();
+       // if (leapingPlayers.contains(uuid)|| jumpingPlayers.contains(uuid)) {
+        /*    leapingPlayers.remove(uuid);
+            jumpingPlayers.remove(uuid);*/
+     //   }
     }
 }

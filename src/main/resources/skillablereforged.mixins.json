@@ -6,7 +6,7 @@
   "refmap": "skillablereforged.refmap.json",
   "mixins": [
     "CraftingContainerMixin",
-    "PlayerChargeJumpMixin",
+    "PlayerChargeJumpMixin"
   ],
   "client": [
   ],

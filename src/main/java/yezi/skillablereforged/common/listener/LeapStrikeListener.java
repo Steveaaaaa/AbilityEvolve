@@ -10,14 +10,13 @@ public class LeapStrikeListener {
     private static final LeapStrikeAbility ability = new LeapStrikeAbility();
     @SubscribeEvent
     public void onAttack(LivingAttackEvent event) {
-     //   Skillablereforged.LOGGER.info("onAttack");
         if (!(event.getSource().getEntity() instanceof ServerPlayer player)) return;
-        if (player.isFallFlying() || player.getAbilities().flying) return;
-        if (player.onGround()){
+        if (player.isFallFlying() || player.getAbilities().flying || ability.leapingPlayers.contains(player.getUUID())) return;
+        if (player.onGround()) {
             ability.onPlayerLand(player);
             return;
         }
-        Skillablereforged.LOGGER.info("玩家 {} 跃斩生效！", player.getName().getString());
+        Skillablereforged.LOGGER.info("玩家 {} 触发跃斩！", player.getName().getString() + "目标为:" + event.getEntity().getName().getString());
         LivingEntity target = event.getEntity();
         ability.triggerLeapStrike(player, target);
     }

@@ -209,7 +209,7 @@ public class PassiveAbilityApplier {
             isStunEffectActive = true;
         Skillablereforged.LOGGER.info("applyAttackPassive2");
         MinecraftForge.EVENT_BUS.register(new LeapStrikeListener());
-        MinecraftForge.EVENT_BUS.register(new StunEffect());
+        MinecraftForge.EVENT_BUS.register(StunEffect.class);
     }
     private void applyAttackPassive3() {
         System.out.println("直取要害生效");
@@ -218,6 +218,7 @@ public class PassiveAbilityApplier {
         if (!isStunEffectActive)
             isStunEffectActive = true;
         MinecraftForge.EVENT_BUS.register(new ExposeWeaknessListener());
+        MinecraftForge.EVENT_BUS.register(StunEffect.class);
     }
     private void applyDefensePassive0() {
         System.out.println("应用 defense 被动能力, 索引: 0");
