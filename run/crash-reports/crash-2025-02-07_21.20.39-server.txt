@@ -5,16 +5,16 @@ Time: 2025-02-07 21:20:39
 Description: Exception in server tick loop
 
 java.lang.IllegalArgumentException: Player does not have a Skill Model!
-	at yezi.skillablereforged.common.capabilities.SkillModel.lambda$get$0(SkillModel.java:112) ~[%23196!/:?] {re:mixin,re:classloading}
+	at yezi.abilityevolve.common.capabilities.SkillModel.lambda$get$0(SkillModel.java:112) ~[%23196!/:?] {re:mixin,re:classloading}
 	at net.minecraftforge.common.util.LazyOptional.orElseThrow(LazyOptional.java:261) ~[forge-1.20.1-47.3.12_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23190%23197!/:?] {re:classloading}
-	at yezi.skillablereforged.common.capabilities.SkillModel.get(SkillModel.java:112) ~[%23196!/:?] {re:mixin,re:classloading}
-	at yezi.skillablereforged.common.abilities.RapidStabAbility.<init>(RapidStabAbility.java:20) ~[%23196!/:?] {re:classloading}
-	at yezi.skillablereforged.common.listener.RapidStabListener.<init>(RapidStabListener.java:9) ~[%23196!/:?] {re:classloading}
-	at yezi.skillablereforged.common.abilities.PassiveAbilityApplier.applyAttackPassive0(PassiveAbilityApplier.java:197) ~[%23196!/:?] {re:classloading}
-	at yezi.skillablereforged.common.abilities.PassiveAbilityApplier.applyUnlockedAbilities(PassiveAbilityApplier.java:68) ~[%23196!/:?] {re:classloading}
-	at yezi.skillablereforged.common.EventHandler.executePassiveAbilities(EventHandler.java:216) ~[%23196!/:?] {re:classloading}
-	at yezi.skillablereforged.common.EventHandler.onServerTick(EventHandler.java:204) ~[%23196!/:?] {re:classloading}
-	at yezi.skillablereforged.common.__EventHandler_onServerTick_ServerTickEvent.invoke(.dynamic) ~[%23196!/:?] {re:classloading,pl:eventbus:B}
+	at yezi.abilityevolve.common.capabilities.SkillModel.get(SkillModel.java:112) ~[%23196!/:?] {re:mixin,re:classloading}
+	at yezi.abilityevolve.common.abilities.RapidStabAbility.<init>(RapidStabAbility.java:20) ~[%23196!/:?] {re:classloading}
+	at yezi.abilityevolve.common.listener.RapidStabListener.<init>(RapidStabListener.java:9) ~[%23196!/:?] {re:classloading}
+	at yezi.abilityevolve.common.abilities.PassiveAbilityApplier.applyAttackPassive0(PassiveAbilityApplier.java:197) ~[%23196!/:?] {re:classloading}
+	at yezi.abilityevolve.common.abilities.PassiveAbilityApplier.applyUnlockedAbilities(PassiveAbilityApplier.java:68) ~[%23196!/:?] {re:classloading}
+	at yezi.abilityevolve.common.listener.EventHandler.executePassiveAbilities(EventHandler.java:216) ~[%23196!/:?] {re:classloading}
+	at yezi.abilityevolve.common.listener.EventHandler.onServerTick(EventHandler.java:204) ~[%23196!/:?] {re:classloading}
+	at yezi.abilityevolve.common.__EventHandler_onServerTick_ServerTickEvent.invoke(.dynamic) ~[%23196!/:?] {re:classloading,pl:eventbus:B}
 	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:73) ~[eventbus-6.0.5.jar%23114!/:?] {}
 	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%23114!/:?] {}
 	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%23114!/:?] {}

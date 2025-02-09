@@ -19,7 +19,7 @@
 [082月2025 16:03:26.592] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
 [082月2025 16:03:26.598] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
 [082月2025 16:03:26.697] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
-[082月2025 16:03:26.980] [modloading-worker-0/INFO] [yezi.skillablereforged.Skillablereforged/]: 模组已加载！
+[082月2025 16:03:26.980] [modloading-worker-0/INFO] [yezi.abilityevolve.AbilityEvolve/]: 模组已加载！
 [082月2025 16:03:27.016] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.12, for MC 1.20.1 with MCP 20230612.114412
 [082月2025 16:03:27.019] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.12 Initialized
 [082月2025 16:03:27.864] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: [skillablereforged]
@@ -73,157 +73,157 @@
 [082月2025 16:04:01.074] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
 [082月2025 16:04:01.082] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
 [082月2025 16:04:01.082] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[082月2025 16:04:03.621] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: executePassiveAbilities
-[082月2025 16:04:03.623] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: executePassiveAbilitiesnet.minecraft.client.server.IntegratedServer@deb0c0e
-[082月2025 16:04:03.625] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 解锁的被动能力: [(attack,2)]
-[082月2025 16:04:03.625] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: applyAttackPassive2
-[082月2025 16:04:05.587] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 玩家 Dev目标为:村民 触发跃斩！
-[082月2025 16:04:05.587] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 获取到对应等级效果
-[082月2025 16:04:05.588] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 跃斩伤害：1.00.3999999999999999
-[082月2025 16:04:05.588] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:05.589] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce
-[082月2025 16:04:05.589] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:05.589] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上510d733d-8bdd-44a1-9f1e-32c97f711fd7
-[082月2025 16:04:05.590] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:05.590] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上bae3489a-454a-4c42-9fb2-d661635fe2f2
-[082月2025 16:04:05.590] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:05.590] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上e5b71e93-ab10-4ba0-a9f8-e7a0df5b6dd3
-[082月2025 16:04:05.590] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:05.590] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上ec32000d-1d26-4c97-bb6d-2c983cff2362
-[082月2025 16:04:05.590] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:05.590] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上0574e36c-5d9c-4808-85fb-fc4a230daa5f
-[082月2025 16:04:05.590] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:05.590] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上3f442de0-b641-4e77-815d-d6790b392fac
-[082月2025 16:04:05.590] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:05.591] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上6a45bc9c-db60-4432-9619-cfb80c403aec
-[082月2025 16:04:05.591] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:05.591] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上f49960a1-4e4f-43a3-bd5b-9d3509f36e38
-[082月2025 16:04:06.620] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体6a45bc9c-db60-4432-9619-cfb80c403aec解除了眩晕
-[082月2025 16:04:06.620] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体f49960a1-4e4f-43a3-bd5b-9d3509f36e38解除了眩晕
-[082月2025 16:04:06.621] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce解除了眩晕
-[082月2025 16:04:06.621] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体3f442de0-b641-4e77-815d-d6790b392fac解除了眩晕
-[082月2025 16:04:06.621] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体510d733d-8bdd-44a1-9f1e-32c97f711fd7解除了眩晕
-[082月2025 16:04:06.621] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体bae3489a-454a-4c42-9fb2-d661635fe2f2解除了眩晕
-[082月2025 16:04:06.621] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体e5b71e93-ab10-4ba0-a9f8-e7a0df5b6dd3解除了眩晕
-[082月2025 16:04:06.622] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体ec32000d-1d26-4c97-bb6d-2c983cff2362解除了眩晕
-[082月2025 16:04:06.622] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体0574e36c-5d9c-4808-85fb-fc4a230daa5f解除了眩晕
-[082月2025 16:04:08.622] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: executePassiveAbilities
-[082月2025 16:04:08.622] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: executePassiveAbilitiesnet.minecraft.client.server.IntegratedServer@deb0c0e
-[082月2025 16:04:08.622] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 解锁的被动能力: [(attack,2)]
-[082月2025 16:04:11.386] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 玩家 Dev目标为:村民 触发跃斩！
-[082月2025 16:04:11.386] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 获取到对应等级效果
-[082月2025 16:04:11.386] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 跃斩伤害：1.00.3999999999999999
-[082月2025 16:04:11.388] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:11.388] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上510d733d-8bdd-44a1-9f1e-32c97f711fd7
-[082月2025 16:04:11.388] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:11.388] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce
-[082月2025 16:04:11.388] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:11.388] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上e5b71e93-ab10-4ba0-a9f8-e7a0df5b6dd3
-[082月2025 16:04:11.388] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:11.388] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上3f442de0-b641-4e77-815d-d6790b392fac
-[082月2025 16:04:12.419] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce解除了眩晕
-[082月2025 16:04:12.420] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体3f442de0-b641-4e77-815d-d6790b392fac解除了眩晕
-[082月2025 16:04:12.420] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体510d733d-8bdd-44a1-9f1e-32c97f711fd7解除了眩晕
-[082月2025 16:04:12.420] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体e5b71e93-ab10-4ba0-a9f8-e7a0df5b6dd3解除了眩晕
-[082月2025 16:04:13.623] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: executePassiveAbilities
-[082月2025 16:04:13.623] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: executePassiveAbilitiesnet.minecraft.client.server.IntegratedServer@deb0c0e
-[082月2025 16:04:13.624] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 解锁的被动能力: [(attack,2)]
-[082月2025 16:04:16.587] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 玩家 Dev目标为:村民 触发跃斩！
-[082月2025 16:04:16.588] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 获取到对应等级效果
-[082月2025 16:04:16.588] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 跃斩伤害：1.00.3999999999999999
-[082月2025 16:04:16.588] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:16.588] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上e5b71e93-ab10-4ba0-a9f8-e7a0df5b6dd3
-[082月2025 16:04:16.588] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:16.588] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上bae3489a-454a-4c42-9fb2-d661635fe2f2
-[082月2025 16:04:16.588] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:16.588] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce
-[082月2025 16:04:16.589] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:16.589] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上3f442de0-b641-4e77-815d-d6790b392fac
-[082月2025 16:04:16.589] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:16.589] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上510d733d-8bdd-44a1-9f1e-32c97f711fd7
-[082月2025 16:04:17.622] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce解除了眩晕
-[082月2025 16:04:17.622] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体3f442de0-b641-4e77-815d-d6790b392fac解除了眩晕
-[082月2025 16:04:17.622] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体510d733d-8bdd-44a1-9f1e-32c97f711fd7解除了眩晕
-[082月2025 16:04:17.623] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体bae3489a-454a-4c42-9fb2-d661635fe2f2解除了眩晕
-[082月2025 16:04:17.623] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体e5b71e93-ab10-4ba0-a9f8-e7a0df5b6dd3解除了眩晕
-[082月2025 16:04:18.621] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: executePassiveAbilities
-[082月2025 16:04:18.622] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: executePassiveAbilitiesnet.minecraft.client.server.IntegratedServer@deb0c0e
-[082月2025 16:04:18.622] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 解锁的被动能力: [(attack,2)]
-[082月2025 16:04:23.621] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: executePassiveAbilities
-[082月2025 16:04:23.623] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: executePassiveAbilitiesnet.minecraft.client.server.IntegratedServer@deb0c0e
-[082月2025 16:04:23.623] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 解锁的被动能力: [(attack,2)]
-[082月2025 16:04:27.337] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 玩家 Dev目标为:村民 触发跃斩！
-[082月2025 16:04:27.338] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 获取到对应等级效果
-[082月2025 16:04:27.338] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 跃斩伤害：1.00.3999999999999999
-[082月2025 16:04:27.338] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:27.338] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上ec32000d-1d26-4c97-bb6d-2c983cff2362
-[082月2025 16:04:27.338] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:27.338] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上f49960a1-4e4f-43a3-bd5b-9d3509f36e38
-[082月2025 16:04:27.338] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:27.338] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上6a45bc9c-db60-4432-9619-cfb80c403aec
-[082月2025 16:04:27.338] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:27.339] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce
-[082月2025 16:04:27.339] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:27.339] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上510d733d-8bdd-44a1-9f1e-32c97f711fd7
-[082月2025 16:04:27.339] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:27.339] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上e5b71e93-ab10-4ba0-a9f8-e7a0df5b6dd3
-[082月2025 16:04:27.339] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:27.339] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上bae3489a-454a-4c42-9fb2-d661635fe2f2
-[082月2025 16:04:28.370] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体6a45bc9c-db60-4432-9619-cfb80c403aec解除了眩晕
-[082月2025 16:04:28.370] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体f49960a1-4e4f-43a3-bd5b-9d3509f36e38解除了眩晕
-[082月2025 16:04:28.370] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce解除了眩晕
-[082月2025 16:04:28.372] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体510d733d-8bdd-44a1-9f1e-32c97f711fd7解除了眩晕
-[082月2025 16:04:28.372] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体bae3489a-454a-4c42-9fb2-d661635fe2f2解除了眩晕
-[082月2025 16:04:28.372] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体e5b71e93-ab10-4ba0-a9f8-e7a0df5b6dd3解除了眩晕
-[082月2025 16:04:28.373] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体ec32000d-1d26-4c97-bb6d-2c983cff2362解除了眩晕
-[082月2025 16:04:28.624] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: executePassiveAbilities
-[082月2025 16:04:28.624] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: executePassiveAbilitiesnet.minecraft.client.server.IntegratedServer@deb0c0e
-[082月2025 16:04:28.624] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 解锁的被动能力: [(attack,2)]
-[082月2025 16:04:32.287] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 玩家 Dev目标为:村民 触发跃斩！
-[082月2025 16:04:32.287] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 获取到对应等级效果
-[082月2025 16:04:32.287] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 跃斩伤害：1.00.3999999999999999
-[082月2025 16:04:32.287] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:32.287] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上ec32000d-1d26-4c97-bb6d-2c983cff2362
-[082月2025 16:04:32.287] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:32.288] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上f49960a1-4e4f-43a3-bd5b-9d3509f36e38
-[082月2025 16:04:32.288] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:32.288] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上6a45bc9c-db60-4432-9619-cfb80c403aec
-[082月2025 16:04:32.288] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:32.288] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce
-[082月2025 16:04:32.288] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:32.288] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上510d733d-8bdd-44a1-9f1e-32c97f711fd7
-[082月2025 16:04:33.322] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体6a45bc9c-db60-4432-9619-cfb80c403aec解除了眩晕
-[082月2025 16:04:33.322] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体f49960a1-4e4f-43a3-bd5b-9d3509f36e38解除了眩晕
-[082月2025 16:04:33.323] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce解除了眩晕
-[082月2025 16:04:33.323] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体510d733d-8bdd-44a1-9f1e-32c97f711fd7解除了眩晕
-[082月2025 16:04:33.324] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体ec32000d-1d26-4c97-bb6d-2c983cff2362解除了眩晕
-[082月2025 16:04:33.637] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: executePassiveAbilities
-[082月2025 16:04:33.638] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: executePassiveAbilitiesnet.minecraft.client.server.IntegratedServer@deb0c0e
-[082月2025 16:04:33.638] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 解锁的被动能力: [(attack,2)]
-[082月2025 16:04:35.136] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 玩家 Dev目标为:村民 触发跃斩！
-[082月2025 16:04:35.136] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 获取到对应等级效果
-[082月2025 16:04:35.137] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 跃斩伤害：1.00.3999999999999999
-[082月2025 16:04:35.137] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:35.137] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上ec32000d-1d26-4c97-bb6d-2c983cff2362
-[082月2025 16:04:35.137] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:35.137] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上f49960a1-4e4f-43a3-bd5b-9d3509f36e38
-[082月2025 16:04:35.137] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:35.137] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上6a45bc9c-db60-4432-9619-cfb80c403aec
-[082月2025 16:04:35.138] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:35.138] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce
-[082月2025 16:04:35.138] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:35.138] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上510d733d-8bdd-44a1-9f1e-32c97f711fd7
-[082月2025 16:04:35.138] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 晕眩目标：村民
-[082月2025 16:04:35.138] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 应用了1.0秒的眩晕效果在xx实体上bae3489a-454a-4c42-9fb2-d661635fe2f2
-[082月2025 16:04:36.170] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体6a45bc9c-db60-4432-9619-cfb80c403aec解除了眩晕
-[082月2025 16:04:36.170] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体f49960a1-4e4f-43a3-bd5b-9d3509f36e38解除了眩晕
-[082月2025 16:04:36.171] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce解除了眩晕
-[082月2025 16:04:36.171] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体510d733d-8bdd-44a1-9f1e-32c97f711fd7解除了眩晕
-[082月2025 16:04:36.171] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体bae3489a-454a-4c42-9fb2-d661635fe2f2解除了眩晕
-[082月2025 16:04:36.171] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 实体ec32000d-1d26-4c97-bb6d-2c983cff2362解除了眩晕
-[082月2025 16:04:38.625] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: executePassiveAbilities
-[082月2025 16:04:38.625] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: executePassiveAbilitiesnet.minecraft.client.server.IntegratedServer@deb0c0e
-[082月2025 16:04:38.625] [Server thread/INFO] [yezi.skillablereforged.Skillablereforged/]: 解锁的被动能力: [(attack,2)]
+[082月2025 16:04:03.621] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: executePassiveAbilities
+[082月2025 16:04:03.623] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: executePassiveAbilitiesnet.minecraft.client.server.IntegratedServer@deb0c0e
+[082月2025 16:04:03.625] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 解锁的被动能力: [(attack,2)]
+[082月2025 16:04:03.625] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: applyAttackPassive2
+[082月2025 16:04:05.587] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 玩家 Dev目标为:村民 触发跃斩！
+[082月2025 16:04:05.587] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 获取到对应等级效果
+[082月2025 16:04:05.588] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 跃斩伤害：1.00.3999999999999999
+[082月2025 16:04:05.588] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:05.589] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce
+[082月2025 16:04:05.589] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:05.589] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上510d733d-8bdd-44a1-9f1e-32c97f711fd7
+[082月2025 16:04:05.590] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:05.590] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上bae3489a-454a-4c42-9fb2-d661635fe2f2
+[082月2025 16:04:05.590] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:05.590] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上e5b71e93-ab10-4ba0-a9f8-e7a0df5b6dd3
+[082月2025 16:04:05.590] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:05.590] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上ec32000d-1d26-4c97-bb6d-2c983cff2362
+[082月2025 16:04:05.590] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:05.590] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上0574e36c-5d9c-4808-85fb-fc4a230daa5f
+[082月2025 16:04:05.590] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:05.590] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上3f442de0-b641-4e77-815d-d6790b392fac
+[082月2025 16:04:05.590] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:05.591] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上6a45bc9c-db60-4432-9619-cfb80c403aec
+[082月2025 16:04:05.591] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:05.591] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上f49960a1-4e4f-43a3-bd5b-9d3509f36e38
+[082月2025 16:04:06.620] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体6a45bc9c-db60-4432-9619-cfb80c403aec解除了眩晕
+[082月2025 16:04:06.620] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体f49960a1-4e4f-43a3-bd5b-9d3509f36e38解除了眩晕
+[082月2025 16:04:06.621] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce解除了眩晕
+[082月2025 16:04:06.621] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体3f442de0-b641-4e77-815d-d6790b392fac解除了眩晕
+[082月2025 16:04:06.621] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体510d733d-8bdd-44a1-9f1e-32c97f711fd7解除了眩晕
+[082月2025 16:04:06.621] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体bae3489a-454a-4c42-9fb2-d661635fe2f2解除了眩晕
+[082月2025 16:04:06.621] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体e5b71e93-ab10-4ba0-a9f8-e7a0df5b6dd3解除了眩晕
+[082月2025 16:04:06.622] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体ec32000d-1d26-4c97-bb6d-2c983cff2362解除了眩晕
+[082月2025 16:04:06.622] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体0574e36c-5d9c-4808-85fb-fc4a230daa5f解除了眩晕
+[082月2025 16:04:08.622] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: executePassiveAbilities
+[082月2025 16:04:08.622] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: executePassiveAbilitiesnet.minecraft.client.server.IntegratedServer@deb0c0e
+[082月2025 16:04:08.622] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 解锁的被动能力: [(attack,2)]
+[082月2025 16:04:11.386] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 玩家 Dev目标为:村民 触发跃斩！
+[082月2025 16:04:11.386] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 获取到对应等级效果
+[082月2025 16:04:11.386] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 跃斩伤害：1.00.3999999999999999
+[082月2025 16:04:11.388] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:11.388] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上510d733d-8bdd-44a1-9f1e-32c97f711fd7
+[082月2025 16:04:11.388] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:11.388] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce
+[082月2025 16:04:11.388] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:11.388] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上e5b71e93-ab10-4ba0-a9f8-e7a0df5b6dd3
+[082月2025 16:04:11.388] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:11.388] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上3f442de0-b641-4e77-815d-d6790b392fac
+[082月2025 16:04:12.419] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce解除了眩晕
+[082月2025 16:04:12.420] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体3f442de0-b641-4e77-815d-d6790b392fac解除了眩晕
+[082月2025 16:04:12.420] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体510d733d-8bdd-44a1-9f1e-32c97f711fd7解除了眩晕
+[082月2025 16:04:12.420] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体e5b71e93-ab10-4ba0-a9f8-e7a0df5b6dd3解除了眩晕
+[082月2025 16:04:13.623] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: executePassiveAbilities
+[082月2025 16:04:13.623] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: executePassiveAbilitiesnet.minecraft.client.server.IntegratedServer@deb0c0e
+[082月2025 16:04:13.624] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 解锁的被动能力: [(attack,2)]
+[082月2025 16:04:16.587] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 玩家 Dev目标为:村民 触发跃斩！
+[082月2025 16:04:16.588] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 获取到对应等级效果
+[082月2025 16:04:16.588] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 跃斩伤害：1.00.3999999999999999
+[082月2025 16:04:16.588] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:16.588] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上e5b71e93-ab10-4ba0-a9f8-e7a0df5b6dd3
+[082月2025 16:04:16.588] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:16.588] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上bae3489a-454a-4c42-9fb2-d661635fe2f2
+[082月2025 16:04:16.588] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:16.588] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce
+[082月2025 16:04:16.589] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:16.589] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上3f442de0-b641-4e77-815d-d6790b392fac
+[082月2025 16:04:16.589] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:16.589] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上510d733d-8bdd-44a1-9f1e-32c97f711fd7
+[082月2025 16:04:17.622] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce解除了眩晕
+[082月2025 16:04:17.622] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体3f442de0-b641-4e77-815d-d6790b392fac解除了眩晕
+[082月2025 16:04:17.622] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体510d733d-8bdd-44a1-9f1e-32c97f711fd7解除了眩晕
+[082月2025 16:04:17.623] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体bae3489a-454a-4c42-9fb2-d661635fe2f2解除了眩晕
+[082月2025 16:04:17.623] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体e5b71e93-ab10-4ba0-a9f8-e7a0df5b6dd3解除了眩晕
+[082月2025 16:04:18.621] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: executePassiveAbilities
+[082月2025 16:04:18.622] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: executePassiveAbilitiesnet.minecraft.client.server.IntegratedServer@deb0c0e
+[082月2025 16:04:18.622] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 解锁的被动能力: [(attack,2)]
+[082月2025 16:04:23.621] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: executePassiveAbilities
+[082月2025 16:04:23.623] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: executePassiveAbilitiesnet.minecraft.client.server.IntegratedServer@deb0c0e
+[082月2025 16:04:23.623] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 解锁的被动能力: [(attack,2)]
+[082月2025 16:04:27.337] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 玩家 Dev目标为:村民 触发跃斩！
+[082月2025 16:04:27.338] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 获取到对应等级效果
+[082月2025 16:04:27.338] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 跃斩伤害：1.00.3999999999999999
+[082月2025 16:04:27.338] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:27.338] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上ec32000d-1d26-4c97-bb6d-2c983cff2362
+[082月2025 16:04:27.338] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:27.338] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上f49960a1-4e4f-43a3-bd5b-9d3509f36e38
+[082月2025 16:04:27.338] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:27.338] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上6a45bc9c-db60-4432-9619-cfb80c403aec
+[082月2025 16:04:27.338] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:27.339] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce
+[082月2025 16:04:27.339] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:27.339] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上510d733d-8bdd-44a1-9f1e-32c97f711fd7
+[082月2025 16:04:27.339] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:27.339] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上e5b71e93-ab10-4ba0-a9f8-e7a0df5b6dd3
+[082月2025 16:04:27.339] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:27.339] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上bae3489a-454a-4c42-9fb2-d661635fe2f2
+[082月2025 16:04:28.370] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体6a45bc9c-db60-4432-9619-cfb80c403aec解除了眩晕
+[082月2025 16:04:28.370] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体f49960a1-4e4f-43a3-bd5b-9d3509f36e38解除了眩晕
+[082月2025 16:04:28.370] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce解除了眩晕
+[082月2025 16:04:28.372] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体510d733d-8bdd-44a1-9f1e-32c97f711fd7解除了眩晕
+[082月2025 16:04:28.372] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体bae3489a-454a-4c42-9fb2-d661635fe2f2解除了眩晕
+[082月2025 16:04:28.372] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体e5b71e93-ab10-4ba0-a9f8-e7a0df5b6dd3解除了眩晕
+[082月2025 16:04:28.373] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体ec32000d-1d26-4c97-bb6d-2c983cff2362解除了眩晕
+[082月2025 16:04:28.624] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: executePassiveAbilities
+[082月2025 16:04:28.624] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: executePassiveAbilitiesnet.minecraft.client.server.IntegratedServer@deb0c0e
+[082月2025 16:04:28.624] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 解锁的被动能力: [(attack,2)]
+[082月2025 16:04:32.287] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 玩家 Dev目标为:村民 触发跃斩！
+[082月2025 16:04:32.287] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 获取到对应等级效果
+[082月2025 16:04:32.287] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 跃斩伤害：1.00.3999999999999999
+[082月2025 16:04:32.287] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:32.287] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上ec32000d-1d26-4c97-bb6d-2c983cff2362
+[082月2025 16:04:32.287] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:32.288] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上f49960a1-4e4f-43a3-bd5b-9d3509f36e38
+[082月2025 16:04:32.288] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:32.288] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上6a45bc9c-db60-4432-9619-cfb80c403aec
+[082月2025 16:04:32.288] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:32.288] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce
+[082月2025 16:04:32.288] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:32.288] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上510d733d-8bdd-44a1-9f1e-32c97f711fd7
+[082月2025 16:04:33.322] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体6a45bc9c-db60-4432-9619-cfb80c403aec解除了眩晕
+[082月2025 16:04:33.322] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体f49960a1-4e4f-43a3-bd5b-9d3509f36e38解除了眩晕
+[082月2025 16:04:33.323] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce解除了眩晕
+[082月2025 16:04:33.323] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体510d733d-8bdd-44a1-9f1e-32c97f711fd7解除了眩晕
+[082月2025 16:04:33.324] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体ec32000d-1d26-4c97-bb6d-2c983cff2362解除了眩晕
+[082月2025 16:04:33.637] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: executePassiveAbilities
+[082月2025 16:04:33.638] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: executePassiveAbilitiesnet.minecraft.client.server.IntegratedServer@deb0c0e
+[082月2025 16:04:33.638] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 解锁的被动能力: [(attack,2)]
+[082月2025 16:04:35.136] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 玩家 Dev目标为:村民 触发跃斩！
+[082月2025 16:04:35.136] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 获取到对应等级效果
+[082月2025 16:04:35.137] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 跃斩伤害：1.00.3999999999999999
+[082月2025 16:04:35.137] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:35.137] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上ec32000d-1d26-4c97-bb6d-2c983cff2362
+[082月2025 16:04:35.137] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:35.137] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上f49960a1-4e4f-43a3-bd5b-9d3509f36e38
+[082月2025 16:04:35.137] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:35.137] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上6a45bc9c-db60-4432-9619-cfb80c403aec
+[082月2025 16:04:35.138] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:35.138] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce
+[082月2025 16:04:35.138] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:35.138] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上510d733d-8bdd-44a1-9f1e-32c97f711fd7
+[082月2025 16:04:35.138] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[082月2025 16:04:35.138] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上bae3489a-454a-4c42-9fb2-d661635fe2f2
+[082月2025 16:04:36.170] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体6a45bc9c-db60-4432-9619-cfb80c403aec解除了眩晕
+[082月2025 16:04:36.170] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体f49960a1-4e4f-43a3-bd5b-9d3509f36e38解除了眩晕
+[082月2025 16:04:36.171] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体5a1d81d3-ce7b-4fa0-8ec4-e9b3de0335ce解除了眩晕
+[082月2025 16:04:36.171] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体510d733d-8bdd-44a1-9f1e-32c97f711fd7解除了眩晕
+[082月2025 16:04:36.171] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体bae3489a-454a-4c42-9fb2-d661635fe2f2解除了眩晕
+[082月2025 16:04:36.171] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体ec32000d-1d26-4c97-bb6d-2c983cff2362解除了眩晕
+[082月2025 16:04:38.625] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: executePassiveAbilities
+[082月2025 16:04:38.625] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: executePassiveAbilitiesnet.minecraft.client.server.IntegratedServer@deb0c0e
+[082月2025 16:04:38.625] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 解锁的被动能力: [(attack,2)]
 [082月2025 16:04:39.367] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
 [082月2025 16:04:39.374] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
 [082月2025 16:04:39.379] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end

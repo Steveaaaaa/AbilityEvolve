@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "yezi.abilityevolve.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "skillablereforged.refmap.json",
+  "mixins": [
+    "CraftingContainerMixin",
+    "PlayerChargeJumpMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

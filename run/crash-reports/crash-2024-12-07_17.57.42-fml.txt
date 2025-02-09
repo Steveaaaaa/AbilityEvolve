@@ -45,16 +45,16 @@ Stacktrace:
 Details:
 	Mod File: /D:/MyMods/SkillableReforged/build/resources/main/
 	Failure message: Skillable Reforged (skillablereforged) encountered an error during the common_setup event phase
-		java.lang.IllegalArgumentException: No enum constant yezi.skillablereforged.common.skills.Skill.CRAFT
+		java.lang.IllegalArgumentException: No enum constant yezi.abilityevolve.common.skills.Skill.CRAFT
 	Mod Version: 1.1
 	Mod Issue URL: NOT PROVIDED
-	Exception message: java.lang.IllegalArgumentException: No enum constant yezi.skillablereforged.common.skills.Skill.CRAFT
+	Exception message: java.lang.IllegalArgumentException: No enum constant yezi.abilityevolve.common.skills.Skill.CRAFT
 Stacktrace:
 	at java.lang.Enum.valueOf(Enum.java:273) ~[?:?] {}
-	at yezi.skillablereforged.common.skills.Skill.valueOf(Skill.java:3) ~[%23196!/:?] {re:classloading}
-	at yezi.skillablereforged.Config.parseSkillLocks(Config.java:85) ~[%23196!/:?] {re:classloading}
-	at yezi.skillablereforged.Config.load(Config.java:56) ~[%23196!/:?] {re:classloading}
-	at yezi.skillablereforged.Skillablereforged.commonSetup(Skillablereforged.java:48) ~[%23196!/:?] {re:classloading}
+	at yezi.abilityevolve.common.skills.Skill.valueOf(Skill.java:3) ~[%23196!/:?] {re:classloading}
+	at yezi.abilityevolve.Config.parseSkillLocks(Config.java:85) ~[%23196!/:?] {re:classloading}
+	at yezi.abilityevolve.Config.load(Config.java:56) ~[%23196!/:?] {re:classloading}
+	at yezi.abilityevolve.AbilityEvolve.commonSetup(Skillablereforged.java:48) ~[%23196!/:?] {re:classloading}
 	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:260) ~[eventbus-6.0.5.jar%23114!/:?] {}
 	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:252) ~[eventbus-6.0.5.jar%23114!/:?] {}
 	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%23114!/:?] {}

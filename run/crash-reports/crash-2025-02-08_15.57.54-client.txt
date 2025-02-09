@@ -5,8 +5,8 @@ Time: 2025-02-08 15:57:54
 Description: Ticking entity
 
 java.lang.ClassCastException: class net.minecraft.client.multiplayer.ClientLevel cannot be cast to class net.minecraft.server.level.ServerLevel (net.minecraft.client.multiplayer.ClientLevel and net.minecraft.server.level.ServerLevel are in module minecraft@1.20.1 of loader 'TRANSFORMER' @3b7eac14)
-	at yezi.skillablereforged.common.utils.ParticleSpawner.onTick(ParticleSpawner.java:31) ~[%23196!/:?] {re:classloading}
-	at yezi.skillablereforged.common.utils.__ParticleSpawner_onTick_LivingTickEvent.invoke(.dynamic) ~[%23196!/:?] {re:classloading,pl:eventbus:B}
+	at yezi.abilityevolve.common.utils.ParticleSpawner.onTick(ParticleSpawner.java:31) ~[%23196!/:?] {re:classloading}
+	at yezi.abilityevolve.common.utils.__ParticleSpawner_onTick_LivingTickEvent.invoke(.dynamic) ~[%23196!/:?] {re:classloading,pl:eventbus:B}
 	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:73) ~[eventbus-6.0.5.jar:?] {}
 	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar:?] {}
 	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar:?] {}
@@ -48,10 +48,10 @@ A detailed walkthrough of the error, its code path and all known details is as f
 Thread: Render thread
 Suspected Mod: 
 	Skillable Reforged (skillablereforged), Version: 1.1
-		at TRANSFORMER/skillablereforged@1.1/yezi.skillablereforged.common.utils.ParticleSpawner.onTick(ParticleSpawner.java:31)
+		at TRANSFORMER/skillablereforged@1.1/yezi.abilityevolve.common.utils.ParticleSpawner.onTick(ParticleSpawner.java:31)
 Stacktrace:
-	at yezi.skillablereforged.common.utils.ParticleSpawner.onTick(ParticleSpawner.java:31) ~[%23196!/:?] {re:classloading}
-	at yezi.skillablereforged.common.utils.__ParticleSpawner_onTick_LivingTickEvent.invoke(.dynamic) ~[%23196!/:?] {re:classloading,pl:eventbus:B}
+	at yezi.abilityevolve.common.utils.ParticleSpawner.onTick(ParticleSpawner.java:31) ~[%23196!/:?] {re:classloading}
+	at yezi.abilityevolve.common.utils.__ParticleSpawner_onTick_LivingTickEvent.invoke(.dynamic) ~[%23196!/:?] {re:classloading,pl:eventbus:B}
 	at net.minecraftforge.eventbus.ASMEventHandler.invoke(ASMEventHandler.java:73) ~[eventbus-6.0.5.jar%23114!/:?] {}
 	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:315) ~[eventbus-6.0.5.jar%23114!/:?] {}
 	at net.minecraftforge.eventbus.EventBus.post(EventBus.java:296) ~[eventbus-6.0.5.jar%23114!/:?] {}
