@@ -11,7 +11,7 @@ import java.util.List;
 
 public class PassiveAbilityApplier {
 
-    private boolean isGrazieryPassive0Active = false;
+    private boolean isAidSupportAbilityActive = false;
     private boolean isRidingAbilityActive = false;
     private boolean isWolvesAbilityActive = false;
     private boolean isIronCavalryAbilityActive = false;
@@ -135,9 +135,9 @@ public class PassiveAbilityApplier {
     }
     private void applyGrazieryPassive0() {
         System.out.println("援护生效");
-        if (isGrazieryPassive0Active) return;
-        isGrazieryPassive0Active = true;
-        MinecraftForge.EVENT_BUS.register(new GrazieryPassive0Listener());
+        if (isAidSupportAbilityActive) return;
+        isAidSupportAbilityActive = true;
+        MinecraftForge.EVENT_BUS.register(new AidSupportListener());
     }
     private void applyGrazieryPassive1() {
         System.out.println("精饲生效");

@@ -4,7 +4,7 @@ import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.network.NetworkEvent;
 import yezi.abilityevolve.AbilityEvolve;
-import yezi.abilityevolve.Config;
+import yezi.abilityevolve.config.ConfigManager;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
 import yezi.abilityevolve.common.skills.Skill;
 
@@ -31,7 +31,7 @@ public class RequestLevelUp {
 
             Skill skill = Skill.values()[this.skill];
             assert player != null;
-            int level = Config.getStartCost() + (ModCapabilities.getSkillModel(player).getSkillLevel(skill.index) - 1) * Config.getCostIncrease();
+            int level = ConfigManager.getStartCost() + (ModCapabilities.getSkillModel(player).getSkillLevel(skill.index) - 1) * ConfigManager.getCostIncrease();
             int cost;
             if (level >= 0 && level <= 16) {
                 cost = level * level + 6 * level;
@@ -42,11 +42,11 @@ public class RequestLevelUp {
             } else {
                 throw new IllegalArgumentException("Invalid skill level: " + level);
             }
-            if (ModCapabilities.getSkillModel(player).getSkillLevel(skill.index) < Config.getMaxLevel() && (player.totalExperience >= cost)) {
+            if (ModCapabilities.getSkillModel(player).getSkillLevel(skill.index) < ConfigManager.getMaxLevel() && (player.totalExperience >= cost)) {
                 player.giveExperiencePoints(-cost);
                 ModCapabilities.getSkillModel(player).setSkillLevel(skill.index, ModCapabilities.getSkillModel(player).getSkillLevel(skill.index) + 1);
                 for (int i = 0; i < ModCapabilities.getSkillModel(player).skillLevels.length; i++){
-                    ModCapabilities.getAbilityModel(player).abilityPoint = (ModCapabilities.getAbilityModel(player).abilityPoint + ModCapabilities.getSkillModel(player).skillLevels[i] - ModCapabilities.getSkillModel(player).skillLevels.length)/Config.getAbilityPointIncrease();
+                    ModCapabilities.getAbilityModel(player).abilityPoint = (ModCapabilities.getAbilityModel(player).abilityPoint + ModCapabilities.getSkillModel(player).skillLevels[i] - ModCapabilities.getSkillModel(player).skillLevels.length)/ ConfigManager.getAbilityPointIncrease();
                 }
                 SyncToClient.send(player);
                 AbilitySyncToClient.send(player);

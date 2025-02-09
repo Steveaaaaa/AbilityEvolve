@@ -24,18 +24,18 @@ import yezi.abilityevolve.common.CuriosCompat;
 import yezi.abilityevolve.common.capabilities.AbilityModel;
 import yezi.abilityevolve.common.capabilities.SkillModel;
 import yezi.abilityevolve.common.commands.Commands;
+import yezi.abilityevolve.common.listener.ClientEvents;
 import yezi.abilityevolve.common.network.*;
 import yezi.abilityevolve.common.utils.ParticleSpawner;
-import yezi.abilityevolve.common.listener.ClientEvents;
+import yezi.abilityevolve.config.ConfigManager;
+import yezi.abilityevolve.config.SkillLockLoader;
 
 import java.util.Optional;
 
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod("AbilityEvolve")
-
-public class AbilityEvolve
-{
+public class AbilityEvolve {
     public static final String MOD_ID = "AbilityEvolve";
     public static final String VERSION = "1.20.1-1.0.0";
     public static SimpleChannel NETWORK;
@@ -48,21 +48,32 @@ public class AbilityEvolve
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(this::initCaps);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.getConfig());
+
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ConfigManager.CONFIG_SPEC);
+
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
-        Config.load();
-        NETWORK = NetworkRegistry.newSimpleChannel(new ResourceLocation(MOD_ID, "main_channel"), () -> VERSION, (s) -> true, (s) -> true);
+
+        SkillLockLoader.load();
+
+        NETWORK = NetworkRegistry.newSimpleChannel(
+                new ResourceLocation(MOD_ID, "main_channel"),
+                () -> VERSION,
+                (s) -> true,
+                (s) -> true
+        );
         NETWORK.registerMessage(1, SyncToClient.class, SyncToClient::encode, SyncToClient::new, SyncToClient::handle, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
         NETWORK.registerMessage(2, AbilitySyncToClient.class, AbilitySyncToClient::encode, AbilitySyncToClient::new, AbilitySyncToClient::handle, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
         NETWORK.registerMessage(3, RequestGetAbility.class, RequestGetAbility::encode, RequestGetAbility::new, RequestGetAbility::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
         NETWORK.registerMessage(4, RequestLevelUp.class, RequestLevelUp::encode, RequestLevelUp::new, RequestLevelUp::handle, Optional.of(NetworkDirection.PLAY_TO_SERVER));
         NETWORK.registerMessage(5, Warning.class, Warning::encode, Warning::new, Warning::handle, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
         NETWORK.registerMessage(6, SyncConfigPacket.class, SyncConfigPacket::toBytes, SyncConfigPacket::new, SyncConfigPacket::handle);
-        MinecraftForge.EVENT_BUS.register(new Commands());
+
+        MinecraftForge.EVENT_BUS.register(Commands.class);
         MinecraftForge.EVENT_BUS.register(ParticleSpawner.class);
+
         if (ModList.get().isLoaded("curios")) {
             MinecraftForge.EVENT_BUS.register(new CuriosCompat());
         }
@@ -76,7 +87,7 @@ public class AbilityEvolve
     private void clientSetup(FMLClientSetupEvent event) {
         MinecraftForge.EVENT_BUS.register(new Tooltips());
         MinecraftForge.EVENT_BUS.register(new Overlay());
-        MinecraftForge.EVENT_BUS.register(new Keybind());
+        MinecraftForge.EVENT_BUS.register(Keybind.class);
         MinecraftForge.EVENT_BUS.register(ClientEvents.class);
     }
 }

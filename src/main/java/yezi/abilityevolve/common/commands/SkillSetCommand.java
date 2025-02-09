@@ -10,7 +10,7 @@ import net.minecraft.commands.arguments.EntityArgument;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraftforge.server.command.EnumArgument;
-import yezi.abilityevolve.Config;
+import yezi.abilityevolve.config.ConfigManager;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
 import yezi.abilityevolve.common.network.SyncToClient;
 import yezi.abilityevolve.common.skills.Skill;
@@ -20,11 +20,11 @@ public class SkillSetCommand {
     }
 
     static ArgumentBuilder<CommandSourceStack, ?> register() {
-        return Commands.literal("set")  // 注册 "set" 命令
-                .then(Commands.argument("player", EntityArgument.player())  // "player" 参数，用于指定玩家实体
-                        .then(Commands.argument("skill", EnumArgument.enumArgument(Skill.class))  // "skill" 参数，用于指定技能
-                                .then(Commands.argument("level", IntegerArgumentType.integer(1, Config.getMaxLevel()))  // "level" 参数，技能等级，范围是 1 到最大等级
-                                        .executes(SkillSetCommand::execute)  // 执行 SkillSetCommand.execute 方法
+        return Commands.literal("set")
+                .then(Commands.argument("player", EntityArgument.player())
+                        .then(Commands.argument("skill", EnumArgument.enumArgument(Skill.class))
+                                .then(Commands.argument("level", IntegerArgumentType.integer(1, ConfigManager.getMaxLevel()))
+                                        .executes(SkillSetCommand::execute)
                                 )
                         )
                 );

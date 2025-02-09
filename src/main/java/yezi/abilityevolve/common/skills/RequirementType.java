@@ -1,15 +1,15 @@
 package yezi.abilityevolve.common.skills;
 
 import net.minecraft.resources.ResourceLocation;
-import yezi.abilityevolve.Config;
+import yezi.abilityevolve.config.SkillLockLoader;
 
 import java.util.function.Function;
 
 public enum RequirementType {
-    USE(Config::getRequirements),
-    CRAFT(Config::getCraftRequirements),
-    ATTACK(Config::getEntityAttackRequirements);
-  //  ABILITY(Config::getAbilityRequirements);
+    USE(SkillLockLoader::getRequirements),
+    CRAFT(SkillLockLoader::getCraftRequirements),
+    ATTACK(SkillLockLoader::getAttackRequirements);
+  //  ABILITY(ConfigManager::getAbilityRequirements);
 
     private final Function<ResourceLocation, Requirement[]> requirementMap;
 
@@ -20,7 +20,7 @@ public enum RequirementType {
     public Requirement[] getRequirements(ResourceLocation resource) {
         return this.requirementMap.apply(resource);
     }
-    public Requirement[] getRequirements(String name) {
+  /*  public Requirement[] getRequirements(String name) {
         return getRequirements(new ResourceLocation(name));
-    }
+    }*/
 }

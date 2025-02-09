@@ -19,7 +19,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.server.ServerLifecycleHooks;
-import yezi.abilityevolve.Config;
+import yezi.abilityevolve.config.ConfigManager;
 import yezi.abilityevolve.common.abilities.PassiveAbilityApplier;
 import yezi.abilityevolve.common.capabilities.AbilityModel;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
@@ -108,7 +108,7 @@ public class EventHandler {
     // ==============================
     @SubscribeEvent
     public static void onEntityDrops(LivingDropsEvent event) {
-        if (Config.getDisableWool() && event.getEntity() instanceof Sheep) {
+        if (ConfigManager.getDisableWool() && event.getEntity() instanceof Sheep) {
             event.getDrops().removeIf(drop -> drop.getItem().is(ItemTags.WOOL));
         }
     }
@@ -117,7 +117,7 @@ public class EventHandler {
     public static void onPlayerDeath(LivingDeathEvent event) {
         if (event.getEntity() instanceof Player player) {
             ModCapabilities.getOptionalSkillModel(player).ifPresent(model -> {
-                if (Config.getDeathReset()) {
+                if (ConfigManager.getDeathReset()) {
                     Arrays.fill(model.skillLevels, 1);
                 }
                 lastDiedPlayerSkills = model;

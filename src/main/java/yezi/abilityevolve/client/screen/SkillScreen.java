@@ -2,6 +2,7 @@ package yezi.abilityevolve.client.screen;
 
 import com.mojang.blaze3d.systems.RenderSystem;
 import net.minecraft.ChatFormatting;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
@@ -12,54 +13,46 @@ import yezi.abilityevolve.client.screen.buttons.SkillButton;
 import yezi.abilityevolve.common.skills.Skill;
 
 public class SkillScreen extends Screen {
-    public static final ResourceLocation RESOURCES = new ResourceLocation("abilityevolve", "textures/gui/skills.png");
+    public static final ResourceLocation RESOURCES = new ResourceLocation("AbilityEvolve", "textures/gui/skills.png");
+    private final int centerX;
+    private final int centerY;
+    private final Skill[] skills = Skill.values(); // 预存所有技能
 
     public SkillScreen() {
         super(Component.translatable("container.skills")
                 .setStyle(Style.EMPTY.withBold(true).withColor(ChatFormatting.BLACK)));
+
+        // 预计算界面中心点
+        this.centerX = (Minecraft.getInstance().getWindow().getGuiScaledWidth() - 176) / 2;
+        this.centerY = (Minecraft.getInstance().getWindow().getGuiScaledHeight() - 166) / 2;
     }
+
     @Override
     protected void init() {
-        int left = (this.width - 162) / 2;
-        int top = (this.height - 128) / 2;
-
-        for (int i = 0; i < 8; ++i) {
-            int x = left + (i % 2) * 83;
-            int y = top + (i / 2) * 36;
-
-            Skill skill = Skill.values()[i];
-
-            this.addRenderableWidget(new SkillButton(x, y, skill));
+        for (int i = 0; i < skills.length; i++) {
+            int x = centerX + (i % 2) * 83;
+            int y = centerY + (i / 2) * 36;
+            this.addRenderableWidget(new SkillButton(x, y, skills[i]));
         }
     }
 
-   /* private int getLevel(Skill skill) {
-        if (Minecraft.getInstance().player!= null) {
-            return ModCapabilities.getSkillModel(Minecraft.getInstance().player).getSkillLevel(skill.index);
-        } else {
-            return 0;
-        }
-    }
-
-    private int getMaxLevel() {
-        return Config.getMaxLevel();
-    }*/
     @Override
     public void render(@NotNull GuiGraphics guiGraphics, int mouseX, int mouseY, float partialTicks) {
-        RenderSystem.setShaderTexture(0, RESOURCES);
-        int left = (this.width - 176) / 2;
-        int top = (this.height - 166) / 2;
-
         this.renderBackground(guiGraphics);
-        guiGraphics.blit(RESOURCES, left, top, 0, 0, 176, 166);
-        guiGraphics.drawString(this.font, this.title.getString(), this.width / 2 - this.font.width(this.title) / 2, top + 6, 0xFFFFFF);
+
+        RenderSystem.setShaderTexture(0, RESOURCES);
+        guiGraphics.blit(RESOURCES, centerX, centerY, 0, 0, 176, 166);
+
+        // 渲染标题
+        String titleText = this.title.getString();
+        guiGraphics.drawString(this.font, titleText, centerX + (176 - this.font.width(titleText)) / 2, centerY + 6, 0xFFFFFF);
 
         super.render(guiGraphics, mouseX, mouseY, partialTicks);
     }
 
     @Override
-    public boolean isPauseScreen()
-    {
+    public boolean isPauseScreen() {
         return false;
     }
 }
+

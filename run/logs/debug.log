@@ -291,7 +291,7 @@
 [082��2025 16:03:27.045] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing yezi.abilityevolve.common.commands.SkillGetCommand to FORGE
 [082��2025 16:03:27.053] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing yezi.abilityevolve.common.listener.EventHandler to FORGE
 [082��2025 16:03:27.090] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing yezi.abilityevolve.common.network.SyncConfigPacket to FORGE
-[082��2025 16:03:27.092] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing yezi.abilityevolve.Config to FORGE
+[082��2025 16:03:27.092] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing yezi.abilityevolve.config.ConfigManager to FORGE
 [082��2025 16:03:27.096] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing yezi.abilityevolve.common.listener.ClientEvents to FORGE
 [082��2025 16:03:27.108] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent0/]: -Dio.netty.noUnsafe: false
 [082��2025 16:03:27.108] [modloading-worker-0/DEBUG] [io.netty.util.internal.PlatformDependent0/]: Java version: 17

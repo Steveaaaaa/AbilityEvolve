@@ -52,8 +52,8 @@ Details:
 Stacktrace:
 	at java.lang.Enum.valueOf(Enum.java:273) ~[?:?] {}
 	at yezi.abilityevolve.common.skills.Skill.valueOf(Skill.java:3) ~[%23196!/:?] {re:classloading}
-	at yezi.abilityevolve.Config.parseSkillLocks(Config.java:85) ~[%23196!/:?] {re:classloading}
-	at yezi.abilityevolve.Config.load(Config.java:56) ~[%23196!/:?] {re:classloading}
+	at yezi.abilityevolve.config.ConfigManager.parseSkillLocks(Config.java:85) ~[%23196!/:?] {re:classloading}
+	at yezi.abilityevolve.config.ConfigManager.load(Config.java:56) ~[%23196!/:?] {re:classloading}
 	at yezi.abilityevolve.AbilityEvolve.commonSetup(Skillablereforged.java:48) ~[%23196!/:?] {re:classloading}
 	at net.minecraftforge.eventbus.EventBus.doCastFilter(EventBus.java:260) ~[eventbus-6.0.5.jar%23114!/:?] {}
 	at net.minecraftforge.eventbus.EventBus.lambda$addListener$11(EventBus.java:252) ~[eventbus-6.0.5.jar%23114!/:?] {}

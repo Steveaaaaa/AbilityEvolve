@@ -10,8 +10,8 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.network.NetworkEvent;
 import net.minecraftforge.network.PacketDistributor;
 import yezi.abilityevolve.AbilityEvolve;
-import yezi.abilityevolve.Config;
 import yezi.abilityevolve.common.skills.Requirement;
+import yezi.abilityevolve.config.SkillLockLoader;
 
 import java.lang.reflect.Type;
 import java.util.Map;
@@ -35,7 +35,7 @@ public class SyncConfigPacket {
     }
 
     public SyncConfigPacket(FriendlyByteBuf buf) {
-        Type type = Config.getSkillLocksType();
+        Type type = SkillLockLoader.getSkillLocksType();
         this.skillLocks = GSON.fromJson(buf.readUtf(), type);
         this.craftSkillLocks = GSON.fromJson(buf.readUtf(), type);
         this.attackSkillLocks = GSON.fromJson(buf.readUtf(), type);
@@ -52,9 +52,9 @@ public class SyncConfigPacket {
     public static void handle(SyncConfigPacket msg, Supplier<NetworkEvent.Context> ctx) {
         ctx.get().setPacketHandled(true); // 先标记包已处理，避免并发问题
         ctx.get().enqueueWork(() -> {
-            Config.setSkillLocks(msg.skillLocks);
-            Config.setCraftSkillLocks(msg.craftSkillLocks);
-            Config.setAttackSkillLocks(msg.attackSkillLocks);
+            SkillLockLoader.setSkillLocks(msg.skillLocks);
+            SkillLockLoader.setCraftSkillLocks(msg.craftSkillLocks);
+            SkillLockLoader.setAttackSkillLocks(msg.attackSkillLocks);
             LOGGER.info("Skill configuration updated on the client.");
 
             Minecraft minecraft = Minecraft.getInstance();
@@ -70,9 +70,9 @@ public class SyncConfigPacket {
 
     public static void sendToAllClients() {
         SyncConfigPacket packet = new SyncConfigPacket(
-                Config.getSkillLocks(),
-                Config.getCraftSkillLocks(),
-                Config.getAttackSkillLocks()
+                SkillLockLoader.getSkillLocks(),
+                SkillLockLoader.getCraftSkillLocks(),
+                SkillLockLoader.getAttackSkillLocks()
         );
         AbilityEvolve.NETWORK.send(PacketDistributor.ALL.noArg(), packet);
         LOGGER.info("SyncConfigPacket sent to all clients.");
