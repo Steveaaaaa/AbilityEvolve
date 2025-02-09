@@ -39,7 +39,7 @@ authors="" #optional
 #displayTest="MATCH_VERSION" # MATCH_VERSION is the default if nothing is specified (#optional)
 
 # The description text for the mod (multi line!) (#mandatory)
-description='''Level up and earn your unique ability.'''
+description='''Level up and evolve your unique ability.'''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 mixins=["abilityevolve.mixin.json"]
 [[dependencies.abilityevolve]] #optional
