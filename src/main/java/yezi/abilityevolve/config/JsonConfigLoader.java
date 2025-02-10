@@ -23,12 +23,15 @@ public class JsonConfigLoader {
 
         try (FileReader reader = new FileReader(file)) {
             Type mapType = new TypeToken<Map<String, Map<String, List<String>>>>() {}.getType();
-            return new Gson().fromJson(JsonParser.parseReader(reader), mapType);
+            Map<String, Map<String, List<String>>> result = new Gson().fromJson(JsonParser.parseReader(reader), mapType);
+
+            return result != null ? result : new HashMap<>(); // 防止返回 null
         } catch (Exception e) {
             e.printStackTrace();
-            return new HashMap<>();
+            return new HashMap<>(); // 解析失败时返回空 Map
         }
     }
+
 
     private static void createDefaultJsonFile(File file, String content) {
         try {

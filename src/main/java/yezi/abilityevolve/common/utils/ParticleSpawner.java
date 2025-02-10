@@ -6,7 +6,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import yezi.abilityevolve.common.Particles.ParticleInit;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -67,13 +66,13 @@ public class ParticleSpawner {
 
         double yOffset = entity.getBbHeight() * 1.2;
 
-        for (int i = 0; i < 6; i++) {
-            double angle = Math.toRadians((tick * 5 + i * 60) % 360);
+        for (int i = 0; i < 3; i++) {
+            double angle = Math.toRadians((tick * 5 + i * 120) % 360);
             double radius = 0.5;
             double xOffset = Math.cos(angle) * radius;
             double zOffset = Math.sin(angle) * radius;
-
-            entity.level().addParticle(ParticleInit.YELLOW_STAR.get(),
+        //    AbilityEvolve.LOGGER.info("YELLOW_STAR: " + ParticleInit.YELLOW_STAR.get());
+            entity.level().addParticle(ParticleTypes.ELECTRIC_SPARK,
                     entity.getX() + xOffset,
                     entity.getY() + yOffset,
                     entity.getZ() + zOffset,

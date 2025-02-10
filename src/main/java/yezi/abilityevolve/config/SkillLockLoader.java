@@ -15,14 +15,20 @@ public class SkillLockLoader {
     private static Map<String, Requirement[]> skillLocks = new HashMap<>();
     private static Map<String, Requirement[]> craftSkillLocks = new HashMap<>();
     private static Map<String, Requirement[]> attackSkillLocks = new HashMap<>();
-    private static Map<String, String> skillAliasMap = new HashMap<>();
+    private static final Map<String, String> skillAliasMap = new HashMap<>();
 
     public static void load() {
         loadSkillAliases();
-        skillLocks.putAll(parseSkillLocks(JsonConfigLoader.loadJsonConfig("AbilityEvolve/skill_locks.json", "{}").get("skillLocks")));
-        craftSkillLocks.putAll(parseSkillLocks(JsonConfigLoader.loadJsonConfig("AbilityEvolve/craft_skill_locks.json", "{}").get("craftSkillLocks")));
-        attackSkillLocks.putAll(parseSkillLocks(JsonConfigLoader.loadJsonConfig("AbilityEvolve/attack_skill_locks.json", "{}").get("attackSkillLocks")));
+
+        Map<String, List<String>> skillLocksData = JsonConfigLoader.loadJsonConfig("AbilityEvolve/skill_locks.json", "{}").get("skillLocks");
+        Map<String, List<String>> craftSkillLocksData = JsonConfigLoader.loadJsonConfig("AbilityEvolve/craft_skill_locks.json", "{}").get("craftSkillLocks");
+        Map<String, List<String>> attackSkillLocksData = JsonConfigLoader.loadJsonConfig("AbilityEvolve/attack_skill_locks.json", "{}").get("attackSkillLocks");
+
+        skillLocks.putAll(parseSkillLocks(skillLocksData != null ? skillLocksData : new HashMap<>()));
+        craftSkillLocks.putAll(parseSkillLocks(craftSkillLocksData != null ? craftSkillLocksData : new HashMap<>()));
+        attackSkillLocks.putAll(parseSkillLocks(attackSkillLocksData != null ? attackSkillLocksData : new HashMap<>()));
     }
+
 
     private static void loadSkillAliases() {
         skillAliasMap.clear();
@@ -36,6 +42,10 @@ public class SkillLockLoader {
 
     private static Map<String, Requirement[]> parseSkillLocks(Map<String, List<String>> data) {
         Map<String, Requirement[]> locks = new HashMap<>();
+
+        if (data == null || data.isEmpty()) {
+            return locks; // 避免空指针异常
+        }
 
         for (Map.Entry<String, List<String>> entry : data.entrySet()) {
             List<Requirement> requirements = new ArrayList<>();
@@ -53,6 +63,7 @@ public class SkillLockLoader {
         }
         return locks;
     }
+
 
     public static Requirement[] getRequirements(ResourceLocation key) {
         return skillLocks.getOrDefault(key.toString(), new Requirement[0]);

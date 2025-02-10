@@ -10,13 +10,9 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import yezi.abilityevolve.client.Overlay;
 import yezi.abilityevolve.client.screen.SkillScreen;
 import yezi.abilityevolve.client.screen.buttons.KeyBinding;
-import yezi.abilityevolve.common.Particles.ParticleInit;
-import yezi.abilityevolve.common.Particles.YellowStarParticleProvider;
+import yezi.abilityevolve.common.particles.ParticleInit;
 
-@EventBusSubscriber(
-        modid = "abilityevolve",
-        value = {Dist.CLIENT}
-)
+@EventBusSubscriber(modid = "abilityevolve", value = {Dist.CLIENT})
 
 public class ClientEvents {
     public ClientEvents() {
@@ -36,6 +32,6 @@ public class ClientEvents {
     }
     @SubscribeEvent
     public static void registerParticles(RegisterParticleProvidersEvent event) {
-        event.registerSpriteSet(ParticleInit.YELLOW_STAR.get(), YellowStarParticleProvider::new);
+        ParticleInit.registerParticleFactories(event);
     }
 }

@@ -8,12 +8,11 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
-import yezi.abilityevolve.common.capabilities.SkillModel;
 
 public class SkillRequirementChecker {
    // private static SkillModel skillModel;
 
-    public SkillRequirementChecker(SkillModel skillModel) {
+    public SkillRequirementChecker() {
       //  SkillRequirementChecker.skillModel = skillModel;
     }
 

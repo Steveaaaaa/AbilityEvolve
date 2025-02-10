@@ -17,9 +17,8 @@ import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.server.ServerLifecycleHooks;
-import yezi.abilityevolve.config.ConfigManager;
+import yezi.abilityevolve.AbilityEvolve;
 import yezi.abilityevolve.common.abilities.PassiveAbilityApplier;
 import yezi.abilityevolve.common.capabilities.AbilityModel;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
@@ -27,12 +26,12 @@ import yezi.abilityevolve.common.capabilities.SkillModel;
 import yezi.abilityevolve.common.network.AbilitySyncToClient;
 import yezi.abilityevolve.common.network.SyncToClient;
 import yezi.abilityevolve.common.skills.SkillRequirementChecker;
+import yezi.abilityevolve.config.ConfigManager;
 
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
-@Mod.EventBusSubscriber(modid = "AbilityEvolve")
 public class EventHandler {
 
     private static final int INTERVAL_TICKS = 100;
@@ -41,7 +40,7 @@ public class EventHandler {
     private static AbilityModel lastDiedPlayerAbilities = new AbilityModel();
     private static final Map<UUID, PassiveAbilityApplier> abilityAppliers = new HashMap<>();
 
-    private EventHandler() {} // 私有构造防止监听器被实例化
+    private EventHandler() {}
 
     // ==============================
     // 1. 玩家交互事件处理
@@ -178,6 +177,7 @@ public class EventHandler {
     @SubscribeEvent
     public static void onServerTick(TickEvent.ServerTickEvent event) {
         if (event.phase == TickEvent.Phase.END && ++tickCounter >= INTERVAL_TICKS) {
+            AbilityEvolve.LOGGER.info("onServerTick");
             tickCounter = 0;
             executePassiveAbilities();
         }
@@ -187,6 +187,7 @@ public class EventHandler {
         MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
         if (server != null) {
             for (ServerPlayer player : server.getPlayerList().getPlayers()) {
+                AbilityEvolve.LOGGER.info("执行被动能力: " + player.getUUID());
                 abilityAppliers.computeIfAbsent(player.getUUID(), id -> new PassiveAbilityApplier(player))
                         .applyUnlockedAbilities();
             }

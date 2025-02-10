@@ -13,10 +13,10 @@ import yezi.abilityevolve.client.screen.buttons.SkillButton;
 import yezi.abilityevolve.common.skills.Skill;
 
 public class SkillScreen extends Screen {
-    public static final ResourceLocation RESOURCES = new ResourceLocation("AbilityEvolve", "textures/gui/skills.png");
+    public static final ResourceLocation RESOURCES = new ResourceLocation("abilityevolve", "textures/gui/skills.png");
     private final int centerX;
     private final int centerY;
-    private final Skill[] skills = Skill.values(); // 预存所有技能
+    private final Skill[] skills = Skill.values();
 
     public SkillScreen() {
         super(Component.translatable("container.skills")

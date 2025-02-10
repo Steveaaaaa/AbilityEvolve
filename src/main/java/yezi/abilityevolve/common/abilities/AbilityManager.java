@@ -2,6 +2,7 @@ package yezi.abilityevolve.common.abilities;
 
 import org.apache.commons.lang3.tuple.Pair;
 import net.minecraft.world.entity.player.Player;
+import yezi.abilityevolve.AbilityEvolve;
 import yezi.abilityevolve.common.capabilities.AbilityModel;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
 
@@ -25,6 +26,7 @@ public class AbilityManager {
     }
 
     private int[] getAbilityGroupBySkill(String skillName) {
+        AbilityEvolve.LOGGER.info("获取被动能力: " + skillName);
         return switch (skillName.toLowerCase()) {
             case "graziery" -> abilityModel.grazieryLock;
             case "mining" -> abilityModel.miningLock;
@@ -40,6 +42,7 @@ public class AbilityManager {
         };
     }
     public void getAbility(String abilityType, int index,int skillPointCost) {
+        AbilityEvolve.LOGGER.info("getAbility");
         if (checkForGetAbility(abilityType, index, skillPointCost)){
             switch (abilityType.toLowerCase()) {
                 case "graziery" -> abilityModel.grazieryLock[index] = 1;
@@ -58,6 +61,7 @@ public class AbilityManager {
         }
     }
     public List<Pair<String, Integer>> getUnlockedPassiveAbilities() {
+
         List<Pair<String, Integer>> unlockedAbilities = new ArrayList<>();
 
         checkUnlockedAbilities(abilityModel.grazieryLock, "graziery", unlockedAbilities);
