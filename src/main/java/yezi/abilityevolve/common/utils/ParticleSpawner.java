@@ -65,10 +65,10 @@ public class ParticleSpawner {
         int tick = entityStunTicks.getOrDefault(uuid, 0);
         entityStunTicks.put(uuid, tick + 1);
 
-        double yOffset = entity.getBbHeight() * 1.2;
+        double yOffset = entity.getBbHeight() * 1.15;
 
-        for (int i = 0; i < 3; i++) {
-            double angle = Math.toRadians((tick * 5 + i * 120) % 360);
+        for (int i = 0; i < 4; i++) {
+            double angle = Math.toRadians((tick * 5 + i * 90) % 360);
             double radius = 0.5;
             double xOffset = Math.cos(angle) * radius;
             double zOffset = Math.sin(angle) * radius;

@@ -10,11 +10,11 @@ import org.jetbrains.annotations.NotNull;
 public class YellowStarParticle extends TextureSheetParticle {
     public YellowStarParticle(ClientLevel level, double x, double y, double z, double dx, double dy, double dz) {
         super(level, x, y, z, dx, dy, dz);
-        this.setSize(1.5F, 1.5F);
-        this.lifetime = 20 + this.random.nextInt(10);
+        this.setSize(0.6F, 0.6F);
+        this.lifetime = 2;
         this.gravity = 0.0F;
         this.alpha = 1.0F;
-        this.quadSize = 1.0F + this.random.nextFloat() * 0.2F;
+        this.quadSize = 0.2F;
         this.xd = dx * 0.05;
         this.yd = 0.0;
         this.zd = dz * 0.05;
@@ -24,11 +24,9 @@ public class YellowStarParticle extends TextureSheetParticle {
     public void tick() {
         super.tick();
 
-     //   this.yd += 0.005;
-
         this.alpha = Math.max(0.0F, 1.0F - (float) this.age / (float) this.lifetime);
 
-        this.quadSize = (0.5F + (float) Math.sin((double) this.age / this.lifetime * Math.PI)) * 0.6F;
+     //   this.quadSize = (0.5F + (float) Math.sin((double) this.age / this.lifetime * Math.PI)) * 0.6F;
     }
 
     @Override

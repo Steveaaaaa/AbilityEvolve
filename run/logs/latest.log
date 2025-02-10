@@ -1,393 +1,264 @@
-[102月2025 17:25:42.759] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 5, --assetsDir, C:\Users\东南风也好喝\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.12, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mixin.config, abilityevolve.mixins.json]
-[102月2025 17:25:42.764] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.6 by Oracle Corporation; OS Windows 11 arch amd64 version 10.0
-[102月2025 17:25:42.885] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
-[102月2025 17:25:42.974] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
-[102月2025 17:25:43.555] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
-[102月2025 17:25:43.644] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/东南风也好喝/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
-[102月2025 17:25:43.695] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 3050 Laptop GPU/PCIe/SSE2 GL version 4.6.0 NVIDIA 560.94, NVIDIA Corporation
-[102月2025 17:25:43.975] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\东南风也好喝\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.12\f6b9f7f45e33548b47f78d9f54c7b4eb1e94e9bd\javafmllanguage-1.20.1-47.3.12.jar is missing mods.toml file
-[102月2025 17:25:43.982] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\东南风也好喝\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.12\81de74e1180787af25604b6ecb3728fc485bd3c7\lowcodelanguage-1.20.1-47.3.12.jar is missing mods.toml file
-[102月2025 17:25:43.989] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\东南风也好喝\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.12\1ff4ed058e0774b82d8da352d9e051e6d2a154eb\mclanguage-1.20.1-47.3.12.jar is missing mods.toml file
-[102月2025 17:25:43.997] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\东南风也好喝\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.12\9a4d9f99e106aa2358cdbe6777921855d353371\fmlcore-1.20.1-47.3.12.jar is missing mods.toml file
-[102月2025 17:25:44.069] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
-[102月2025 17:25:45.328] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
-[102月2025 17:25:45.331] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\东南风也好喝\.gradle\caches\forge_gradle\assets, --assetIndex, 5]
-[102月2025 17:25:45.696] [main/INFO] [mixin/]: Remapping refMap abilityevolve.refmap.json using D:\MyMods\AbilityEvolve\build\createSrgToMcp\output.srg
-[102月2025 17:25:49.768] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 162 milliseconds
-[102月2025 17:25:51.562] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/东南风也好喝/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.12_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.12_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
-[102月2025 17:25:51.562] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/东南风也好喝/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.12_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.12_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
-[102月2025 17:25:51.582] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[102月2025 17:25:51.591] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
-[102月2025 17:25:51.744] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
-[102月2025 17:25:51.990] [modloading-worker-0/INFO] [yezi.abilityevolve.AbilityEvolve/]: AbilityEvolve Loaded.
-[102月2025 17:25:52.012] [modloading-worker-0/INFO] [yezi.abilityevolve.AbilityEvolve/]: Registering particle types
-[102月2025 17:25:52.016] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.12, for MC 1.20.1 with MCP 20230612.114412
-[102月2025 17:25:52.018] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.12 Initialized
-[102月2025 17:25:52.235] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Registering capabilities
-[102月2025 17:25:52.856] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Registering particle factories
-[102月2025 17:25:52.860] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: Provider constructor called.net.minecraft.client.particle.ParticleEngine$MutableSpriteSet@31433df9
-[102月2025 17:25:52.920] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: [abilityevolve]
-[102月2025 17:25:53.066] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
-[102月2025 17:25:53.186] [Worker-Main-7/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
-[102月2025 17:25:53.348] [Worker-Main-5/INFO] [yezi.abilityevolve.AbilityEvolve/]: AbilityEvolve Common Loaded.
-[102月2025 17:25:53.465] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
-[102月2025 17:25:53.505] [Worker-Main-3/INFO] [yezi.abilityevolve.AbilityEvolve/]: AbilityEvolve Client Loaded.
-[102月2025 17:25:55.730] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
-[102月2025 17:25:55.730] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[102月2025 17:25:56.158] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek(R) Audio)
-[102月2025 17:25:56.159] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
-[102月2025 17:25:56.272] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
-[102月2025 17:25:56.280] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[102月2025 17:25:56.281] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[102月2025 17:25:56.282] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[102月2025 17:25:56.282] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[102月2025 17:25:56.284] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[102月2025 17:25:56.287] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[102月2025 17:25:56.287] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[102月2025 17:25:56.287] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[102月2025 17:25:56.516] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[102月2025 17:25:56.561] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[102月2025 17:25:56.562] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[102月2025 17:25:56.562] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[102月2025 17:26:02.918] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 47.3.12 Target: 47.3.27
-[102月2025 17:26:05.371] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: Invalid session id
-[102月2025 17:26:45.041] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 340
-[102月2025 17:26:45.086] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 340
-[102月2025 17:26:45.645] [Render thread/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: Injecting existing registry data into this CLIENT instance
-[102月2025 17:26:47.097] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
-[102月2025 17:26:47.185] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1271 advancements
-[102月2025 17:26:47.618] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.1
-[102月2025 17:26:47.618] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
-[102月2025 17:26:47.910] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
-[102月2025 17:26:49.568] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: 准备生成区域中：0%
-[102月2025 17:26:49.568] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: 准备生成区域中：0%
-[102月2025 17:26:49.568] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: 准备生成区域中：0%
-[102月2025 17:26:49.568] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: 准备生成区域中：0%
-[102月2025 17:26:49.926] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: 准备生成区域中：26%
-[102月2025 17:26:50.238] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
-[102月2025 17:26:50.251] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 2337 ms
-[102月2025 17:26:50.383] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
-[102月2025 17:26:50.385] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
-[102月2025 17:26:50.568] [Render thread/WARN] [io.netty.util.internal.SystemPropertyUtil/]: Unable to parse the boolean system property 'java.net.preferIPv6Addresses':system - using the default value: false
-[102月2025 17:26:51.058] [Netty Local Client IO #0/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
-[102月2025 17:26:51.066] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Attaching capabilities to entity
-[102月2025 17:26:51.105] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:569e37f9] logged in with entity id 80 at (69.12020107435805, -60.0, 95.22768696778456)
-[102月2025 17:26:51.172] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev加入了游戏
-[102月2025 17:26:51.602] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Attaching capabilities to entity
-[102月2025 17:26:51.845] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 33 advancements
-[102月2025 17:26:52.343] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[102月2025 17:26:52.396] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[102月2025 17:26:52.708] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[102月2025 17:26:52.711] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[102月2025 17:26:53.895] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:53.928] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:54.000] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:54.513] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:54.546] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:54.579] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:54.612] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:54.637] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:54.663] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:54.712] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:54.746] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:54.779] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:54.800] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:54.837] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:54.865] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:54.896] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:54.929] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:54.979] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:55.012] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:55.035] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:55.065] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:55.079] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 32
-[102月2025 17:26:55.216] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 32
-[102月2025 17:26:55.328] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:56.132] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:56.195] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 32
-[102月2025 17:26:56.362] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 32
-[102月2025 17:26:56.598] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: onServerTick
-[102月2025 17:26:56.598] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 执行被动能力: 380df991-f603-344c-a090-369bad2a924a
-[102月2025 17:26:56.602] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用被动能力:
-[102月2025 17:26:56.612] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:56.679] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 玩家 Dev目标为:史莱姆 触发跃斩！
-[102月2025 17:26:56.679] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 获取到对应等级效果
-[102月2025 17:26:56.680] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 跃斩伤害：1.00.3999999999999999
-[102月2025 17:26:56.681] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：史莱姆
-[102月2025 17:26:56.682] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上977441f3-faa7-40a5-b00c-ffc4bce23e0a
-[102月2025 17:26:56.729] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.729] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.729] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.780] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.780] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.780] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.830] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.830] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.830] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.880] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.880] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.880] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.895] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
-[102月2025 17:26:56.930] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.930] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.930] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.980] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.980] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:56.980] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.013] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
-[102月2025 17:26:57.030] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.030] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.030] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.080] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.080] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.080] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.129] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.129] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.129] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.180] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.180] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.180] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.229] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.229] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.229] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.280] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.280] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.280] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.330] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.330] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.330] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.380] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.380] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.380] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.429] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.430] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.430] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.479] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.479] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.479] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.529] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.529] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.529] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.579] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.579] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.579] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.629] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.629] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.629] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.678] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:26:57.679] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.679] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.679] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:26:57.694] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体977441f3-faa7-40a5-b00c-ffc4bce23e0a解除了眩晕
-[102月2025 17:26:58.178] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:26:58.212] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:26:58.249] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:26:58.284] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:26:58.312] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:26:58.346] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:26:58.378] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:26:58.411] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:26:58.449] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:26:58.479] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:26:58.512] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:26:58.516] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:26:58.566] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:58.829] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:26:59.511] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 343
-[102月2025 17:27:00.161] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 343
-[102月2025 17:27:00.922] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 256
-[102月2025 17:27:00.941] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[102月2025 17:27:00.954] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[102月2025 17:27:00.963] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[102月2025 17:27:00.965] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[102月2025 17:27:01.050] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 256
-[102月2025 17:27:02.997] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: onServerTick
-[102月2025 17:27:02.997] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 执行被动能力: 380df991-f603-344c-a090-369bad2a924a
-[102月2025 17:27:02.997] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用被动能力:
-[102月2025 17:27:05.162] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:05.246] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:05.346] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:05.413] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:27:05.633] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:05.751] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:27:05.951] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 343
-[102月2025 17:27:06.302] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 343
-[102月2025 17:27:07.995] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: onServerTick
-[102月2025 17:27:07.997] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 执行被动能力: 380df991-f603-344c-a090-369bad2a924a
-[102月2025 17:27:07.997] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用被动能力:
-[102月2025 17:27:08.696] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:08.845] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:08.933] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:09.445] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:10.801] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:11.246] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:11.681] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:11.846] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:12.195] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:12.289] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:12.545] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 32
-[102月2025 17:27:12.663] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 32
-[102月2025 17:27:12.947] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 玩家 Dev目标为:史莱姆 触发跃斩！
-[102月2025 17:27:12.948] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 获取到对应等级效果
-[102月2025 17:27:12.948] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 跃斩伤害：1.00.3999999999999999
-[102月2025 17:27:12.948] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：猪
-[102月2025 17:27:12.948] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上4e8bebc5-8752-45a8-9097-f3b9c185a224
-[102月2025 17:27:12.948] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：史莱姆
-[102月2025 17:27:12.948] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了1.0秒的眩晕效果在xx实体上977441f3-faa7-40a5-b00c-ffc4bce23e0a
-[102月2025 17:27:13.012] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.013] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: onServerTick
-[102月2025 17:27:13.013] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.013] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 执行被动能力: 380df991-f603-344c-a090-369bad2a924a
-[102月2025 17:27:13.013] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.013] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用被动能力:
-[102月2025 17:27:13.013] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.013] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.013] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.048] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.048] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.048] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.048] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.048] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.048] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.054] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
-[102月2025 17:27:13.097] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.097] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.097] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.097] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.097] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.097] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.147] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.147] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.147] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.148] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.148] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.148] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.151] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
-[102月2025 17:27:13.197] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.197] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.197] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.197] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.197] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.197] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.246] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.246] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.248] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.248] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.248] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.248] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.297] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.298] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.298] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.298] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.298] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.298] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.347] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.347] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.347] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.347] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.347] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.348] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.396] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.397] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.397] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.397] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.397] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.397] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.447] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.447] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.447] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.447] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.447] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.447] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.497] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.497] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.497] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.497] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.497] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.498] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.548] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.549] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.549] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.549] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.549] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.549] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.597] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.597] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.597] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.597] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.597] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.597] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.647] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.647] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.647] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.647] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.647] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.647] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.697] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.698] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.698] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.698] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.698] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.698] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.746] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.746] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.746] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.748] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.748] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.748] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.796] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
-[102月2025 17:27:13.798] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.798] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.798] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.798] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.798] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.798] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.848] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.848] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.848] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.848] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.848] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.848] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.897] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.897] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.897] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.897] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.898] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.898] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.946] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.947] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.947] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.947] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.947] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.947] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: YellowStarParticle: createParticle called.
-[102月2025 17:27:13.995] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体977441f3-faa7-40a5-b00c-ffc4bce23e0a解除了眩晕
-[102月2025 17:27:13.996] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体4e8bebc5-8752-45a8-9097-f3b9c185a224解除了眩晕
-[102月2025 17:27:14.162] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
-[102月2025 17:27:14.415] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:14.566] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:27:14.663] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:14.679] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:14.945] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
-[102月2025 17:27:14.978] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
-[102月2025 17:27:15.201] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 256
-[102月2025 17:27:15.242] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
-[102月2025 17:27:15.250] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[102月2025 17:27:15.255] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[102月2025 17:27:15.256] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[102月2025 17:27:15.395] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 256
-[102月2025 17:27:16.399] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 343
-[102月2025 17:27:16.846] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 343
-[102月2025 17:27:20.116] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
-[102月2025 17:27:20.146] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: 连接中断
-[102月2025 17:27:20.146] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev退出了游戏
-[102月2025 17:27:20.156] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Stopping singleplayer server as player logged out
-[102月2025 17:27:20.203] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
-[102月2025 17:27:20.204] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
-[102月2025 17:27:20.204] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
-[102月2025 17:27:20.642] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
-[102月2025 17:27:20.930] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
-[102月2025 17:27:20.931] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
-[102月2025 17:27:20.946] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (新的世界 (2)): All chunks are saved
-[102月2025 17:27:20.946] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
-[102月2025 17:27:20.947] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
-[102月2025 17:27:20.947] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
+[102月2025 23:17:21.850] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 5, --assetsDir, C:\Users\东南风也好喝\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 47.3.12, --fml.mcVersion, 1.20.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20230612.114412, --mixin.config, abilityevolve.mixins.json]
+[102月2025 23:17:21.855] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 10.0.9+10.0.9+main.dcd20f30 starting: java version 17.0.6 by Oracle Corporation; OS Windows 11 arch amd64 version 10.0
+[102月2025 23:17:21.971] [main/INFO] [net.minecraftforge.fml.loading.ImmediateWindowHandler/]: Loading ImmediateWindowProvider fmlearlywindow
+[102月2025 23:17:22.064] [main/INFO] [EARLYDISPLAY/]: Trying GL version 4.6
+[102月2025 23:17:22.587] [main/INFO] [EARLYDISPLAY/]: Requested GL version 4.6 got version 4.6
+[102月2025 23:17:22.664] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/东南风也好喝/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%23128!/ Service=ModLauncher Env=CLIENT
+[102月2025 23:17:22.721] [pool-2-thread-1/INFO] [EARLYDISPLAY/]: GL info: NVIDIA GeForce RTX 3050 Laptop GPU/PCIe/SSE2 GL version 4.6.0 NVIDIA 560.94, NVIDIA Corporation
+[102月2025 23:17:23.031] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\东南风也好喝\.gradle\caches\modules-2\files-2.1\net.minecraftforge\javafmllanguage\1.20.1-47.3.12\f6b9f7f45e33548b47f78d9f54c7b4eb1e94e9bd\javafmllanguage-1.20.1-47.3.12.jar is missing mods.toml file
+[102月2025 23:17:23.037] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\东南风也好喝\.gradle\caches\modules-2\files-2.1\net.minecraftforge\lowcodelanguage\1.20.1-47.3.12\81de74e1180787af25604b6ecb3728fc485bd3c7\lowcodelanguage-1.20.1-47.3.12.jar is missing mods.toml file
+[102月2025 23:17:23.046] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\东南风也好喝\.gradle\caches\modules-2\files-2.1\net.minecraftforge\mclanguage\1.20.1-47.3.12\1ff4ed058e0774b82d8da352d9e051e6d2a154eb\mclanguage-1.20.1-47.3.12.jar is missing mods.toml file
+[102月2025 23:17:23.053] [main/WARN] [net.minecraftforge.fml.loading.moddiscovery.ModFileParser/LOADING]: Mod file C:\Users\东南风也好喝\.gradle\caches\modules-2\files-2.1\net.minecraftforge\fmlcore\1.20.1-47.3.12\9a4d9f99e106aa2358cdbe6777921855d353371\fmlcore-1.20.1-47.3.12.jar is missing mods.toml file
+[102月2025 23:17:23.124] [main/INFO] [net.minecraftforge.fml.loading.moddiscovery.JarInJarDependencyLocator/]: No dependencies to load found. Skipping!
+[102月2025 23:17:24.267] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[102月2025 23:17:24.270] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\东南风也好喝\.gradle\caches\forge_gradle\assets, --assetIndex, 5]
+[102月2025 23:17:24.609] [main/INFO] [mixin/]: Remapping refMap abilityevolve.refmap.json using D:\MyMods\AbilityEvolve\build\createSrgToMcp\output.srg
+[102月2025 23:17:28.456] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 188 Datafixer optimizations took 124 milliseconds
+[102月2025 23:17:29.824] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/东南风也好喝/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.12_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.12_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/assets/.mcassetsroot' uses unexpected schema
+[102月2025 23:17:29.825] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/C:/Users/东南风也好喝/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.20.1-47.3.12_mapped_parchment_2023.09.03-1.20.1/forge-1.20.1-47.3.12_mapped_parchment_2023.09.03-1.20.1-recomp.jar%23191!/data/.mcassetsroot' uses unexpected schema
+[102月2025 23:17:29.840] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[102月2025 23:17:29.846] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Dev
+[102月2025 23:17:29.931] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.1 build 7
+[102月2025 23:17:30.162] [modloading-worker-0/INFO] [yezi.abilityevolve.AbilityEvolve/]: AbilityEvolve Loaded.
+[102月2025 23:17:30.178] [modloading-worker-0/INFO] [net.minecraftforge.common.ForgeMod/FORGEMOD]: Forge mod loading, version 47.3.12, for MC 1.20.1 with MCP 20230612.114412
+[102月2025 23:17:30.179] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.3.12 Initialized
+[102月2025 23:17:30.185] [modloading-worker-0/INFO] [yezi.abilityevolve.AbilityEvolve/]: Registering particle types
+[102月2025 23:17:30.388] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Registering capabilities
+[102月2025 23:17:30.896] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Registering particle factories
+[102月2025 23:17:30.941] [Render thread/INFO] [net.minecraftforge.gametest.ForgeGameTestHooks/]: Enabled Gametest Namespaces: [abilityevolve]
+[102月2025 23:17:31.064] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources
+[102月2025 23:17:31.099] [Worker-Main-2/INFO] [yezi.abilityevolve.AbilityEvolve/]: AbilityEvolve Common Loaded.
+[102月2025 23:17:31.160] [Worker-Main-10/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.0.06.hex, loading
+[102月2025 23:17:31.172] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[102月2025 23:17:31.266] [Worker-Main-7/INFO] [yezi.abilityevolve.AbilityEvolve/]: AbilityEvolve Client Loaded.
+[102月2025 23:17:31.906] [Worker-Main-1/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'abilityevolve:invalid_crafting_item#inventory' referenced from: abilityevolve:invalid_crafting_item#inventory: java.io.FileNotFoundException: abilityevolve:models/item/invalid_crafting_item.json
+[102月2025 23:17:33.328] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[102月2025 23:17:33.329] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[102月2025 23:17:33.749] [Render thread/INFO] [com.mojang.blaze3d.audio.Library/]: OpenAL initialized on device OpenAL Soft on 扬声器 (Realtek(R) Audio)
+[102月2025 23:17:33.749] [Render thread/INFO] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Sound engine started
+[102月2025 23:17:33.853] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x4 minecraft:textures/atlas/blocks.png-atlas
+[102月2025 23:17:33.862] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[102月2025 23:17:33.863] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[102月2025 23:17:33.863] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[102月2025 23:17:33.863] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[102月2025 23:17:33.867] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[102月2025 23:17:33.869] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[102月2025 23:17:33.869] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[102月2025 23:17:33.869] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[102月2025 23:17:34.105] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[102月2025 23:17:34.153] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[102月2025 23:17:34.155] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[102月2025 23:17:34.155] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[102月2025 23:17:34.627] [Realms Notification Availability checker #1/INFO] [com.mojang.realmsclient.client.RealmsClient/]: Could not authorize you against Realms server: Invalid session id
+[102月2025 23:17:36.080] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 340
+[102月2025 23:17:36.328] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 340
+[102月2025 23:17:37.907] [Render thread/INFO] [net.minecraftforge.registries.GameData/REGISTRIES]: Injecting existing registry data into this CLIENT instance
+[102月2025 23:17:38.833] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 47.3.12 Target: 47.3.27
+[102月2025 23:17:39.266] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 7 recipes
+[102月2025 23:17:39.351] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 1271 advancements
+[102月2025 23:17:39.722] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.20.1
+[102月2025 23:17:39.723] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[102月2025 23:17:39.965] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[102月2025 23:17:41.285] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: 准备生成区域中：0%
+[102月2025 23:17:41.360] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: 准备生成区域中：0%
+[102月2025 23:17:41.360] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: 准备生成区域中：0%
+[102月2025 23:17:41.475] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: 准备生成区域中：0%
+[102月2025 23:17:41.988] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: 准备生成区域中：60%
+[102月2025 23:17:42.107] [Server thread/INFO] [net.minecraftforge.server.permission.PermissionAPI/]: Successfully initialized permission handler forge:default_handler
+[102月2025 23:17:42.115] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 2143 ms
+[102月2025 23:17:42.217] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 12, from 10
+[102月2025 23:17:42.218] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[102月2025 23:17:42.334] [Render thread/WARN] [io.netty.util.internal.SystemPropertyUtil/]: Unable to parse the boolean system property 'java.net.preferIPv6Addresses':system - using the default value: false
+[102月2025 23:17:42.826] [Netty Local Client IO #0/INFO] [net.minecraftforge.network.NetworkHooks/]: Connected to a modded server.
+[102月2025 23:17:42.832] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Attaching capabilities to entity
+[102月2025 23:17:42.865] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Dev[local:E:c2115efe] logged in with entity id 99 at (22.108653869023932, -60.0, 55.106306159452494)
+[102月2025 23:17:42.914] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev加入了游戏
+[102月2025 23:17:43.346] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Attaching capabilities to entity
+[102月2025 23:17:43.612] [Render thread/INFO] [net.minecraft.advancements.AdvancementList/]: Loaded 33 advancements
+[102月2025 23:17:44.873] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 69
+[102月2025 23:17:45.089] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 69
+[102月2025 23:17:52.415] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: onServerTick
+[102月2025 23:17:52.415] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 执行被动能力: 380df991-f603-344c-a090-369bad2a924a
+[102月2025 23:17:52.418] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用被动能力:
+[102月2025 23:17:56.092] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 256
+[102月2025 23:17:56.544] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:17:56.791] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:17:56.958] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 69
+[102月2025 23:17:57.116] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 69
+[102月2025 23:18:00.558] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 256
+[102月2025 23:18:00.826] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:00.925] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:01.008] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:01.525] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:01.558] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:01.579] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:01.613] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:01.642] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:01.674] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:01.724] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:01.757] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:01.792] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:01.812] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:01.844] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:01.874] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:01.908] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:01.941] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:01.983] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:02.017] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:02.045] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:02.074] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:02.109] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:02.141] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:02.170] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:02.198] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:02.243] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:02.275] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:02.308] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:02.342] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:02.353] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:02.367] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
+[102月2025 23:18:02.424] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: onServerTick
+[102月2025 23:18:02.425] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 执行被动能力: 380df991-f603-344c-a090-369bad2a924a
+[102月2025 23:18:02.425] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用被动能力:
+[102月2025 23:18:02.685] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
+[102月2025 23:18:02.925] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 32
+[102月2025 23:18:02.929] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:03.058] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:03.091] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 32
+[102月2025 23:18:03.508] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
+[102月2025 23:18:04.008] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
+[102月2025 23:18:04.042] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
+[102月2025 23:18:04.059] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
+[102月2025 23:18:04.213] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:04.343] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 32
+[102月2025 23:18:04.524] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 32
+[102月2025 23:18:04.827] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:04.992] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
+[102月2025 23:18:05.209] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
+[102月2025 23:18:05.425] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:05.941] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:05.961] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:05.992] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:06.024] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:06.059] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:06.091] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:06.141] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:06.175] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:06.180] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 32
+[102月2025 23:18:06.325] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 32
+[102月2025 23:18:06.375] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:06.714] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 玩家 Dev目标为:村民 触发跃斩！
+[102月2025 23:18:06.715] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 跃斩伤害：1.00.3999999999999999
+[102月2025 23:18:06.715] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：史莱姆
+[102月2025 23:18:06.716] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了 1.0 秒的眩晕效果在实体 7d02baa4-7e5b-4d11-b824-9fe4a789aa23 上
+[102月2025 23:18:06.716] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[102月2025 23:18:06.717] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了 1.0 秒的眩晕效果在实体 3f5b18ad-a3a7-4827-af70-182e48ce3b16 上
+[102月2025 23:18:06.717] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：牛
+[102月2025 23:18:06.717] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了 1.0 秒的眩晕效果在实体 a62e5c89-383b-45c8-a5bf-539bfd286d9a 上
+[102月2025 23:18:07.608] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
+[102月2025 23:18:07.759] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体 7d02baa4-7e5b-4d11-b824-9fe4a789aa23 解除了眩晕
+[102月2025 23:18:07.768] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体 3f5b18ad-a3a7-4827-af70-182e48ce3b16 解除了眩晕
+[102月2025 23:18:07.768] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体 a62e5c89-383b-45c8-a5bf-539bfd286d9a 解除了眩晕
+[102月2025 23:18:07.773] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
+[102月2025 23:18:08.175] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:08.558] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:08.792] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.291] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.325] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.375] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.408] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.427] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.458] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.491] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.525] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.558] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.592] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.628] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.659] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.692] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.725] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.757] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.792] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.812] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.861] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.891] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.925] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.958] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:09.991] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.025] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.059] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.092] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.113] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.158] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.191] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.225] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.259] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.291] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.312] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.343] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.375] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.425] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.458] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.491] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.525] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.546] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:10.575] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 32
+[102月2025 23:18:10.792] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 32
+[102月2025 23:18:11.008] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:11.692] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:12.193] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:12.225] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:12.228] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:12.325] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:12.392] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:12.415] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: onServerTick
+[102月2025 23:18:12.415] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 执行被动能力: 380df991-f603-344c-a090-369bad2a924a
+[102月2025 23:18:12.415] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用被动能力:
+[102月2025 23:18:12.475] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:12.774] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 32
+[102月2025 23:18:12.924] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 32
+[102月2025 23:18:13.062] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 87
+[102月2025 23:18:13.274] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
+[102月2025 23:18:13.308] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 玩家 Dev目标为:村民 触发跃斩！
+[102月2025 23:18:13.308] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 跃斩伤害：1.00.3999999999999999
+[102月2025 23:18:13.308] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[102月2025 23:18:13.309] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了 1.0 秒的眩晕效果在实体 3f5b18ad-a3a7-4827-af70-182e48ce3b16 上
+[102月2025 23:18:13.309] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 晕眩目标：村民
+[102月2025 23:18:13.309] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 应用了 1.0 秒的眩晕效果在实体 fa5474fc-8fcb-4e21-bbf0-c7f4174e2a1e 上
+[102月2025 23:18:13.663] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
+[102月2025 23:18:13.691] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
+[102月2025 23:18:14.208] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
+[102月2025 23:18:14.242] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
+[102月2025 23:18:14.265] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
+[102月2025 23:18:14.296] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
+[102月2025 23:18:14.316] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体 3f5b18ad-a3a7-4827-af70-182e48ce3b16 解除了眩晕
+[102月2025 23:18:14.317] [Server thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: 实体 fa5474fc-8fcb-4e21-bbf0-c7f4174e2a1e 解除了眩晕
+[102月2025 23:18:14.328] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
+[102月2025 23:18:14.358] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
+[102月2025 23:18:14.408] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
+[102月2025 23:18:14.441] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
+[102月2025 23:18:14.475] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
+[102月2025 23:18:14.507] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
+[102月2025 23:18:14.524] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
+[102月2025 23:18:14.862] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 83
+[102月2025 23:18:14.977] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 65
+[102月2025 23:18:15.868] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 256
+[102月2025 23:18:15.909] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Saving and pausing game...
+[102月2025 23:18:15.921] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[102月2025 23:18:15.935] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[102月2025 23:18:15.937] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[102月2025 23:18:16.007] [Render thread/INFO] [yezi.abilityevolve.AbilityEvolve/]: Key input event: 256
+[102月2025 23:18:16.583] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[102月2025 23:18:16.616] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Dev lost connection: 连接中断
+[102月2025 23:18:16.617] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Dev退出了游戏
+[102月2025 23:18:16.625] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Stopping singleplayer server as player logged out
+[102月2025 23:18:16.660] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[102月2025 23:18:16.660] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[102月2025 23:18:16.660] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[102月2025 23:18:16.996] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:overworld
+[102月2025 23:18:17.282] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_nether
+[102月2025 23:18:17.283] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[新的世界]'/minecraft:the_end
+[102月2025 23:18:17.298] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (新的世界 (3)): All chunks are saved
+[102月2025 23:18:17.298] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[102月2025 23:18:17.298] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[102月2025 23:18:17.298] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
