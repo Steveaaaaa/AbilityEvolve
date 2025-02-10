@@ -1,6 +1,5 @@
 package yezi.abilityevolve.common.abilities;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -18,10 +17,10 @@ import java.util.*;
 
 public class LeapStrikeAbility extends Ability {
     private static final String name = "leap_strike";
-    private static final String description = "长按空格以蓄力，蓄力后跳跃更高，跃斩击中目标可造成额外伤害和晕眩效果";
+    private static final String description = "长按空格以蓄力，蓄力后跳跃高度增加，跃斩击中目标可造成额外伤害和晕眩效果";
     private static final int requirement = 18;
 
-    public int abilityLevel = GetAbilityLevel.getAbilityLevelAttack2(ModCapabilities.getSkillModel(Minecraft.getInstance().player).getSkillLevel(Skill.ATTACK), requirement);
+  //  public int abilityLevel = GetAbilityLevel.getAbilityLevelAttack2(ModCapabilities.getSkillModel(Minecraft.getInstance().player).getSkillLevel(Skill.ATTACK), requirement);
     public Set<UUID> leapingPlayers = new HashSet<>();
     private final Map<Integer, Pair<Double, Double>> levelEffects = new HashMap<>(); // 存储伤害加成和眩晕的对应关系
 
@@ -51,10 +50,12 @@ public class LeapStrikeAbility extends Ability {
     }
 
     public void triggerLeapStrike(ServerPlayer player, LivingEntity target) {
-        UUID uuid = player.getUUID();
         if (!levelEffects.containsKey(abilityLevel) || player.onGround()) return;
+        UUID uuid = player.getUUID();
         leapingPlayers.add(uuid);
-        AbilityEvolve.LOGGER.info("获取到对应等级效果");
+        int skillLevel = ModCapabilities.getSkillModel(player).getSkillLevel(Skill.ATTACK);
+        int abilityLevel = GetAbilityLevel.getAbilityLevelAttack2(skillLevel, requirement);
+        if (!levelEffects.containsKey(abilityLevel)) return;
 
         Pair<Double, Double> effect = levelEffects.get(abilityLevel);
         double damageMultiplier = effect.getLeft();

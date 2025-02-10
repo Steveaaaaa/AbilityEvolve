@@ -34,7 +34,7 @@ import java.util.Map;
 import java.util.UUID;
 public class EventHandler {
 
-    private static final int INTERVAL_TICKS = 100;
+    private static final int INTERVAL_TICKS = 200;
     private static int tickCounter = 0;
     private static SkillModel lastDiedPlayerSkills = new SkillModel();
     private static AbilityModel lastDiedPlayerAbilities = new AbilityModel();
