@@ -1,4 +1,4 @@
-package yezi.abilityevolve.common;
+package yezi.abilityevolve.common.compat;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;

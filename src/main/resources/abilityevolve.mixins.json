@@ -6,7 +6,6 @@
   "refmap": "abilityevolve.refmap.json",
   "mixins": [
     "CraftingContainerMixin",
-    "MobMixin",
     "PlayerChargeJumpMixin"
   ],
   "client": [

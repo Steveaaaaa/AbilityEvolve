@@ -12,7 +12,6 @@ import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import yezi.abilityevolve.AbilityEvolve;
-import yezi.abilityevolve.common.interfaces.IStunCapability;
 
 import java.util.Optional;
 
@@ -20,13 +19,12 @@ import java.util.Optional;
 public class ModCapabilities {
     public static final Capability<SkillModel> SKILL_MODEL_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() {});
     public static final Capability<AbilityModel> ABILITY_MODEL_CAPABILITY = CapabilityManager.get(new CapabilityToken<>() {});
-    public static final Capability<IStunCapability> STUN = CapabilityManager.get(new CapabilityToken<>() {});
+   // public static final Capability<IStunCapability> STUN = CapabilityManager.get(new CapabilityToken<>() {});
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onRegisterCapabilities(RegisterCapabilitiesEvent event) {
         AbilityEvolve.LOGGER.info("Registering capabilities");
         event.register(SkillModel.class);
         event.register(AbilityModel.class);
-        event.register(IStunCapability.class);
     }
 
     @SubscribeEvent

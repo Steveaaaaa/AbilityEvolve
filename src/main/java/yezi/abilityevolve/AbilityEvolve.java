@@ -19,7 +19,7 @@ import org.spongepowered.asm.launch.MixinBootstrap;
 import yezi.abilityevolve.client.Keybind;
 import yezi.abilityevolve.client.Overlay;
 import yezi.abilityevolve.client.Tooltips;
-import yezi.abilityevolve.common.CuriosCompat;
+import yezi.abilityevolve.common.compat.CuriosCompat;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
 import yezi.abilityevolve.common.commands.Commands;
 import yezi.abilityevolve.common.listener.ClientEvents;
