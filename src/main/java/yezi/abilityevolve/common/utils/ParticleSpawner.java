@@ -6,6 +6,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import yezi.abilityevolve.common.particles.AbilityEvolveParticle;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -71,12 +72,12 @@ public class ParticleSpawner {
             double radius = 0.5;
             double xOffset = Math.cos(angle) * radius;
             double zOffset = Math.sin(angle) * radius;
-        //    AbilityEvolve.LOGGER.info("YELLOW_STAR: " + ParticleInit.YELLOW_STAR.get());
-            entity.level().addParticle(ParticleTypes.ELECTRIC_SPARK,
+            entity.level().addParticle(AbilityEvolveParticle.YELLOW_STAR.get(),
                     entity.getX() + xOffset,
                     entity.getY() + yOffset,
                     entity.getZ() + zOffset,
-                    0, 0.05, 0);
+                    0, 0.03, 0);
+
         }
     }
 }

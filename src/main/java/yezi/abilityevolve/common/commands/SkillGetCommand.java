@@ -3,6 +3,7 @@ package yezi.abilityevolve.common.commands;
 import com.mojang.brigadier.builder.ArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
+import net.minecraft.client.Minecraft;
 import net.minecraft.commands.CommandSourceStack;
 import net.minecraft.commands.Commands;
 import net.minecraft.commands.arguments.EntityArgument;
@@ -14,6 +15,7 @@ import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.server.command.EnumArgument;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
 import yezi.abilityevolve.common.network.SyncConfigPacket;
+import yezi.abilityevolve.common.particles.AbilityEvolveParticle;
 import yezi.abilityevolve.common.skills.Skill;
 import yezi.abilityevolve.config.SkillLockLoader;
 
@@ -34,6 +36,11 @@ public class SkillGetCommand {
         ServerPlayer player = EntityArgument.getPlayer(context, "player");
         Skill skill = context.getArgument("skill", Skill.class);
         context.getSource().sendSuccess(() -> Component.literal(skill.displayName).append(" " + ModCapabilities.getSkillModel(player).getSkillLevel(skill)), true);
+        Minecraft.getInstance().level.addParticle(
+                AbilityEvolveParticle.YELLOW_STAR.get(),
+                player.getX(), player.getY() + 1, player.getZ(),
+                0, 0, 0
+        );
         return ModCapabilities.getSkillModel(player).getSkillLevel(skill);
     }
 
@@ -44,10 +51,10 @@ public class SkillGetCommand {
                         .then(
                                 Commands.literal("get")
                                         .then(
-                                                Commands.argument("player", EntityArgument.player())  // "player" 参数
+                                                Commands.argument("player", EntityArgument.player())
                                                         .then(
-                                                                Commands.argument("skill", EnumArgument.enumArgument(Skill.class))  // "skill" 参数
-                                                                        .executes(SkillGetCommand::execute)  // 执行 SkillGetCommand.execute 方法
+                                                                Commands.argument("skill", EnumArgument.enumArgument(Skill.class))
+                                                                        .executes(SkillGetCommand::execute)
                                                         )
                                         )
                         )

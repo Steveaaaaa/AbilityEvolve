@@ -25,15 +25,13 @@ import yezi.abilityevolve.common.commands.Commands;
 import yezi.abilityevolve.common.listener.ClientEvents;
 import yezi.abilityevolve.common.listener.EventHandler;
 import yezi.abilityevolve.common.network.*;
-import yezi.abilityevolve.common.particles.ParticleInit;
+import yezi.abilityevolve.common.particles.AbilityEvolveParticle;
 import yezi.abilityevolve.common.utils.ParticleSpawner;
 import yezi.abilityevolve.config.ConfigManager;
 import yezi.abilityevolve.config.SkillLockLoader;
 
 import java.util.Optional;
 
-
-// The value here should match an entry in the META-INF/mods.toml file
 @Mod("abilityevolve")
 public class AbilityEvolve {
     public static final String MOD_ID = "abilityevolve";
@@ -45,13 +43,11 @@ public class AbilityEvolve {
         LOGGER.info("AbilityEvolve Loaded.");
         MixinBootstrap.init();
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        ParticleInit.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(ModCapabilities::onRegisterCapabilities);
-
+        AbilityEvolveParticle.register(modEventBus);
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, ConfigManager.CONFIG_SPEC);
-
         MinecraftForge.EVENT_BUS.register(this);
     }
 

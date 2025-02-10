@@ -1,31 +1,31 @@
 {
   "minecraft:recipes/decorations/crafting_table": {
     "criteria": {
-      "unlock_right_away": "2025-02-09 17:57:14 +0800"
+      "unlock_right_away": "2025-02-10 11:48:33 +0800"
     },
     "done": true
   },
   "minecraft:adventure/adventuring_time": {
     "criteria": {
-      "minecraft:plains": "2025-02-09 17:57:15 +0800"
+      "minecraft:plains": "2025-02-10 11:49:08 +0800"
     },
     "done": false
   },
   "minecraft:adventure/root": {
     "criteria": {
-      "killed_something": "2025-02-09 23:32:20 +0800"
+      "killed_something": "2025-02-10 15:57:35 +0800"
     },
     "done": true
   },
   "minecraft:adventure/kill_all_mobs": {
     "criteria": {
-      "minecraft:slime": "2025-02-09 23:32:20 +0800"
+      "minecraft:slime": "2025-02-10 15:57:35 +0800"
     },
     "done": false
   },
   "minecraft:adventure/kill_a_mob": {
     "criteria": {
-      "minecraft:slime": "2025-02-09 23:32:20 +0800"
+      "minecraft:slime": "2025-02-10 15:57:35 +0800"
     },
     "done": true
   },

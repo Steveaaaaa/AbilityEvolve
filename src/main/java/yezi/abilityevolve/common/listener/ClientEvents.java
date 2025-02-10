@@ -1,19 +1,15 @@
 package yezi.abilityevolve.common.listener;
 
 import net.minecraft.client.Minecraft;
-import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.InputEvent;
 import net.minecraftforge.client.event.RegisterGuiOverlaysEvent;
-import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
+import yezi.abilityevolve.AbilityEvolve;
 import yezi.abilityevolve.client.Overlay;
 import yezi.abilityevolve.client.screen.SkillScreen;
 import yezi.abilityevolve.client.screen.buttons.KeyBinding;
-import yezi.abilityevolve.common.particles.ParticleInit;
 
-@EventBusSubscriber(modid = "abilityevolve", value = {Dist.CLIENT})
-
+//@Mod.EventBusSubscriber(modid = "abilityevolve", bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientEvents {
     public ClientEvents() {
     }
@@ -21,6 +17,7 @@ public class ClientEvents {
     @SubscribeEvent
     public static void onKeyInput(InputEvent.Key event) {
         Minecraft minecraft = Minecraft.getInstance();
+        AbilityEvolve.LOGGER.info("Key input event: {}", event.getKey());
         if (KeyBinding.SKILLS_KEY.isDown()) {
             minecraft.setScreen(new SkillScreen());
         }
@@ -28,10 +25,12 @@ public class ClientEvents {
 
     @SubscribeEvent
     public static void registerOverlay(RegisterGuiOverlaysEvent event) {
+        AbilityEvolve.LOGGER.info("Registering overlays");
         event.registerAboveAll("skill_page", new Overlay());
     }
-    @SubscribeEvent
-    public static void registerParticles(RegisterParticleProvidersEvent event) {
-        ParticleInit.registerParticleFactories(event);
-    }
+   /* @SubscribeEvent
+    public static void registerParticleFactories(RegisterParticleProvidersEvent event) {
+        AbilityEvolve.LOGGER.info("Registering particle factories");
+        event.registerSpriteSet(AbilityEvolveParticle.YELLOW_STAR.get(), YellowStarParticle.Provider::new);
+    }*/
 }
