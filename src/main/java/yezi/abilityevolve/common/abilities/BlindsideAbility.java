@@ -1,6 +1,5 @@
 package yezi.abilityevolve.common.abilities;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
@@ -32,11 +31,11 @@ public class BlindsideAbility extends Ability{
     }
     private static final double[] DAMAGE_MULTIPLIER = {1.1, 1.2, 1.4, 1.5, 1.7, 1.8, 1.9, 2.1, 2.2, 2.4};
 
-    public float getBonusDamage(LivingEntity target) {
+    public float getBonusDamage(LivingEntity target, ServerPlayer player) {
         if (target instanceof Mob mob) {
             LivingEntity targetAttacker = mob.getTarget();
             if (!(targetAttacker instanceof ServerPlayer)) {
-                return (float) DAMAGE_MULTIPLIER[GetAbilityLevel.getAbilityLevelAttack1(ModCapabilities.getSkillModel(Minecraft.getInstance().player).getSkillLevel(Skill.MINING), requirement)-1];
+                return (float) DAMAGE_MULTIPLIER[GetAbilityLevel.getAbilityLevelAttack1(ModCapabilities.getSkillModel(player).getSkillLevel(Skill.MINING), requirement)-1];
             }
         }
         return 1.0f;

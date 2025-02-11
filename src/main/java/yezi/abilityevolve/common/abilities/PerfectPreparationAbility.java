@@ -67,11 +67,9 @@ public class PerfectPreparationAbility extends Ability {
         invinciblePlayers.put(playerUUID, true);
 
         if (world instanceof ServerLevel serverLevel) {
-            serverLevel.getServer().execute(() -> {
-                scheduler.schedule(() -> {
-                    invinciblePlayers.remove(playerUUID);
-                }, invincibilityDuration, TimeUnit.SECONDS);
-            });
+            serverLevel.getServer().execute(() -> scheduler.schedule(() -> {
+                invinciblePlayers.remove(playerUUID);
+            }, invincibilityDuration, TimeUnit.SECONDS));
         }
     }
 

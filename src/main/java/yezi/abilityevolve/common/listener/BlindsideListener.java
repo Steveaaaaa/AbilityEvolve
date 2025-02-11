@@ -18,7 +18,7 @@ public class BlindsideListener {
     public void onPlayerAttack(LivingDamageEvent event) {
         if (event.getSource().getEntity() != this.player) return;
         LivingEntity target = event.getEntity();
-        float multiplier = blindsideAbility.getBonusDamage(target);
+        float multiplier = blindsideAbility.getBonusDamage(target,this.player);
         event.setAmount(event.getAmount() * multiplier);
     }
 }
