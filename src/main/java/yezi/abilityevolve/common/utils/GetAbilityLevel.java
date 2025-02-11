@@ -25,4 +25,10 @@ public class GetAbilityLevel {
     public static int getAbilityLevelDefense1(int skillLevel, int requirement){
         return Math.min(Math.max(1, 1 + skillLevel - requirement), 10);
     }
+    public static int getAbilityLevelDefense2(int skillLevel, int requirement){
+        return Math.min(Math.max(1, 1 + (skillLevel - requirement)/2), 6);
+    }
+    public static int getAbilityLevelDefense3(int skillLevel, int requirement){
+        return Math.min(Math.max(1, 1 + (skillLevel - requirement)/3), 5);
+    }
 }

@@ -11,10 +11,15 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import yezi.abilityevolve.common.abilities.IronCavalryAbility;
 
 public class IronCavalryListener {
-    private final IronCavalryAbility ironCavalryAbility = new IronCavalryAbility();
+    private final ServerPlayer player;
+    private final IronCavalryAbility ironCavalryAbility;
+    public IronCavalryListener(ServerPlayer player) {
+        this.player = player;
+        this.ironCavalryAbility = new IronCavalryAbility();
+    }
     @SubscribeEvent(priority = EventPriority.NORMAL)
     public void onPlayerMountIronCavalry(EntityMountEvent event) {
-        if (event.getEntityMounting() instanceof ServerPlayer) {
+        if (event.getEntityMounting() == this.player) {
             if (event.getEntityBeingMounted() instanceof Pig|| event.getEntityBeingMounted() instanceof Horse|| event.getEntityBeingMounted() instanceof Donkey || event.getEntityBeingMounted() instanceof Mule){
                 ironCavalryAbility.applyAttackBonus((ServerPlayer) event.getEntityMounting());
             }
@@ -23,3 +28,4 @@ public class IronCavalryListener {
         }
     }
 }
+

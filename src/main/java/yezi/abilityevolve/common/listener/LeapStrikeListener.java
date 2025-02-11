@@ -7,10 +7,15 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import yezi.abilityevolve.AbilityEvolve;
 import yezi.abilityevolve.common.abilities.LeapStrikeAbility;
 public class LeapStrikeListener {
-    private static final LeapStrikeAbility ability = new LeapStrikeAbility();
+    private final ServerPlayer player;
+    private final LeapStrikeAbility ability;
+    public LeapStrikeListener(ServerPlayer player) {
+        this.player = player;
+        this.ability = new LeapStrikeAbility();
+    }
     @SubscribeEvent
     public void onAttack(LivingAttackEvent event) {
-        if (!(event.getSource().getEntity() instanceof ServerPlayer player)) return;
+        if (!(event.getSource().getEntity() == this.player)) return;
         if (player.isFallFlying() || player.getAbilities().flying || ability.leapingPlayers.contains(player.getUUID())) return;
         if (player.onGround()) {return;}
         AbilityEvolve.LOGGER.info("玩家 {} 触发跃斩！", player.getName().getString() + "目标为:" + event.getEntity().getName().getString());

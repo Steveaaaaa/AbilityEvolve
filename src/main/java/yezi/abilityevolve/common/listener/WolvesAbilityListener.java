@@ -11,13 +11,18 @@ import yezi.abilityevolve.common.abilities.WolvesAbility;
 import java.util.Random;
 
 public class WolvesAbilityListener {
-    private final WolvesAbility wolvesAbility = new WolvesAbility();
+    private final Player player;
+    private final WolvesAbility wolvesAbility;
+    public WolvesAbilityListener(Player player) {
+        this.player = player;
+        this.wolvesAbility = new WolvesAbility();
+    }
     private static final Random random = new Random();
 
     @SubscribeEvent(priority = EventPriority.NORMAL)
     public void onWolfAttack(LivingChangeTargetEvent event) {
         if (!(event.getEntity() instanceof Wolf wolf)) return;
-        if (!wolf.isTame() || !(wolf.getOwner() instanceof Player)) return;
+        if (!wolf.isTame() || !(wolf.getOwner() == this.player)) return;
         wolvesAbility.applyEffect(wolf);
     }
     @SubscribeEvent

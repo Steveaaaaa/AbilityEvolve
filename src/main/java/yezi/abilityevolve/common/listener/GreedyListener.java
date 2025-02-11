@@ -6,11 +6,17 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import yezi.abilityevolve.common.abilities.GreedyAbility;
 
 public class GreedyListener {
+    private final ServerPlayer player;
+    public GreedyListener(ServerPlayer player) {
+        this.player = player;
+    }
     @SubscribeEvent
     public void onBlockBreak(BlockEvent.BreakEvent event) {
-        if (event.getPlayer() instanceof ServerPlayer player) {
+        if (event.getPlayer() == this.player) {
             GreedyAbility greedyAbility = new GreedyAbility();
             greedyAbility.applyEffect(player, event.getPos());
         }
     }
 }
+
+

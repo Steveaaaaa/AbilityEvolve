@@ -12,21 +12,24 @@ import java.util.Map;
 import java.util.UUID;
 
 public class ExplosiveMiningListener {
-    private final ExplosiveMiningAbility ability = new ExplosiveMiningAbility();
+    private final ServerPlayer player;
+    private final ExplosiveMiningAbility explosiveMiningAbility;
+    public ExplosiveMiningListener(ServerPlayer player) {
+        this.player = player;
+        this.explosiveMiningAbility = new ExplosiveMiningAbility();
+    }
     private static final Map<UUID, Float> damageReductionMap = new HashMap<>();
     @SubscribeEvent
     public void onTNTPlace(BlockEvent.EntityPlaceEvent event) {
-        if (!(event.getEntity() instanceof ServerPlayer player)) {
-            return;
-        }
-        ability.onTNTPlaced(player, event.getPos());
-        damageReductionMap.put(player.getUUID(), ability.DAMAGE_REDUCTION[ability.abilityLevel - 1]);
+        if (event.getEntity() != this.player) return;
+        explosiveMiningAbility.onTNTPlaced(player, event.getPos());
+        damageReductionMap.put(player.getUUID(), explosiveMiningAbility.DAMAGE_REDUCTION[explosiveMiningAbility.abilityLevel - 1]);
     }
     @SubscribeEvent
     public void onExplosionDamage(LivingDamageEvent event) {
-        if (event.getEntity() instanceof ServerPlayer player) {
+        if (event.getEntity() == player) {
             if (event.getSource().is(DamageTypes.EXPLOSION)) {
-                damageReductionMap.put(player.getUUID(), ability.DAMAGE_REDUCTION[ability.abilityLevel - 1]);
+                damageReductionMap.put(player.getUUID(), explosiveMiningAbility.DAMAGE_REDUCTION[explosiveMiningAbility.abilityLevel - 1]);
                 if (damageReductionMap.containsKey(player.getUUID())) {
                     float reduction = damageReductionMap.get(player.getUUID());
                     event.setAmount(event.getAmount() * (1 - reduction));
@@ -35,3 +38,4 @@ public class ExplosiveMiningListener {
         }
     }
 }
+

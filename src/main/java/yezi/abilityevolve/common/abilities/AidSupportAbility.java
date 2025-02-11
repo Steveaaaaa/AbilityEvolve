@@ -68,7 +68,7 @@ public class AidSupportAbility extends Ability {
         double healPerInterval = totalHeal * TOTAL_HEAL_PERCENT;
 
         for (LivingEntity entity : entities) {
-            AidSupportListener.addHealingTask(entity, (float) healPerInterval);
+            AidSupportListener.addHealingTask(player, entity, (float) healPerInterval);
         }
     }
 }

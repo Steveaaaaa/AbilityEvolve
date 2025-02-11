@@ -13,9 +13,7 @@ public class BlindsideAbility extends Ability{
     private static final String name = "blindside";
     private static final String description = "If the target does not detect you, the damage increase";
     private static final int requirement = 16;
-  /*  GetAbilityLevel getAbilityLevel = new GetAbilityLevel();
 
-    public int abilityLevel = getAbilityLevel.getAbilityLevelAttack1(SkillModel.get().getSkillLevel(Skill.ATTACK), requirement);*/
     public BlindsideAbility()
     {
         super(
@@ -44,3 +42,4 @@ public class BlindsideAbility extends Ability{
         return 1.0f;
     }
 }
+

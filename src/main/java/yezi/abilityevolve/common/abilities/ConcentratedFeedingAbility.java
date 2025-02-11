@@ -39,7 +39,7 @@ public class ConcentratedFeedingAbility extends Ability{
                 "graziery", 1, 4, true
         );
     }
- //   int skillLevel = SkillModel.get().getSkillLevel(Skill.GRAZIERY);
+    //   int skillLevel = SkillModel.get().getSkillLevel(Skill.GRAZIERY);
     public Double[] getStandard(){
         return map.get(GetAbilityLevel.getAbilityLevelGraziery1(ModCapabilities.getSkillModel(Minecraft.getInstance().player).getSkillLevel(Skill.MINING),requirementGraziery));
     }
@@ -53,3 +53,4 @@ public class ConcentratedFeedingAbility extends Ability{
         entity.removeEffect(MobEffects.JUMP);
     }
 }
+

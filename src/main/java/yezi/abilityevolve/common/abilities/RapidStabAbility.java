@@ -58,3 +58,4 @@ public class RapidStabAbility extends Ability{
                 "RapidStabDamage", -ATTACK_DAMAGE_REDUCTION[abilityLevel-1] / 100.0, AttributeModifier.Operation.MULTIPLY_BASE);
     }
 }
+

@@ -1,5 +1,6 @@
 package yezi.abilityevolve.common.abilities;
 
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.common.MinecraftForge;
 import org.apache.commons.lang3.tuple.Pair;
@@ -17,8 +18,10 @@ public class PassiveAbilityApplier {
     private final AbilityManager abilityManager;
     private final Map<String, Consumer<Integer>> abilityHandlers = new HashMap<>();
     private final Map<String, Boolean> abilityStates = new HashMap<>();
+    private final Player player;
 
     public PassiveAbilityApplier(Player player) {
+        this.player = player;
         this.abilityManager = new AbilityManager(player);
         initAbilityHandlers();
     }
@@ -41,43 +44,43 @@ public class PassiveAbilityApplier {
         List<Pair<String, Integer>> unlockedAbilities = abilityManager.getUnlockedPassiveAbilities();
         for (Pair<String, Integer> ability : unlockedAbilities) {
             abilityHandlers.getOrDefault(ability.getLeft(), index ->
-                    AbilityEvolve.LOGGER.info("未知的被动能力: " + ability.getLeft())
+                    AbilityEvolve.LOGGER.info("Unknown Ability: " + ability.getLeft())
             ).accept(ability.getRight());
         }
     }
 
     private void applyGrazieryAbility(int index) {
         switch (index) {
-            case 0 -> applyAbility("isAidSupportAbilityActive", new AidSupportListener(), "援护生效");
-            case 1 -> applyAbility("isRidingAbilityActive", new ConcentratedFeedingAbilityListener(), "精饲生效");
-            case 2 -> applyAbility("isIronCavalryAbilityActive", new IronCavalryListener(), "铁骑生效");
-            case 3 -> applyAbility("isWolvesAbilityActive", new WolvesAbilityListener(), "狼群生效");
+            case 0 -> applyAbility("isAidSupportAbilityActive", new AidSupportListener(player), "援护生效");
+            case 1 -> applyAbility("isRidingAbilityActive", new ConcentratedFeedingAbilityListener(player), "精饲生效");
+            case 2 -> applyAbility("isIronCavalryAbilityActive", new IronCavalryListener((ServerPlayer) player), "铁骑生效");
+            case 3 -> applyAbility("isWolvesAbilityActive", new WolvesAbilityListener(player), "狼群生效");
         }
     }
 
     private void applyMiningAbility(int index) {
         switch (index) {
-            case 0 -> applyAbility("isAssociatedOreAbilityActive", new AssociatedOreListener(), "伴生生效");
-            case 1 -> applyAbility("isGreedyAbilityActive", new GreedyListener(), "贪婪生效");
-            case 2 -> applyAbility("isExplosiveAbilityActive", new ExplosiveMiningListener(), "爆破掘进生效");
+            case 0 -> applyAbility("isAssociatedOreAbilityActive", new AssociatedOreListener(player), "伴生生效");
+            case 1 -> applyAbility("isGreedyAbilityActive", new GreedyListener((ServerPlayer) player), "贪婪生效");
+            case 2 -> applyAbility("isExplosiveAbilityActive", new ExplosiveMiningListener((ServerPlayer) player), "爆破掘进生效");
         }
     }
 
     private void applyGatheringAbility(int index) {
-        if (index == 0) applyAbility("isPanningAbilityActive", new PanningListener(), "淘金生效");
+        if (index == 0) applyAbility("isPanningAbilityActive", new PanningListener((ServerPlayer) player), "淘金生效");
     }
 
     private void applyAttackAbility(int index) {
         switch (index) {
-            case 0 -> applyAbility("isRapidStabAbilityActive", new RapidStabListener(), "迅刺生效");
-            case 1 -> applyAbility("isBlindsideAbilityActive", new BlindsideListener(), "攻其不备生效");
+            case 0 -> applyAbility("isRapidStabAbilityActive", new RapidStabListener((ServerPlayer) player), "迅刺生效");
+            case 1 -> applyAbility("isBlindsideAbilityActive", new BlindsideListener((ServerPlayer) player), "攻其不备生效");
             case 2 -> {
-                if (applyAbility("isLeapStrikeAbilityActive", new LeapStrikeListener(), "跃斩生效")) {
+                if (applyAbility("isLeapStrikeAbilityActive", new LeapStrikeListener((ServerPlayer) player), "跃斩生效")) {
                     applyAbility("isStunEffectActive", StunEffect.class, "晕眩生效");
                 }
             }
             case 3 -> {
-                if (applyAbility("isExposeWeaknessAbilityActive", new ExposeWeaknessListener(), "直取要害生效")) {
+                if (applyAbility("isExposeWeaknessAbilityActive", new ExposeWeaknessListener(player), "直取要害生效")) {
                     applyAbility("isStunEffectActive", StunEffect.class, "晕眩生效");
                 }
             }
@@ -85,7 +88,13 @@ public class PassiveAbilityApplier {
     }
 
     private void applyDefenseAbility(int index) {
+
         AbilityEvolve.LOGGER.info("应用 defense 被动能力, 索引: " + index);
+        switch (index) {
+            case 0 -> applyAbility("isHomomorphicRetributionAbilityActive", HomomorphicRetributionListener.class, "同态复仇生效");
+            case 1 -> applyAbility("isPerfectPreparationAbilityActive", PerfectPreparationListener.class, "准备万全生效");
+            case 2 -> applyAbility("isSurvivorAbilityActive", new SurvivorListener(player), "幸存者生效");
+        }
     }
 
     private void applyBuildingAbility(int index) {

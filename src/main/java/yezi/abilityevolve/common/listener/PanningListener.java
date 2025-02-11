@@ -15,12 +15,15 @@ import yezi.abilityevolve.common.abilities.PanningAbility;
 import java.util.List;
 
 public class PanningListener {
-    private final PanningAbility panningAbility = new PanningAbility();
+    private final ServerPlayer player;
+    private final PanningAbility panningAbility;
+    public PanningListener(ServerPlayer player) {
+        this.player = player;
+        this.panningAbility = new PanningAbility();
+    }
     @SubscribeEvent
     public void onBlockBreak(BlockEvent.BreakEvent event) {
-        if (!(event.getPlayer() instanceof ServerPlayer)) {
-            return;
-        }
+        if (!(event.getPlayer() == this.player)) return;
         Level level = (Level) event.getLevel();
         BlockPos pos = event.getPos();
         BlockState state = event.getState();
@@ -36,3 +39,4 @@ public class PanningListener {
         }
     }
 }
+

@@ -80,3 +80,4 @@ public class LeapStrikeAbility extends Ability {
         StunEffect.apply(entity, duration);
     }
 }
+

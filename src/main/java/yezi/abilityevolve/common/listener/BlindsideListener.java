@@ -7,14 +7,19 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import yezi.abilityevolve.common.abilities.BlindsideAbility;
 
 public class BlindsideListener {
-    private final BlindsideAbility blindsideAbility = new BlindsideAbility();
+    private final ServerPlayer player;
+    private final BlindsideAbility blindsideAbility;
+    public BlindsideListener(ServerPlayer player) {
+       // blindsideAbility.abilityLevel = GetAbilityLevel.getAbilityLevelDefense1(ModCapabilities.getSkillModel(player).getSkillLevel(Skill.DEFENSE), blindsideAbility.requiredSkill);
+        this.player = player;
+        this.blindsideAbility = new BlindsideAbility();
+    }
     @SubscribeEvent
     public void onPlayerAttack(LivingDamageEvent event) {
-        if (!(event.getSource().getEntity() instanceof ServerPlayer)) {
-            return;
-        }
+        if (event.getSource().getEntity() != this.player) return;
         LivingEntity target = event.getEntity();
-            float multiplier = blindsideAbility.getBonusDamage(target);
-            event.setAmount(event.getAmount() * multiplier);
+        float multiplier = blindsideAbility.getBonusDamage(target);
+        event.setAmount(event.getAmount() * multiplier);
     }
 }
+

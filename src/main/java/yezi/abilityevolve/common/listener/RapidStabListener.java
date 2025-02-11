@@ -6,21 +6,27 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import yezi.abilityevolve.common.abilities.RapidStabAbility;
 
 public class RapidStabListener {
-    private final RapidStabAbility rapidStabAbility = new RapidStabAbility();
+    private final ServerPlayer player;
+    private final RapidStabAbility rapidStabAbility;
+    public RapidStabListener(ServerPlayer player) {
+        this.player = player;
+        this.rapidStabAbility = new RapidStabAbility();
+    }
     @SubscribeEvent
     public void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent event) {
-        if (!(event.getEntity() instanceof ServerPlayer player)) return;
+        if (!(event.getEntity() == this.player)) return;
         rapidStabAbility.applyEffect(player);
-     //   new RapidStabAbility().applyEffect(player);
+        //   new RapidStabAbility().applyEffect(player);
     }
     @SubscribeEvent
     public void onPlayerRespawn(PlayerEvent.PlayerRespawnEvent event) {
-        if (!(event.getEntity() instanceof ServerPlayer player)) return;
+        if (!(event.getEntity() == this.player)) return;
         rapidStabAbility.applyEffect(player);
     }
     @SubscribeEvent
     public void onPlayerChangeDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
-        if (!(event.getEntity() instanceof ServerPlayer player)) return;
+        if (!(event.getEntity() == player)) return;
         rapidStabAbility.applyEffect(player);
     }
 }
+

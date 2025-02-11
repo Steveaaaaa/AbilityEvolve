@@ -8,11 +8,18 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import yezi.abilityevolve.common.abilities.ExposeWeaknessAbility;
 
 public class ExposeWeaknessListener {
-    private static final ExposeWeaknessAbility exposeWeaknessAbility = new ExposeWeaknessAbility();
+    private final Player player;
+    private final ExposeWeaknessAbility exposeWeaknessAbility;
+    public ExposeWeaknessListener(Player player) {
+        this.player = player;
+        exposeWeaknessAbility = new ExposeWeaknessAbility();
+    }
+
     @SubscribeEvent(priority = EventPriority.NORMAL)
     public void onEntityDamage(LivingHurtEvent event) {
-        if (!(event.getSource().getEntity() instanceof Player attacker)) return;
+        if (!(event.getSource().getEntity() == this.player)) return;
         LivingEntity target = event.getEntity();
-        exposeWeaknessAbility.applyWeaknessMark(target, attacker, event.getAmount());
+        exposeWeaknessAbility.applyWeaknessMark(target, player, event.getAmount());
     }
 }
+

@@ -3,12 +3,10 @@ package yezi.abilityevolve.common.abilities;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;
-import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.AABB;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
 import yezi.abilityevolve.common.skills.Requirement;
@@ -17,6 +15,11 @@ import yezi.abilityevolve.common.utils.GetAbilityLevel;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 public class HomomorphicRetributionAbility extends Ability{
     private static final String name = "homomorphic_retribution";
@@ -40,46 +43,45 @@ public class HomomorphicRetributionAbility extends Ability{
                 true
         );
     }
-    private final Map<Player, Long> lastDamageTimeMap = new HashMap<>();
+    private final Map<UUID, ScheduledFuture<?>> activeTimers = new HashMap<>();
+    private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
     public double getRange() {
         return abilityLevel * 0.5 + 2.0;
     }
-    public void applyEffect(Player player){
-        if (player.hasEffect(MobEffects.FIRE_RESISTANCE))
-            return;
-        Level world = player.level();
-        BlockPos playerPos = player.blockPosition();
+    public void startAbility(Player player, boolean isInSoulFire, boolean isInLava) {
+        if (activeTimers.containsKey(player.getUUID())) return;
+        UUID playerUUID = player.getUUID();
         double range = getRange();
-        AABB area = new AABB(playerPos).inflate(range);
-        for (Entity entity : world.getEntities(player, area)) {
-            if (entity instanceof LivingEntity livingEntity && entity != player) {
-                if (isInFire(playerPos, world)) {
-                    livingEntity.setSecondsOnFire(1);
-                }
 
-                if (isInSoulFireOrLava(playerPos, world)) {
-                    long currentTime = System.currentTimeMillis();
-                    long lastDamageTime = lastDamageTimeMap.getOrDefault(player, 0L);
+        ScheduledFuture<?> task = scheduler.scheduleAtFixedRate(() -> {
+            if (!player.isAlive() || player.hasEffect(MobEffects.FIRE_RESISTANCE)) {
+                stopAbility(player);
+                return;
+            }
 
-                    if (currentTime - lastDamageTime >= 1000){
-                        livingEntity.setSecondsOnFire(1);
-                        int damage = isInSoulFire(playerPos, world) ? 2 : 4;
-                        livingEntity.hurt(world.damageSources().onFire(), damage);
+            Level world = player.level();
+            BlockPos playerPos = player.blockPosition();
+            AABB area = new AABB(playerPos).inflate(range);
+
+            for (LivingEntity entity : world.getEntitiesOfClass(LivingEntity.class, area)) {
+                if (entity instanceof Mob) {
+                    entity.setSecondsOnFire(2);
+                    if (isInLava || isInSoulFire) {
+                        int damage = isInSoulFire ? 2 : 4;
+                        entity.hurt(world.damageSources().onFire(), damage);
                     }
                 }
             }
+        }, 0, 1, TimeUnit.SECONDS);
+        activeTimers.put(playerUUID, task);
+    }
+
+    public void stopAbility(Player player) {
+        UUID playerUUID = player.getUUID();
+        ScheduledFuture<?> task = activeTimers.remove(playerUUID);
+        if (task != null) {
+            task.cancel(true);
         }
     }
-    private boolean isInFire(BlockPos pos, Level world) {
-        return world.getBlockState(pos).getBlock() == Blocks.FIRE;
-    }
-
-    private boolean isInSoulFireOrLava(BlockPos pos, Level world) {
-        return world.getBlockState(pos).getBlock() == Blocks.SOUL_FIRE ||
-                world.getFluidState(pos).getType() == Fluids.LAVA;
-    }
-
-    private boolean isInSoulFire(BlockPos pos, Level world) {
-        return world.getBlockState(pos).getBlock() == Blocks.SOUL_FIRE;
-    }
 }
+
