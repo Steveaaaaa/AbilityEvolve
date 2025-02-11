@@ -1,8 +1,10 @@
 package yezi.abilityevolve.common.utils;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -78,6 +80,22 @@ public class ParticleSpawner {
                     entity.getZ() + zOffset,
                     0, 0.03, 0);
 
+        }
+    }
+    public static void createFireRing(Level world, BlockPos playerPos, double range) {
+        int numParticles = 40;
+        double angleStep = Math.PI * 2 / numParticles;
+
+        for (int i = 0; i < numParticles; i++) {
+            double angle = i * angleStep;
+            double xOffset = Math.sin(angle) * range;
+            double zOffset = Math.cos(angle) * range;
+
+            double x = playerPos.getX() + xOffset;
+            double y = playerPos.getY() + 0.5;
+            double z = playerPos.getZ() + zOffset;
+
+            world.addParticle(ParticleTypes.FLAME, x, y, z, 0, 0, 0);
         }
     }
 }

@@ -9,7 +9,6 @@ public enum RequirementType {
     USE(SkillLockLoader::getRequirements),
     CRAFT(SkillLockLoader::getCraftRequirements),
     ATTACK(SkillLockLoader::getAttackRequirements);
-  //  ABILITY(ConfigManager::getAbilityRequirements);
 
     private final Function<ResourceLocation, Requirement[]> requirementMap;
 
@@ -20,7 +19,4 @@ public enum RequirementType {
     public Requirement[] getRequirements(ResourceLocation resource) {
         return this.requirementMap.apply(resource);
     }
-  /*  public Requirement[] getRequirements(String name) {
-        return getRequirements(new ResourceLocation(name));
-    }*/
 }

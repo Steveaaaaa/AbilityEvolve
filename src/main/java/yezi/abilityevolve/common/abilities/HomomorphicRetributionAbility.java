@@ -11,6 +11,7 @@ import yezi.abilityevolve.common.capabilities.ModCapabilities;
 import yezi.abilityevolve.common.skills.Requirement;
 import yezi.abilityevolve.common.skills.Skill;
 import yezi.abilityevolve.common.utils.GetAbilityLevel;
+import yezi.abilityevolve.common.utils.ParticleSpawner;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -60,6 +61,9 @@ public class HomomorphicRetributionAbility extends Ability{
 
             Level world = player.level();
             BlockPos playerPos = player.blockPosition();
+            if (!world.isClientSide) {
+                ParticleSpawner.createFireRing(world, playerPos, range);
+            }
             AABB area = new AABB(playerPos).inflate(range);
 
             for (LivingEntity entity : world.getEntitiesOfClass(LivingEntity.class, area)) {
