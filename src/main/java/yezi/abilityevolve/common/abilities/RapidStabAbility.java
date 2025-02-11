@@ -1,10 +1,10 @@
 package yezi.abilityevolve.common.abilities;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.entity.player.Player;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
 import yezi.abilityevolve.common.skills.Requirement;
 import yezi.abilityevolve.common.skills.Skill;
@@ -17,7 +17,6 @@ public class RapidStabAbility extends Ability{
     private static final String description = "Attack speed increases, attack power decreases.";
     private static final int requirement = 12;
 
-    public int abilityLevel = GetAbilityLevel.getAbilityLevelAttack1(ModCapabilities.getSkillModel(Minecraft.getInstance().player).getSkillLevel(Skill.ATTACK), requirement);
     public RapidStabAbility()
     {
         super(
@@ -41,21 +40,21 @@ public class RapidStabAbility extends Ability{
         AttributeInstance attackSpeed = player.getAttribute(Attributes.ATTACK_SPEED);
         AttributeInstance attackDamage = player.getAttribute(Attributes.ATTACK_DAMAGE);
 
-        if (attackSpeed != null && !attackSpeed.hasModifier(getAttackSpeedModifier())) {
-            attackSpeed.addTransientModifier(getAttackSpeedModifier());
+        if (attackSpeed != null && !attackSpeed.hasModifier(getAttackSpeedModifier(player))) {
+            attackSpeed.addTransientModifier(getAttackSpeedModifier(player));
         }
-        if (attackDamage != null && !attackDamage.hasModifier(getAttackDamageModifier())) {
-            attackDamage.addTransientModifier(getAttackDamageModifier());
+        if (attackDamage != null && !attackDamage.hasModifier(getAttackDamageModifier(player))) {
+            attackDamage.addTransientModifier(getAttackDamageModifier(player));
         }
     }
-    private AttributeModifier getAttackSpeedModifier() {
+    private AttributeModifier getAttackSpeedModifier(Player player) {
         return new AttributeModifier(UUID.nameUUIDFromBytes("RapidStabSpeed".getBytes()),
-                "RapidStabSpeed", ATTACK_SPEED_BONUS[abilityLevel-1] / 100.0, AttributeModifier.Operation.MULTIPLY_BASE);
+                "RapidStabSpeed", ATTACK_SPEED_BONUS[GetAbilityLevel.getAbilityLevelAttack1(ModCapabilities.getSkillModel(player).getSkillLevel(Skill.ATTACK), requirement)-1] / 100.0, AttributeModifier.Operation.MULTIPLY_BASE);
     }
 
-    private AttributeModifier getAttackDamageModifier() {
+    private AttributeModifier getAttackDamageModifier(Player player) {
         return new AttributeModifier(UUID.nameUUIDFromBytes("RapidStabDamage".getBytes()),
-                "RapidStabDamage", -ATTACK_DAMAGE_REDUCTION[abilityLevel-1] / 100.0, AttributeModifier.Operation.MULTIPLY_BASE);
+                "RapidStabDamage", -ATTACK_DAMAGE_REDUCTION[GetAbilityLevel.getAbilityLevelAttack1(ModCapabilities.getSkillModel(player).getSkillLevel(Skill.ATTACK), requirement)-1] / 100.0, AttributeModifier.Operation.MULTIPLY_BASE);
     }
 }
 

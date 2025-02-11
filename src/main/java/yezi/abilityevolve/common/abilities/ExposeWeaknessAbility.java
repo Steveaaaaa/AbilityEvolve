@@ -1,6 +1,5 @@
 package yezi.abilityevolve.common.abilities;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
@@ -18,7 +17,6 @@ public class ExposeWeaknessAbility extends Ability{
     private static final String description = "Continuing attack and suppress your target.";
     private static final int requirement = 22;
 
-    public int abilityLevel = GetAbilityLevel.getAbilityLevelAttack1(ModCapabilities.getSkillModel(Minecraft.getInstance().player).getSkillLevel(Skill.ATTACK), requirement);
     public ExposeWeaknessAbility()
     {
         super(
@@ -41,6 +39,7 @@ public class ExposeWeaknessAbility extends Ability{
     private static final Map<Integer, Integer> STUN_DURATION = Map.of(1, 20, 2, 25, 3, 30, 4, 35, 5, 40);
     // private final int abilityLevel = getAbilityLevel.getAbilityLevelAttack1(SkillModel.get().getSkillLevel(Skill.ATTACK), requirement);
     public void applyWeaknessMark(LivingEntity target, Player attacker, float damage) {
+        int abilityLevel = GetAbilityLevel.getAbilityLevelAttack1(ModCapabilities.getSkillModel(attacker).getSkillLevel(Skill.ATTACK), requirement);
         UUID targetId = target.getUUID();
         int currentMarks = weaknessMarks.getOrDefault(targetId, 0) + 1;
         weaknessMarks.put(targetId, currentMarks);

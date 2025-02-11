@@ -23,13 +23,13 @@ public class ExplosiveMiningListener {
     public void onTNTPlace(BlockEvent.EntityPlaceEvent event) {
         if (event.getEntity() != this.player) return;
         explosiveMiningAbility.onTNTPlaced(player, event.getPos());
-        damageReductionMap.put(player.getUUID(), explosiveMiningAbility.DAMAGE_REDUCTION[explosiveMiningAbility.abilityLevel - 1]);
+        damageReductionMap.put(player.getUUID(), explosiveMiningAbility.DAMAGE_REDUCTION[explosiveMiningAbility.getAbilityLevel(player) - 1]);
     }
     @SubscribeEvent
     public void onExplosionDamage(LivingDamageEvent event) {
         if (event.getEntity() == player) {
             if (event.getSource().is(DamageTypes.EXPLOSION)) {
-                damageReductionMap.put(player.getUUID(), explosiveMiningAbility.DAMAGE_REDUCTION[explosiveMiningAbility.abilityLevel - 1]);
+                damageReductionMap.put(player.getUUID(), explosiveMiningAbility.DAMAGE_REDUCTION[explosiveMiningAbility.getAbilityLevel(player) - 1]);
                 if (damageReductionMap.containsKey(player.getUUID())) {
                     float reduction = damageReductionMap.get(player.getUUID());
                     event.setAmount(event.getAmount() * (1 - reduction));

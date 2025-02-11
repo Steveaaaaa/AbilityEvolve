@@ -1,6 +1,5 @@
 package yezi.abilityevolve.common.abilities;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.entity.EntityType;
@@ -19,7 +18,6 @@ public class ExplosiveMiningAbility extends Ability{
     private static final String description = "When holding a pickaxe-type tool in the main hand, placing TNT with the off-hand will spawn an instantly exploding TNT. Explosion damage taken is reduced for yourself.";
     private static final int requirement = 22;
 
-    public int abilityLevel = GetAbilityLevel.getAbilityLevelMining2(ModCapabilities.getSkillModel(Minecraft.getInstance().player).getSkillLevel(Skill.MINING), requirement);
     public ExplosiveMiningAbility()
     {
         super(
@@ -40,6 +38,9 @@ public class ExplosiveMiningAbility extends Ability{
         );
     }
     public float[] DAMAGE_REDUCTION = {0.4f, 0.45f, 0.5f, 0.55f, 0.65f};
+    public int getAbilityLevel(Player player){
+        return GetAbilityLevel.getAbilityLevelMining2(ModCapabilities.getSkillModel(player).getSkillLevel(Skill.MINING), requirement);
+    }
 
     public boolean isHoldingPickaxe(Player player) {
         return player.getMainHandItem().getItem() instanceof PickaxeItem;

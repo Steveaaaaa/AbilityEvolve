@@ -1,6 +1,5 @@
 package yezi.abilityevolve.common.abilities;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
@@ -26,7 +25,7 @@ public class HomomorphicRetributionAbility extends Ability{
     private static final String description = "Make mobs around you fired when you are in hot stuff.";
     private static final int requirement = 12;
 
-    public int abilityLevel = GetAbilityLevel.getAbilityLevelDefense1(ModCapabilities.getSkillModel(Minecraft.getInstance().player).getSkillLevel(Skill.DEFENSE), requirement);
+   // int abilityLevel = GetAbilityLevel.getAbilityLevelDefense1(ModCapabilities.getSkillModel(player).getSkillLevel(Skill.DEFENSE), requirement);
     public HomomorphicRetributionAbility()
     {
         super(
@@ -45,13 +44,13 @@ public class HomomorphicRetributionAbility extends Ability{
     }
     private final Map<UUID, ScheduledFuture<?>> activeTimers = new HashMap<>();
     private final ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
-    public double getRange() {
-        return abilityLevel * 0.5 + 2.0;
+    public double getRange(Player player) {
+        return GetAbilityLevel.getAbilityLevelDefense1(ModCapabilities.getSkillModel(player).getSkillLevel(Skill.DEFENSE), requirement) * 0.5 + 2.0;
     }
     public void startAbility(Player player, boolean isInSoulFire, boolean isInLava) {
         if (activeTimers.containsKey(player.getUUID())) return;
         UUID playerUUID = player.getUUID();
-        double range = getRange();
+        double range = getRange(player);
 
         ScheduledFuture<?> task = scheduler.scheduleAtFixedRate(() -> {
             if (!player.isAlive() || player.hasEffect(MobEffects.FIRE_RESISTANCE)) {

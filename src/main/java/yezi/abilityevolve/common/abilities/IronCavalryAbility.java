@@ -1,6 +1,5 @@
 package yezi.abilityevolve.common.abilities;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -42,19 +41,19 @@ public class IronCavalryAbility extends Ability {
 
     private static final UUID ATTACK_BONUS_UUID = UUID.fromString("d1b4ec21-cfa4-49d4-b7e3-d6937bb9f1b9");
 
-    public int abilityLevel = GetAbilityLevel.getAbilityLevelGraziery3(ModCapabilities.getSkillModel(Minecraft.getInstance().player).getSkillLevel(Skill.GRAZIERY), requirementGraziery);
+
     public void applyAttackBonus(Player player){
         AttributeInstance attackAttr = player.getAttribute(Attributes.ATTACK_DAMAGE);
         if (attackAttr != null) {
             double baseAttack = attackAttr.getBaseValue();
-            double bonusAttack = baseAttack * (ATTACK_BONUS[abilityLevel-1] / 100.0);
+            double bonusAttack = baseAttack * (ATTACK_BONUS[GetAbilityLevel.getAbilityLevelGraziery3(ModCapabilities.getSkillModel(player).getSkillLevel(Skill.GRAZIERY), requirementGraziery)-1] / 100.0);
             AttributeModifier attackModifier = new AttributeModifier(ATTACK_BONUS_UUID, "Iron Cavalry Attack Bonus", bonusAttack, AttributeModifier.Operation.ADDITION);
             attackAttr.addTransientModifier(attackModifier);
         }
     }
     public void applyDefenseBonus(Player player, Pig pig){
         double playerArmor = player.getArmorValue();
-        double armorBonus = playerArmor * (ARMOR_BONUS[abilityLevel-1] / 100.0);
+        double armorBonus = playerArmor * (ARMOR_BONUS[GetAbilityLevel.getAbilityLevelGraziery3(ModCapabilities.getSkillModel(player).getSkillLevel(Skill.GRAZIERY), requirementGraziery)-1] / 100.0);
         AttributeInstance pigArmorAttr = pig.getAttribute(Attributes.ARMOR);
         if (pigArmorAttr != null) {
             double baseArmor = pigArmorAttr.getBaseValue();

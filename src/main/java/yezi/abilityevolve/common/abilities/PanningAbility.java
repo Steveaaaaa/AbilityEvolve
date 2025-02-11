@@ -1,6 +1,6 @@
 package yezi.abilityevolve.common.abilities;
 
-import net.minecraft.client.Minecraft;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
@@ -16,7 +16,6 @@ public class PanningAbility extends Ability {
     private static final String description = "Flint dropped from gravel has a chance to be replaced with iron nuggets, copper nuggets, or gold nuggets.";
     private static final int requirement = 12;
 
-    public int abilityLevel = GetAbilityLevel.getAbilityLevelGathering2(ModCapabilities.getSkillModel(Minecraft.getInstance().player).getSkillLevel(Skill.GATHERING), requirement);
     public PanningAbility()
     {
         super(
@@ -42,8 +41,8 @@ public class PanningAbility extends Ability {
         return RANDOM.nextFloat() < chance;
     }
     private static final Random RANDOM = new Random();
-    public ItemStack getRandomDrop() {
-        List<ItemStack> possibleDrops = switch (abilityLevel) {
+    public ItemStack getRandomDrop(Player player) {
+        List<ItemStack> possibleDrops = switch ( GetAbilityLevel.getAbilityLevelGathering2(ModCapabilities.getSkillModel(player).getSkillLevel(Skill.GATHERING), requirement)) {
             case 1 -> List.of(new ItemStack(Items.RAW_COPPER));
             case 2 -> List.of(new ItemStack(Items.RAW_COPPER), new ItemStack(Items.IRON_NUGGET));
             case 3 -> List.of(new ItemStack(Items.RAW_COPPER), new ItemStack(Items.IRON_NUGGET), new ItemStack(Items.GOLD_NUGGET));

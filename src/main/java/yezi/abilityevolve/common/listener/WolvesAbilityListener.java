@@ -23,13 +23,13 @@ public class WolvesAbilityListener {
     public void onWolfAttack(LivingChangeTargetEvent event) {
         if (!(event.getEntity() instanceof Wolf wolf)) return;
         if (!wolf.isTame() || !(wolf.getOwner() == this.player)) return;
-        wolvesAbility.applyEffect(wolf);
+        wolvesAbility.applyEffect(wolf,this.player);
     }
     @SubscribeEvent
     public void onAttack(LivingAttackEvent event) {
         LivingEntity target = event.getEntity();
         if (target instanceof Wolf) {
-            int dodgePercent = WolvesAbility.DODGE_PERCENT[wolvesAbility.abilityLevel];
+            int dodgePercent = WolvesAbility.DODGE_PERCENT[wolvesAbility.getAbilityLevel(this.player)];
             if (random.nextInt(100) < dodgePercent) {
                 event.setCanceled(true);
             }

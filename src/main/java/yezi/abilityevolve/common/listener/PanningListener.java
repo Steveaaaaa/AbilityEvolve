@@ -29,7 +29,7 @@ public class PanningListener {
         BlockState state = event.getState();
         if (state.getBlock() == Blocks.GRAVEL) {
             if (panningAbility.shouldReplaceDrop()) {
-                ItemStack replacementDrop = panningAbility.getRandomDrop();
+                ItemStack replacementDrop = panningAbility.getRandomDrop(this.player);
                 List<ItemStack> originalDrops = Block.getDrops(state, (ServerLevel) level, pos, level.getBlockEntity(pos));
                 for (ItemStack drop : originalDrops) {
                     drop.setCount(0);

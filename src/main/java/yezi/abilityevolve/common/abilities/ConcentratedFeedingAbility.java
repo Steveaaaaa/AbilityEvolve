@@ -1,9 +1,9 @@
 package yezi.abilityevolve.common.abilities;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.player.Player;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
 import yezi.abilityevolve.common.skills.Requirement;
 import yezi.abilityevolve.common.skills.Skill;
@@ -38,10 +38,14 @@ public class ConcentratedFeedingAbility extends Ability{
                         new Requirement(Skill.AGILITY.index,4)},
                 "graziery", 1, 4, true
         );
+
     }
     //   int skillLevel = SkillModel.get().getSkillLevel(Skill.GRAZIERY);
-    public Double[] getStandard(){
-        return map.get(GetAbilityLevel.getAbilityLevelGraziery1(ModCapabilities.getSkillModel(Minecraft.getInstance().player).getSkillLevel(Skill.MINING),requirementGraziery));
+    public Double[] getStandard(Player player){
+        int skillLevel = ModCapabilities.getSkillModel(player).getSkillLevel(Skill.MINING);
+
+        // 计算能力等级
+        return map.get(GetAbilityLevel.getAbilityLevelGraziery1(skillLevel, requirementGraziery));
     }
 
     public void applyMountEffects(LivingEntity entity) {

@@ -1,10 +1,10 @@
 package yezi.abilityevolve.common.abilities;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.animal.Wolf;
+import net.minecraft.world.entity.player.Player;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
 import yezi.abilityevolve.common.skills.Requirement;
 import yezi.abilityevolve.common.skills.Skill;
@@ -25,7 +25,6 @@ public class WolvesAbility extends Ability{
     public static final int[] DODGE_PERCENT = {35, 40, 45, 50, 55, 60, 65, 70, 75, 80};
     private static final int[] COOLDOWN_TICKS = {72, 71, 70, 69, 68, 67, 66, 65, 64, 64};
 
-    public int abilityLevel = GetAbilityLevel.getAbilityLevelGraziery1(ModCapabilities.getSkillModel(Minecraft.getInstance().player).getSkillLevel(Skill.GRAZIERY),requirementGraziery);
     private static final HashMap<UUID, Long> cooldownMap = new HashMap<>();
     public WolvesAbility()
     {
@@ -47,9 +46,10 @@ public class WolvesAbility extends Ability{
         );
     }
     private static final UUID ATTACK_BONUS_UUID = UUID.fromString("e62b68fc-0b1c-4a49-9f23-984d8f4e1e77");
-    public void applyEffect(Wolf wolf) {
+    public void applyEffect(Wolf wolf, Player player) {
         if (wolf == null) return;
     //    int abilityLevel = getAbilityLevel();
+        int abilityLevel = GetAbilityLevel.getAbilityLevelGraziery1(ModCapabilities.getSkillModel(player).getSkillLevel(Skill.GRAZIERY),requirementGraziery);
         UUID wolfId = wolf.getUUID();
         long currentTime = System.currentTimeMillis();
 
@@ -76,5 +76,8 @@ public class WolvesAbility extends Ability{
                 }
             }
         }, DURATION_TICKS * 50L);
+    }
+    public int getAbilityLevel(Player player) {
+        return GetAbilityLevel.getAbilityLevelGraziery1(ModCapabilities.getSkillModel(player).getSkillLevel(Skill.GRAZIERY),requirementGraziery);
     }
 }

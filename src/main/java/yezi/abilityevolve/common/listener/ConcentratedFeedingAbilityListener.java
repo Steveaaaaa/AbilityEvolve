@@ -23,7 +23,7 @@ public class ConcentratedFeedingAbilityListener {
         if (event.getEntityMounting() == this.player) {
             AbstractHorse mount = (AbstractHorse) event.getEntityBeingMounted();
             if (mount instanceof Horse || mount instanceof Donkey || mount instanceof Mule) {
-                Double[] standardValues = concentratedFeedingAbility.getStandard();
+                Double[] standardValues = concentratedFeedingAbility.getStandard(this.player);
                 if (mount.getAttributeValue(Attributes.MOVEMENT_SPEED) <= standardValues[0]||mount.getAttributeValue(Attributes.JUMP_STRENGTH) <= standardValues[1])
                     concentratedFeedingAbility.applyMountEffects(mount);
             }

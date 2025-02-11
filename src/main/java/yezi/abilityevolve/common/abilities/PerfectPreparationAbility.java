@@ -1,6 +1,5 @@
 package yezi.abilityevolve.common.abilities;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -27,7 +26,6 @@ public class PerfectPreparationAbility extends Ability {
     private static final float[] ASORB_PERCENTAGE = {0.0f, 0.05f, 0.1f, 0.15f, 0.25f};
     private static final int[] INVINCIBILITY_DURATION = {3, 4, 5, 6, 6};
 
-    public static int abilityLevel = GetAbilityLevel.getAbilityLevelDefense3(ModCapabilities.getSkillModel(Minecraft.getInstance().player).getSkillLevel(Skill.DEFENSE), requirement);
 
     public PerfectPreparationAbility() {
         super(
@@ -59,13 +57,13 @@ public class PerfectPreparationAbility extends Ability {
         player.removeAllEffects();
 
         float maxHealth = player.getMaxHealth();
-        float absorptionAmount = maxHealth * getAbsorptionPercentage();
+        float absorptionAmount = maxHealth * getAbsorptionPercentage(player);
 
         player.setAbsorptionAmount(absorptionAmount);
 
         player.setHealth(player.getMaxHealth() * 0.5f);
 
-        int invincibilityDuration = getInvincibilityDuration();
+        int invincibilityDuration = getInvincibilityDuration(player);
         invinciblePlayers.put(playerUUID, true);
 
         if (world instanceof ServerLevel serverLevel) {
@@ -81,11 +79,11 @@ public class PerfectPreparationAbility extends Ability {
         return invinciblePlayers.getOrDefault(player.getUUID(), false);
     }
 
-    private static float getAbsorptionPercentage() {
-        return ASORB_PERCENTAGE[abilityLevel - 1];
+    private static float getAbsorptionPercentage(Player player) {
+        return ASORB_PERCENTAGE[GetAbilityLevel.getAbilityLevelDefense3(ModCapabilities.getSkillModel(player).getSkillLevel(Skill.DEFENSE), requirement) - 1];
     }
 
-    private static int getInvincibilityDuration() {
-        return INVINCIBILITY_DURATION[abilityLevel - 1];
+    private static int getInvincibilityDuration(Player player) {
+        return INVINCIBILITY_DURATION[GetAbilityLevel.getAbilityLevelDefense3(ModCapabilities.getSkillModel(player).getSkillLevel(Skill.DEFENSE), requirement) - 1];
     }
 }
