@@ -2,6 +2,7 @@ package yezi.abilityevolve.config;
 
 import com.google.gson.reflect.TypeToken;
 import net.minecraft.resources.ResourceLocation;
+import yezi.abilityevolve.AbilityEvolve;
 import yezi.abilityevolve.common.skills.Requirement;
 import yezi.abilityevolve.common.skills.Skill;
 
@@ -20,9 +21,38 @@ public class SkillLockLoader {
     public static void load() {
         loadSkillAliases();
 
-        Map<String, List<String>> skillLocksData = JsonConfigLoader.loadJsonConfig("AbilityEvolve/skill_locks.json", "{}").get("skillLocks");
-        Map<String, List<String>> craftSkillLocksData = JsonConfigLoader.loadJsonConfig("AbilityEvolve/craft_skill_locks.json", "{}").get("craftSkillLocks");
-        Map<String, List<String>> attackSkillLocksData = JsonConfigLoader.loadJsonConfig("AbilityEvolve/attack_skill_locks.json", "{}").get("attackSkillLocks");
+        Map<String, List<String>> skillLocksData = JsonConfigLoader.loadJsonConfig("AbilityEvolve/skill_locks.json",
+                "{\n" +
+                "  \"skillLocks\": {\n" +
+                "    \"minecraft:diamond\": [\n" +
+                "      \"attack:5\",\n" +
+                "      \"defense:3\"\n" +
+                "    ],\n" +
+                "    \"minecraft:torch\": [\n" +
+                "      \"crafting:2\",\n" +
+                "      \"magic:4\"\n" +
+                "    ]\n" +
+                "  }\n" +
+                "}").get("skillLocks");
+        Map<String, List<String>> craftSkillLocksData = JsonConfigLoader.loadJsonConfig("AbilityEvolve/craft_skill_locks.json",
+                "{\n" +
+                "  \"craftSkillLocks\": {\n" +
+                "    \"minecraft:crafting_table\": [\n" +
+                "      \"crafting:3\",\n" +
+                "      \"smithing:2\"\n" +
+                "    ]\n" +
+                "  }\n" +
+                "}").get("craftSkillLocks");
+        AbilityEvolve.LOGGER.info("Loaded skill locks: {}", craftSkillLocks);
+        Map<String, List<String>> attackSkillLocksData = JsonConfigLoader.loadJsonConfig("AbilityEvolve/attack_skill_locks.json",
+                "{\n" +
+                "  \"attackSkillLocks\": {\n" +
+                "    \"minecraft:bow\": [\n" +
+                "      \"archery:5\",\n" +
+                "      \"attack:4\"\n" +
+                "    ]\n" +
+                "  }\n" +
+                "}").get("attackSkillLocks");
 
         skillLocks.putAll(parseSkillLocks(skillLocksData != null ? skillLocksData : new HashMap<>()));
         craftSkillLocks.putAll(parseSkillLocks(craftSkillLocksData != null ? craftSkillLocksData : new HashMap<>()));
@@ -44,7 +74,7 @@ public class SkillLockLoader {
         Map<String, Requirement[]> locks = new HashMap<>();
 
         if (data == null || data.isEmpty()) {
-            return locks; // 避免空指针异常
+            return locks;
         }
 
         for (Map.Entry<String, List<String>> entry : data.entrySet()) {
@@ -54,9 +84,14 @@ public class SkillLockLoader {
                 String[] parts = raw.split(":");
                 if (parts.length == 2) {
                     String skillName = parts[0].toLowerCase();
-                    skillName = skillAliasMap.getOrDefault(skillName, skillName); // 替换别名
-                    int level = Integer.parseInt(parts[1]);
-                    requirements.add(new Requirement(Skill.valueOf(skillName.toUpperCase()).index, level));
+                    skillName = skillAliasMap.getOrDefault(skillName, skillName);
+
+                    try {
+                        Requirement requirement = new Requirement(Skill.valueOf(skillName.toUpperCase()).index, Integer.parseInt(parts[1]));
+                        requirements.add(requirement);
+                    } catch (IllegalArgumentException e) {
+                        AbilityEvolve.LOGGER.error("Invalid skill name: {}", skillName);
+                    }
                 }
             }
             locks.put(entry.getKey(), requirements.toArray(new Requirement[0]));

@@ -40,7 +40,6 @@ public class PassiveAbilityApplier {
     }
 
     public void applyUnlockedAbilities() {
-        AbilityEvolve.LOGGER.info("应用被动能力:");
         List<Pair<String, Integer>> unlockedAbilities = abilityManager.getUnlockedPassiveAbilities();
         for (Pair<String, Integer> ability : unlockedAbilities) {
             abilityHandlers.getOrDefault(ability.getLeft(), index ->

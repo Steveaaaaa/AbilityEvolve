@@ -16,10 +16,9 @@ import yezi.abilityevolve.common.skills.Skill;
 import yezi.abilityevolve.config.SkillLockLoader;
 
 import java.util.List;
-import java.util.logging.Logger;
 
 public class Tooltips {
-    private static final Logger LOGGER = Logger.getLogger(Tooltips.class.getName());
+  //  private static final Logger LOGGER = Logger.getLogger(Tooltips.class.getName());
 
     public Tooltips() {}
 
@@ -44,7 +43,7 @@ public class Tooltips {
         SkillModel skillModel = ModCapabilities.getSkillModel(player);
         List<Component> tooltips = event.getToolTip();
         tooltips.add(Component.literal(""));
-        tooltips.add(Component.translatable("tooltip.requirements").append(":").withStyle(ChatFormatting.GRAY));
+        tooltips.add(Component.translatable("tooltip.requirements").append(":").withStyle(ChatFormatting.WHITE));
         addRequirementsTooltip(tooltips, useRequirements, skillModel);
         addRequirementsTooltip(tooltips, craftRequirements, skillModel);
         addRequirementsTooltip(tooltips, attackRequirements, skillModel);

@@ -10,10 +10,8 @@ import net.minecraft.world.level.block.Block;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
 
 public class SkillRequirementChecker {
-   // private static SkillModel skillModel;
 
     public SkillRequirementChecker() {
-      //  SkillRequirementChecker.skillModel = skillModel;
     }
 
     public static boolean canUseItem(Player player, ItemStack item) {

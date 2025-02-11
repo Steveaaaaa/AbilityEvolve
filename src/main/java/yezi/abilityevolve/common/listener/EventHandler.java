@@ -18,7 +18,6 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.server.ServerLifecycleHooks;
-import yezi.abilityevolve.AbilityEvolve;
 import yezi.abilityevolve.common.abilities.PassiveAbilityApplier;
 import yezi.abilityevolve.common.capabilities.AbilityModel;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
@@ -34,7 +33,7 @@ import java.util.Map;
 import java.util.UUID;
 public class EventHandler {
 
-    private static final int INTERVAL_TICKS = 200;
+    private static final int INTERVAL_TICKS = 40;
     private static int tickCounter = 0;
     private static SkillModel lastDiedPlayerSkills = new SkillModel();
     private static AbilityModel lastDiedPlayerAbilities = new AbilityModel();
@@ -42,9 +41,7 @@ public class EventHandler {
 
     private EventHandler() {}
 
-    // ==============================
     // 1. 玩家交互事件处理
-    // ==============================
     @SubscribeEvent
     public static void onLeftClickBlock(PlayerInteractEvent.LeftClickBlock event) {
         handleInteraction(event.getEntity(), event.getItemStack(), event.getLevel().getBlockState(event.getPos()).getBlock(), event);
@@ -80,9 +77,7 @@ public class EventHandler {
         }
     }
 
-    // ==============================
     // 2. 玩家攻击与装备变更事件
-    // ==============================
     @SubscribeEvent
     public static void onAttackEntity(AttackEntityEvent event) {
         Player player = event.getEntity();
@@ -102,9 +97,7 @@ public class EventHandler {
         }
     }
 
-    // ==============================
     // 3. 实体掉落 & 玩家死亡、克隆
-    // ==============================
     @SubscribeEvent
     public static void onEntityDrops(LivingDropsEvent event) {
         if (ConfigManager.getDisableWool() && event.getEntity() instanceof Sheep) {
@@ -146,9 +139,7 @@ public class EventHandler {
         });
     }
 
-    // ==============================
-    // 4. 玩家数据同步事件
-    // ==============================
+    //  玩家数据同步事件
     @SubscribeEvent
     public static void onPlayerLogin(PlayerEvent.PlayerLoggedInEvent event) {
         syncPlayerData(event.getEntity());
@@ -171,13 +162,10 @@ public class EventHandler {
         AbilitySyncToClient.send(player);
     }
 
-    // ==============================
     // 5. 被动能力执行（定期触发）
-    // ==============================
     @SubscribeEvent
     public static void onServerTick(TickEvent.ServerTickEvent event) {
         if (event.phase == TickEvent.Phase.END && ++tickCounter >= INTERVAL_TICKS) {
-            AbilityEvolve.LOGGER.info("onServerTick");
             tickCounter = 0;
             executePassiveAbilities();
         }
@@ -187,7 +175,6 @@ public class EventHandler {
         MinecraftServer server = ServerLifecycleHooks.getCurrentServer();
         if (server != null) {
             for (ServerPlayer player : server.getPlayerList().getPlayers()) {
-                AbilityEvolve.LOGGER.info("执行被动能力: " + player.getUUID());
                 abilityAppliers.computeIfAbsent(player.getUUID(), id -> new PassiveAbilityApplier(player))
                         .applyUnlockedAbilities();
             }

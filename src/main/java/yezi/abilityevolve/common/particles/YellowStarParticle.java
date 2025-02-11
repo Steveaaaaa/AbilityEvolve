@@ -11,7 +11,7 @@ public class YellowStarParticle extends TextureSheetParticle {
     public YellowStarParticle(ClientLevel level, double x, double y, double z, double dx, double dy, double dz) {
         super(level, x, y, z, dx, dy, dz);
         this.setSize(0.6F, 0.6F);
-        this.lifetime = 2;
+        this.lifetime = 1;
         this.gravity = 0.0F;
         this.alpha = 1.0F;
         this.quadSize = 0.2F;

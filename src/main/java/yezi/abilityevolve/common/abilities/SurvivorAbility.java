@@ -14,7 +14,7 @@ public class SurvivorAbility extends Ability {
     private static final String description = "Reduce damage taken from undead creatures.";
     private static final int requirement = 22;
 
-    private static final float[] DAMAGE_REDUCTION = {0.12f, 0.16f, 0.19f, 0.22f, 0.25f, 0.3f};
+    private static final float[] DAMAGE_REDUCTION = {1.0f, 0.16f, 0.19f, 0.22f, 0.25f, 0.3f};
 
     public SurvivorAbility() {
         super(

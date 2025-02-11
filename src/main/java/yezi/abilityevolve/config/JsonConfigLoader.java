@@ -25,10 +25,10 @@ public class JsonConfigLoader {
             Type mapType = new TypeToken<Map<String, Map<String, List<String>>>>() {}.getType();
             Map<String, Map<String, List<String>>> result = new Gson().fromJson(JsonParser.parseReader(reader), mapType);
 
-            return result != null ? result : new HashMap<>(); // 防止返回 null
+            return result != null ? result : new HashMap<>();
         } catch (Exception e) {
             e.printStackTrace();
-            return new HashMap<>(); // 解析失败时返回空 Map
+            return new HashMap<>();
         }
     }
 

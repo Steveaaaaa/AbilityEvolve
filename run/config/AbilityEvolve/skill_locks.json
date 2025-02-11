@@ -1,1 +1,12 @@
-{}
+{
+  "skillLocks": {
+    "minecraft:diamond": [
+      "attack:5",
+      "defense:3"
+    ],
+    "minecraft:torch": [
+      "crafting:2",
+      "magic:4"
+    ]
+  }
+}

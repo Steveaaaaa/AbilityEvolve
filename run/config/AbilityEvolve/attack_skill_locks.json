@@ -1,1 +1,8 @@
-{}
+{
+  "attackSkillLocks": {
+    "minecraft:bow": [
+      "archery:5",
+      "attack:4"
+    ]
+  }
+}
