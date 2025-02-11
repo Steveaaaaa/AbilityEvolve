@@ -91,9 +91,10 @@ public class PassiveAbilityApplier {
 
         AbilityEvolve.LOGGER.info("应用 defense 被动能力, 索引: " + index);
         switch (index) {
-            case 0 -> applyAbility("isHomomorphicRetributionAbilityActive", HomomorphicRetributionListener.class, "同态复仇生效");
-            case 1 -> applyAbility("isPerfectPreparationAbilityActive", PerfectPreparationListener.class, "准备万全生效");
+            case 0 -> applyAbility("isHomomorphicRetributionAbilityActive", new HomomorphicRetributionListener(player), "同态复仇生效");
+            case 1 -> applyAbility("isPerfectPreparationAbilityActive", new PerfectPreparationListener(player), "准备万全生效");
             case 2 -> applyAbility("isSurvivorAbilityActive", new SurvivorListener(player), "幸存者生效");
+            case 3 -> applyAbility("isSurvivalInstinctAbilityActive", new SurvivalInstinctListener(player), "生还本能生效");
         }
     }
 
