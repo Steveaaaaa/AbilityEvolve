@@ -14,6 +14,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import yezi.abilityevolve.AbilityEvolve;
 import yezi.abilityevolve.common.particles.AbilityEvolveParticle;
+import yezi.abilityevolve.common.particles.ShieldParticleData;
 
 import java.util.*;
 @Mod.EventBusSubscriber(modid = AbilityEvolve.MOD_ID, bus = Mod.EventBusSubscriber.Bus.FORGE, value = Dist.CLIENT)
@@ -21,9 +22,11 @@ public class ParticleSpawner {
     private static final Map<Vec3, Integer> activeExplosions = new HashMap<>();
     private static final Map<UUID, Integer> entityStunTicks = new HashMap<>();
     private static final List<RingEffect> activeRings = new ArrayList<>();
+
     public static void spawnImpactParticles(Vec3 position) {
         activeExplosions.put(position, 40); // **持续 60 tick（3秒）**
     }
+
     @SubscribeEvent
     public static void onTick(LivingEvent.LivingTickEvent event) {
         if (event.getEntity().level().isClientSide) {
@@ -65,6 +68,7 @@ public class ParticleSpawner {
             }
         }
     }
+
     public static void spawnStunParticles(LivingEntity entity) {
         UUID uuid = entity.getUUID();
         int tick = entityStunTicks.getOrDefault(uuid, 0);
@@ -85,6 +89,7 @@ public class ParticleSpawner {
 
         }
     }
+
     public static void createFireRing(Level world, BlockPos playerPos, double range) {
         int numParticles = 40;
         double angleStep = Math.PI * 2 / numParticles;
@@ -101,85 +106,124 @@ public class ParticleSpawner {
             world.addParticle(ParticleTypes.FLAME, x, y, z, 0, 0, 0);
         }
     }
+
     public static void spawnResistanceEffect(Vec3 playerPos, Vec3 attackerPos) {
-        activeRings.add(new RingEffect(
-                playerPos,
-                attackerPos,
-                0.0f,
-                (float) (Math.PI/2),
-                0.08f
-        ));
+        // 此处设置初始角度为 0, 最大扩散角度为 Math.PI/4（扩散范围较小）
+        activeRings.add(new RingEffect(playerPos, attackerPos, 0.0f, (float) (Math.PI / 2), 0.07f));
     }
+
     @SubscribeEvent
     public static void onClientTick(TickEvent.ClientTickEvent event) {
         if (event.phase == TickEvent.Phase.END) {
-            AbilityEvolve.LOGGER.info("Tick event triggered");
             Iterator<RingEffect> it = activeRings.iterator();
             while (it.hasNext()) {
                 RingEffect effect = it.next();
                 updateRingEffect(effect);
-                if (effect.currentTheta >= effect.maxTheta) {
+                if (effect.completed) {
                     it.remove();
                 }
             }
         }
     }
 
+
+ // 根据当前阶段生成粒子（扩散 → 保持 → 淡出）
+
     private static void updateRingEffect(RingEffect effect) {
         if (Minecraft.getInstance().level == null) return;
 
         Level level = Minecraft.getInstance().level;
-        float theta = effect.currentTheta;
         Vec3 playerPos = effect.playerPos;
         Vec3 attackerPos = effect.attackerPos;
+        float expansionThreshold = effect.maxTheta*0.8f;
 
-        // 核心参数
-        double sphereRadius = 1.0;
-        int numParticles = 12;
+        // 粒子数量参数
+        int baseParticles = 10;
+        int additionalParticles = 20;
+
+        float alpha;
+        double sphereRadius;
+        int numParticles;
+
+        if (!effect.expansionStopped) {
+            float theta = effect.currentTheta;
+            //可调参数：进入保持阶段的阈值
+            if (theta >= expansionThreshold || (expansionThreshold - theta) < 0.05f) {
+                effect.expansionStopped = true;
+                effect.currentTheta = expansionThreshold;
+                effect.holdTime = 0;
+                alpha = 1.0f;
+                numParticles = baseParticles + additionalParticles;
+            } else {
+                float decelerationFactor = 1.0f - (theta / expansionThreshold);
+                effect.currentTheta += effect.growthSpeed * decelerationFactor;
+                alpha = 1.0f;
+                numParticles = baseParticles + (int)(additionalParticles * (theta / expansionThreshold));
+            }
+            sphereRadius = 0.7 + effect.currentTheta * 0.25;
+        } else if (effect.holdTime < effect.maxHoldTime) {
+            effect.holdTime++;
+            sphereRadius = 0.7 + effect.currentTheta * 0.25;
+            numParticles = baseParticles + additionalParticles;
+            alpha = 1.0f;
+        } else {
+            effect.fadeTime++;
+            float fadeProgress = effect.fadeTime / (float) effect.maxFadeTime;
+            if (fadeProgress > 1.0f) fadeProgress = 1.0f;
+            alpha = (float) Math.pow(1.0 - fadeProgress, 2);
+            sphereRadius = 0.7 + effect.currentTheta * 0.25;
+            numParticles = baseParticles + additionalParticles;
+            if (fadeProgress >= 1.0f) {
+                effect.completed = true;
+            }
+        }
 
         Vec3 front = attackerPos.subtract(playerPos).normalize();
         Vec3 upRef = new Vec3(0, 1, 0);
-        if (Math.abs(front.dot(upRef)) > 0.95) upRef = new Vec3(0, 0, 1);
+        if (Math.abs(front.dot(upRef)) > 0.95) {
+            upRef = new Vec3(0, 0, 1);
+        }
         Vec3 right = front.cross(upRef).normalize();
         Vec3 up = right.cross(front).normalize();
 
-        // 生成圆环粒子
         for (int i = 0; i < numParticles; i++) {
             double phi = 2 * Math.PI * i / numParticles;
+            double xLocal = Math.sin(effect.currentTheta) * Math.cos(phi);
+            double yLocal = Math.sin(effect.currentTheta) * Math.sin(phi);
+            double zLocal = Math.cos(effect.currentTheta);
 
-            // 计算球面坐标
-            double xLocal = Math.sin(theta) * Math.cos(phi);
-            double yLocal = Math.sin(theta) * Math.sin(phi);
-            double zLocal = Math.cos(theta);
+            Vec3 worldDir = right.scale(xLocal).add(up.scale(yLocal)).add(front.scale(zLocal));
+            Vec3 particlePos = playerPos.add(worldDir.scale(sphereRadius)).add(0, 1.2, 0);
 
-            // 转换到世界坐标
-            Vec3 worldDir = right.scale(xLocal)
-                    .add(up.scale(yLocal))
-                    .add(front.scale(zLocal));
-            Vec3 particlePos = playerPos.add(worldDir.scale(sphereRadius)).add(0,1.2,0);
-
-            // 计算切线速度
-            Vec3 tangent = right.scale(-Math.sin(phi))
-                    .add(up.scale(Math.cos(phi)));
-            Vec3 velocity = tangent.scale(0.2);
+            Vec3 velocity;
+            if (!effect.expansionStopped) {
+                Vec3 tangent = right.scale(-Math.sin(phi)).add(up.scale(Math.cos(phi)));
+                velocity = tangent.scale(0.2);
+            } else {
+                velocity = new Vec3(0, 0, 0);
+            }
 
             level.addParticle(
-                    AbilityEvolveParticle.YELLOW_STAR.get(),
+                    new ShieldParticleData(alpha),
                     particlePos.x(), particlePos.y(), particlePos.z(),
                     velocity.x(), velocity.y(), velocity.z()
             );
         }
-
-        // 更新当前角度
-        effect.currentTheta += effect.growthSpeed;
     }
 
     private static class RingEffect {
-        Vec3 playerPos;
-        Vec3 attackerPos;
-        float currentTheta;
-        float maxTheta;
-        float growthSpeed;
+        final Vec3 playerPos;
+        final Vec3 attackerPos;
+        float currentTheta;   // 当前扩散角度
+        final float maxTheta; // 扩散阶段目标角度
+        final float growthSpeed; // 基础增长速度
+
+        boolean expansionStopped = false;
+        int holdTime = 0;
+        final int maxHoldTime = 20; // 保持阶段总时长
+        int fadeTime = 0;
+        final int maxFadeTime = 10; // 淡出阶段总时长
+        boolean completed = false;
 
         RingEffect(Vec3 playerPos, Vec3 attackerPos, float currentTheta, float maxTheta, float growthSpeed) {
             this.playerPos = playerPos;
