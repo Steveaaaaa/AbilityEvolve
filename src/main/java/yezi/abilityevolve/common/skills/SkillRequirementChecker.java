@@ -7,6 +7,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.block.Block;
+import yezi.abilityevolve.AbilityEvolve;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
 
 public class SkillRequirementChecker {
@@ -36,7 +37,9 @@ public class SkillRequirementChecker {
 
     private static boolean canUse(Player player, ResourceLocation resource, RequirementType type) {
         Requirement[] requirements = type.getRequirements(resource);
+        AbilityEvolve.LOGGER.debug("Getting requirements:{}", (Object) requirements);
         if (requirements != null) {
+            AbilityEvolve.LOGGER.debug("Checking requirements for {}", resource);
             for (Requirement requirement : requirements) {
                 if (ModCapabilities.getSkillModel(player).getSkillLevel(requirement.index) < requirement.level) {
                     sendFailureMessage(player, type);

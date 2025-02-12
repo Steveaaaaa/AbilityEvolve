@@ -108,7 +108,6 @@ public class ParticleSpawner {
     }
 
     public static void spawnResistanceEffect(Vec3 playerPos, Vec3 attackerPos) {
-        // 此处设置初始角度为 0, 最大扩散角度为 Math.PI/4（扩散范围较小）
         activeRings.add(new RingEffect(playerPos, attackerPos, 0.0f, (float) (Math.PI / 2), 0.07f));
     }
 
