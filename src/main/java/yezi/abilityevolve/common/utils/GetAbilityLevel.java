@@ -34,4 +34,7 @@ public class GetAbilityLevel {
     public static int getAbilityLevelDefense4(int skillLevel, int requirement){
         return Math.min(Math.max(1, 1 + (skillLevel - requirement)), 5);
     }
+    public static int getAbilityLevelBuilding1(int skillLevel, int requirement){
+        return Math.min(Math.max(1, 1 + skillLevel - requirement), 10);
+    }
 }

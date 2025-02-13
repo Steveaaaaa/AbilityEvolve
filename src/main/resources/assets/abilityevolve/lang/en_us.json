@@ -17,5 +17,6 @@
   "key.skills": "Open SkillScreen",
   "key.abilityevolve.category": "AbilityEvolve",
   "key.abilityevolve.open_skills": "Open SkillScreen",
-  "key.categories.abilityevolve": "AbilityEvolve"
+  "key.categories.abilityevolve": "AbilityEvolve",
+  "message.transmutation.need_xp": "You need Xp to transform."
 }
