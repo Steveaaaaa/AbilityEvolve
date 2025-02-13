@@ -7,28 +7,43 @@ import net.minecraft.util.Mth;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import yezi.abilityevolve.common.capabilities.ModCapabilities;
 import yezi.abilityevolve.common.interfaces.IPlayerMixin;
+import yezi.abilityevolve.common.interfaces.SpiderClimbing;
 
 @Mixin(Player.class)
-public abstract class PlayerChargeJumpMixin extends LivingEntity implements IPlayerMixin {
+public abstract class PlayerMixin extends LivingEntity implements IPlayerMixin {
 
     private int chargeTicks = 0;
     private boolean wasJumping = false;
     private boolean unlocked = false;
 
-    protected PlayerChargeJumpMixin(EntityType<? extends LivingEntity> pEntityType, Level pLevel) {
+    protected PlayerMixin(EntityType<? extends LivingEntity> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
     }
 
     @Inject(method = "tick", at = @At("HEAD"))
     private void onTick(CallbackInfo ci) {
         if ((Object) this instanceof LocalPlayer localPlayer) {
+            SpiderClimbing capability = ModCapabilities.getClimbing(localPlayer);
+
+            if (localPlayer.level().isClientSide) {
+                BlockHitResult hit = detectClimbingSurface(localPlayer);
+                boolean shouldClimb = hit.getType() == HitResult.Type.BLOCK &&
+                        localPlayer.isShiftKeyDown();
+
+                capability.setClimbing(shouldClimb, hit.getDirection());
+            }
             boolean isJumping = localPlayer.input.jumping;
             if (!unlocked) {
                 if (isJumping && onGround() && !isSwimming())
@@ -80,6 +95,16 @@ public abstract class PlayerChargeJumpMixin extends LivingEntity implements IPla
         if ((Object) this instanceof LocalPlayer) {
             ci.cancel();
         }
+    }
+    @Unique
+    private BlockHitResult detectClimbingSurface(Player player) {
+        return player.level().clip(new ClipContext(
+                player.getEyePosition(),
+                player.getEyePosition().add(player.getLookAngle().scale(0.5)),
+                ClipContext.Block.COLLIDER,
+                ClipContext.Fluid.NONE,
+                player
+        ));
     }
     @Override
     public void setAbilityUnlocked(boolean unlocked) {

@@ -70,6 +70,7 @@ public class AbilityEvolve {
         NETWORK.registerMessage(5, Warning.class, Warning::encode, Warning::new, Warning::handle, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
         NETWORK.registerMessage(6, SyncConfigPacket.class, SyncConfigPacket::toBytes, SyncConfigPacket::new, SyncConfigPacket::handle);
         NETWORK.registerMessage(7, SurvivorParticleEffectPacket.class, SurvivorParticleEffectPacket::encode, SurvivorParticleEffectPacket::decode, SurvivorParticleEffectPacket::handle, Optional.of(NetworkDirection.PLAY_TO_CLIENT));
+        NETWORK.registerMessage(8, ClimbingSyncPacket.class, ClimbingSyncPacket::encode, ClimbingSyncPacket::decode, ClimbingSyncPacket::handle);
         MinecraftForge.EVENT_BUS.register(EventHandler.class);
         MinecraftForge.EVENT_BUS.register(Commands.class);
         MinecraftForge.EVENT_BUS.register(ParticleSpawner.class);

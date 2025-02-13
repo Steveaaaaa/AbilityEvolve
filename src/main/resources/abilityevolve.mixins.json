@@ -6,9 +6,13 @@
   "refmap": "abilityevolve.refmap.json",
   "mixins": [
     "CraftingContainerMixin",
-    "PlayerChargeJumpMixin"
+    "LivingEntityMixin",
+    "PlayerMixin"
   ],
   "client": [
+    "CameraMixin",
+    "HudMixin",
+    "MixinEntityRenderer"
   ],
   "injectors": {
     "defaultRequire": 1
