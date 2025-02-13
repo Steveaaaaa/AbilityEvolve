@@ -47,18 +47,18 @@ public abstract class PlayerMixin extends LivingEntity implements IPlayerMixin {
             boolean isJumping = localPlayer.input.jumping;
             if (!unlocked) {
                 if (isJumping && onGround() && !isSwimming())
-                    executeChargeJump(localPlayer);
+                    abilityEvolve$executeChargeJump(localPlayer);
             }else {
                 if (isJumping && onGround() && !isSwimming()) {
                     //  AbilityEvolve.LOGGER.info("Charge jumping...");
                     ++chargeTicks;
                 } else if (wasJumping && !isJumping && onGround()) {
                     //    AbilityEvolve.LOGGER.info("Jump triggered!");
-                    executeChargeJump(localPlayer);
+                    abilityEvolve$executeChargeJump(localPlayer);
                     chargeTicks = 0;
                 }
                 if (chargeTicks >= 20) {
-                    executeChargeJump(localPlayer);
+                    abilityEvolve$executeChargeJump(localPlayer);
                     chargeTicks = 0;
                 }
                 wasJumping = isJumping;
@@ -66,7 +66,8 @@ public abstract class PlayerMixin extends LivingEntity implements IPlayerMixin {
         }
     }
 
-    private void executeChargeJump(Player player) {
+    @Unique
+    private void abilityEvolve$executeChargeJump(Player player) {
         Vec3 vec3 = this.getDeltaMovement();
         this.setDeltaMovement(vec3.x, this.getJumpPower()*Math.max(1.0, chargeTicks/30.0*3.5), vec3.z);
         if (this.isSprinting()) {

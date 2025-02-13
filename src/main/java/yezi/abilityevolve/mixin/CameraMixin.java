@@ -18,6 +18,7 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import yezi.abilityevolve.common.abilities.SpiderClimbingImpl;
 import yezi.abilityevolve.common.capabilities.ModCapabilities;
+import yezi.abilityevolve.common.interfaces.SpiderClimbing;
 
 @OnlyIn(Dist.CLIENT)
 @Mixin(Camera.class)
@@ -35,12 +36,12 @@ public abstract class CameraMixin {
         SpiderClimbingImpl climbing = (SpiderClimbingImpl) ModCapabilities.getClimbing((LivingEntity)entity);
         if (climbing.isClimbing()) {
             Direction dir = climbing.getDirection();
-            adjustCameraForClimbing(dir, partialTick);
+            abilityEvolve$adjustCameraForClimbing(dir, partialTick);
         }
     }
 
     @Unique
-    private void adjustCameraForClimbing(Direction dir, float partialTick) {
+    private void abilityEvolve$adjustCameraForClimbing(Direction dir, float partialTick) {
         if (dir == Direction.DOWN) {
             float targetXRot = -this.xRot;
             float targetYRot = this.yRot + 180.0F;
@@ -65,7 +66,8 @@ public abstract class CameraMixin {
             argsOnly = true
     )
     private double adjustCollisionDistance(double original) {
-        if (ClimbingStateHandler.isClimbing()) {
+        SpiderClimbing climbing = ModCapabilities.getClimbing((LivingEntity)entity);
+        if (climbing.isClimbing()) {
             return original * 1.8;
         }
         return original;
