@@ -24,9 +24,12 @@ import yezi.abilityevolve.common.interfaces.SpiderClimbing;
 @Mixin(Player.class)
 public abstract class PlayerMixin extends LivingEntity implements IPlayerMixin {
 
-    private int chargeTicks = 0;
-    private boolean wasJumping = false;
-    private boolean unlocked = false;
+    @Unique
+    private int abilityEvolve$chargeTicks = 0;
+    @Unique
+    private boolean abilityEvolve$wasJumping = false;
+    @Unique
+    private boolean abilityEvolve$unlocked = false;
 
     protected PlayerMixin(EntityType<? extends LivingEntity> pEntityType, Level pLevel) {
         super(pEntityType, pLevel);
@@ -38,30 +41,30 @@ public abstract class PlayerMixin extends LivingEntity implements IPlayerMixin {
             SpiderClimbing capability = ModCapabilities.getClimbing(localPlayer);
 
             if (localPlayer.level().isClientSide) {
-                BlockHitResult hit = detectClimbingSurface(localPlayer);
+                BlockHitResult hit = abilityEvolve$detectClimbingSurface(localPlayer);
                 boolean shouldClimb = hit.getType() == HitResult.Type.BLOCK &&
                         localPlayer.isShiftKeyDown();
 
                 capability.setClimbing(shouldClimb, hit.getDirection());
             }
             boolean isJumping = localPlayer.input.jumping;
-            if (!unlocked) {
+            if (!abilityEvolve$unlocked) {
                 if (isJumping && onGround() && !isSwimming())
                     abilityEvolve$executeChargeJump(localPlayer);
             }else {
                 if (isJumping && onGround() && !isSwimming()) {
                     //  AbilityEvolve.LOGGER.info("Charge jumping...");
-                    ++chargeTicks;
-                } else if (wasJumping && !isJumping && onGround()) {
+                    ++abilityEvolve$chargeTicks;
+                } else if (abilityEvolve$wasJumping && !isJumping && onGround()) {
                     //    AbilityEvolve.LOGGER.info("Jump triggered!");
                     abilityEvolve$executeChargeJump(localPlayer);
-                    chargeTicks = 0;
+                    abilityEvolve$chargeTicks = 0;
                 }
-                if (chargeTicks >= 20) {
+                if (abilityEvolve$chargeTicks >= 20) {
                     abilityEvolve$executeChargeJump(localPlayer);
-                    chargeTicks = 0;
+                    abilityEvolve$chargeTicks = 0;
                 }
-                wasJumping = isJumping;
+                abilityEvolve$wasJumping = isJumping;
             }
         }
     }
@@ -69,7 +72,7 @@ public abstract class PlayerMixin extends LivingEntity implements IPlayerMixin {
     @Unique
     private void abilityEvolve$executeChargeJump(Player player) {
         Vec3 vec3 = this.getDeltaMovement();
-        this.setDeltaMovement(vec3.x, this.getJumpPower()*Math.max(1.0, chargeTicks/30.0*3.5), vec3.z);
+        this.setDeltaMovement(vec3.x, this.getJumpPower()*Math.max(1.0, abilityEvolve$chargeTicks /30.0*3.5), vec3.z);
         if (this.isSprinting()) {
             float f = this.getYRot() * ((float)Math.PI / 180F);
             this.setDeltaMovement(this.getDeltaMovement().add(-Mth.sin(f) * 0.2F, 0.0D, Mth.cos(f) * 0.2F));
@@ -80,7 +83,7 @@ public abstract class PlayerMixin extends LivingEntity implements IPlayerMixin {
         } else {
             player.causeFoodExhaustion(0.05F);
         }
-        if(unlocked){
+        if(abilityEvolve$unlocked){
             for (int i = 0; i < 5; i++) {
                 player.level().addParticle(ParticleTypes.CLOUD,
                         player.getX(), player.getY(), player.getZ(),
@@ -98,7 +101,7 @@ public abstract class PlayerMixin extends LivingEntity implements IPlayerMixin {
         }
     }
     @Unique
-    private BlockHitResult detectClimbingSurface(Player player) {
+    private BlockHitResult abilityEvolve$detectClimbingSurface(Player player) {
         return player.level().clip(new ClipContext(
                 player.getEyePosition(),
                 player.getEyePosition().add(player.getLookAngle().scale(0.5)),
@@ -108,8 +111,8 @@ public abstract class PlayerMixin extends LivingEntity implements IPlayerMixin {
         ));
     }
     @Override
-    public void setAbilityUnlocked(boolean unlocked) {
-        this.unlocked = unlocked;
+    public void abilityEvolve$setAbilityUnlocked(boolean unlocked) {
+        this.abilityEvolve$unlocked = unlocked;
     }
 }
 

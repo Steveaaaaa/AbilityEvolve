@@ -1,6 +1,6 @@
 package yezi.abilityevolve.common.interfaces;
 
 public interface IPlayerMixin {
-    void setAbilityUnlocked(boolean unlocked);
+    void abilityEvolve$setAbilityUnlocked(boolean unlocked);
   //  boolean skillableReforged$getIsChargingJump();
 }
