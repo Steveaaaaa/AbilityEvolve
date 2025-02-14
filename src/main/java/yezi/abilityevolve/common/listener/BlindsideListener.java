@@ -21,5 +21,6 @@ public class BlindsideListener {
         float multiplier = blindsideAbility.getBonusDamage(target,this.player);
         event.setAmount(event.getAmount() * multiplier);
     }
+
 }
 
