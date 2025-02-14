@@ -30,7 +30,7 @@ public class HarvestAbility extends Ability{
                 true
         );
     }
-    private static final int[] X_VALUES = {20, 25, 30, 35, 40, 45, 50, 55, 60, 65};
+    private static final int[] X_VALUES = {3, 6, 9, 12, 15, 18, 21, 24, 27, 30};
     public static float calculateExtraDamage(int abilityLevel, Player player) {
         if (abilityLevel < 1 || abilityLevel > 10) return 0;
 

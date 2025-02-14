@@ -53,10 +53,8 @@ public abstract class PlayerMixin extends LivingEntity implements IPlayerMixin {
                     abilityEvolve$executeChargeJump(localPlayer);
             }else {
                 if (isJumping && onGround() && !isSwimming()) {
-                    //  AbilityEvolve.LOGGER.info("Charge jumping...");
                     ++abilityEvolve$chargeTicks;
                 } else if (abilityEvolve$wasJumping && !isJumping && onGround()) {
-                    //    AbilityEvolve.LOGGER.info("Jump triggered!");
                     abilityEvolve$executeChargeJump(localPlayer);
                     abilityEvolve$chargeTicks = 0;
                 }

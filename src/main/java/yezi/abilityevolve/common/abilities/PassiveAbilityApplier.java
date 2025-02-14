@@ -88,7 +88,7 @@ public class PassiveAbilityApplier {
 
     private void applyDefenseAbility(int index) {
 
-        AbilityEvolve.LOGGER.info("应用 defense 被动能力, 索引: " + index);
+   //     AbilityEvolve.LOGGER.info("应用 defense 被动能力, 索引: " + index);
         switch (index) {
             case 0 -> applyAbility("isHomomorphicRetributionAbilityActive", new HomomorphicRetributionListener(player), "同态复仇生效");
             case 1 -> applyAbility("isPerfectPreparationAbilityActive", new PerfectPreparationListener(player), "准备万全生效");
@@ -99,30 +99,39 @@ public class PassiveAbilityApplier {
 
     private void applyBuildingAbility(int index) {
 
-        AbilityEvolve.LOGGER.info("应用 building 被动能力, 索引: " + index);
+//        AbilityEvolve.LOGGER.info("应用 building 被动能力, 索引: " + index);
         switch (index) {
             case 2 -> applyAbility("isTransformAbilityActive", new TransformListener(player), "紫颂果嬗变术生效");
         }
     }
 
     private void applyFarmingAbility(int index) {
-        AbilityEvolve.LOGGER.info("应用 farming 被动能力, 索引: " + index);
+      //  AbilityEvolve.LOGGER.info("应用 farming 被动能力, 索引: " + index);
         switch (index) {
             case 1 -> applyAbility("isHarvestAbilityActive", new HarvestListener(player), "收割生效");
-            case 2 -> EnergeticListener.abilityUnlockedMap.put(this.player.getUUID(), true);
+            case 2 -> {
+                if (!PlayerTickListener.energeticUnlockedMap.containsKey(player.getUUID()))
+                    PlayerTickListener.energeticUnlockedMap.put(this.player.getUUID(), false);
+            }
         }
     }
 
     private void applyAgilityAbility(int index) {
-        AbilityEvolve.LOGGER.info("应用 agility 被动能力, 索引: " + index);
+
+      //  AbilityEvolve.LOGGER.info("应用 agility 被动能力, 索引: " + index);
+        switch (index) {
+            case 1 -> PlayerTickListener.longTravelUnlockedMap.put(this.player.getUUID(), false);
+            case 2 -> PlayerTickListener.concealUnlockedMap.put(this.player.getUUID(), true);
+        }
     }
 
     private void applyMagicAbility(int index) {
-        AbilityEvolve.LOGGER.info("应用 magic 被动能力, 索引: " + index);
+       // AbilityEvolve.LOGGER.info("应用 magic 被动能力, 索引: " + index);
     }
 
     private void applyShootingAbility(int index) {
-        AbilityEvolve.LOGGER.info("应用 shooting 被动能力, 索引: " + index);
+
+        //AbilityEvolve.LOGGER.info("应用 shooting 被动能力, 索引: " + index);
     }
 
     private boolean applyAbility(String stateKey, Object listener, String message) {

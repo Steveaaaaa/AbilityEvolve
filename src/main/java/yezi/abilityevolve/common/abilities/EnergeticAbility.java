@@ -10,6 +10,7 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.food.FoodData;
 import net.minecraft.world.phys.Vec3;
+import yezi.abilityevolve.common.listener.PlayerTickListener;
 import yezi.abilityevolve.common.skills.Requirement;
 import yezi.abilityevolve.common.skills.Skill;
 
@@ -43,7 +44,7 @@ public class EnergeticAbility extends Ability{
     private static final int SPEED_LEVEL = 1;
     private static final MobEffect JUMP_EFFECT = MobEffects.JUMP;
     private static final int JUMP_LEVEL = 0;
-    private static final int EFFECT_DURATION = 220;
+    private static final int EFFECT_DURATION = 40;
     public static void applyEnergeticEffect(Player player, int abilityLevel) {
         if (abilityLevel < 1 || abilityLevel > MAX_LEVEL) return;
 
@@ -51,8 +52,10 @@ public class EnergeticAbility extends Ability{
 
         FoodData foodData = player.getFoodData();
         double total = foodData.getFoodLevel() + foodData.getSaturationLevel();
-
-        if (total >= required) {
+        if (total >= required){
+            PlayerTickListener.energeticUnlockedMap.put(player.getUUID(), true);
+        }else PlayerTickListener.energeticUnlockedMap.put(player.getUUID(), false);
+        if (PlayerTickListener.energeticUnlockedMap.get(player.getUUID())) {
             applyEffects(player);
             showVisualFeedback(player, abilityLevel);
         }
@@ -62,8 +65,8 @@ public class EnergeticAbility extends Ability{
     }
     private static void applyEffects(Player player) {
         if (!player.level().isClientSide) {
-            player.removeEffect(SPEED_EFFECT);
-            player.removeEffect(JUMP_EFFECT);
+         /*   player.removeEffect(SPEED_EFFECT);
+            player.removeEffect(JUMP_EFFECT);*/
 
             player.addEffect(new MobEffectInstance(
                     SPEED_EFFECT,

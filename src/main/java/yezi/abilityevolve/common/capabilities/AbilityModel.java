@@ -7,10 +7,10 @@ public class AbilityModel {
     public int[] miningLock = new int[]{0,0,0};
     public int[] gatheringLock = new int[]{0,0,0};
     public int[] attackLock = new int[]{0,0,1,0};
-    public int[] defenseLock = new int[]{0,0,1,0};
+    public int[] defenseLock = new int[]{1,1,1,1};
     public int[] buildingLock = new int[]{0,0,0};
-    public int[] farmingLock = new int[]{0,0,0};
-    public int[] agilityLock = new int[]{0,0,0,0};
+    public int[] farmingLock = new int[]{1,1,1};
+    public int[] agilityLock = new int[]{1,1,1,1};
     public int[] magicLock = new int[]{0,0,0,0};
     public int[] shootingLock = new int[]{0,0,0,0};
     public int abilityPoint = 0;

@@ -11,8 +11,8 @@
   ],
   "client": [
     "CameraMixin",
-    "HudMixin",
-    "MixinEntityRenderer"
+    "GameRendererMixin",
+    "HudMixin"
   ],
   "injectors": {
     "defaultRequire": 1

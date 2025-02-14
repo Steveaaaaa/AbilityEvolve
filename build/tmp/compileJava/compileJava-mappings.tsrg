@@ -1,0 +1,8 @@
+yezi/abilityevolve/mixin/CameraMixin xRot f_90557_
+yezi/abilityevolve/mixin/CameraMixin yRot f_90558_
+yezi/abilityevolve/mixin/CameraMixin position f_90552_
+yezi/abilityevolve/mixin/CameraMixin entity f_90551_
+yezi/abilityevolve/mixin/CameraMixin setPosition (Lnet/minecraft/world/phys/Vec3;)V m_90581_
+yezi/abilityevolve/mixin/CameraMixin setRotation (FF)V m_90572_
+yezi/abilityevolve/mixin/GameRendererMixin createReloadListener ()Lnet/minecraft/server/packs/resources/PreparableReloadListener; m_247116_
+yezi/abilityevolve/mixin/HudMixin getCameraPlayer ()Lnet/minecraft/world/entity/player/Player; m_93092_

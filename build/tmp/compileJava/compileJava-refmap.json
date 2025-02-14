@@ -1,8 +1,24 @@
 {
   "mappings": {
-    "yezi/abilityevolve/mixin/PlayerChargeJumpMixin": {
+    "yezi/abilityevolve/mixin/PlayerMixin": {
       "tick": "Lnet/minecraft/world/entity/player/Player;m_8119_()V",
       "jumpFromGround": "Lnet/minecraft/world/entity/player/Player;m_6135_()V"
+    },
+    "yezi/abilityevolve/mixin/LivingEntityMixin": {
+      "travel": "Lnet/minecraft/world/entity/LivingEntity;m_7023_(Lnet/minecraft/world/phys/Vec3;)V"
+    },
+    "yezi/abilityevolve/mixin/HudMixin": {
+      "Lcom/mojang/blaze3d/vertex/PoseStack;translate(FFF)V": "Lcom/mojang/blaze3d/vertex/PoseStack;m_252880_(FFF)V",
+      "render": "Lnet/minecraft/client/gui/Gui;m_280421_(Lnet/minecraft/client/gui/GuiGraphics;F)V"
+    },
+    "yezi/abilityevolve/mixin/CameraMixin": {
+      "getMaxZoom": "Lnet/minecraft/client/Camera;m_90566_(D)D",
+      "setup": "Lnet/minecraft/client/Camera;m_90575_(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/world/entity/Entity;ZZF)V"
+    },
+    "yezi/abilityevolve/mixin/GameRendererMixin": {
+      "renderLevel": "Lnet/minecraft/client/renderer/GameRenderer;m_109089_(FJLcom/mojang/blaze3d/vertex/PoseStack;)V",
+      "Lnet/minecraft/client/Camera;getXRot()F": "Lnet/minecraft/client/Camera;m_90589_()F",
+      "Lnet/minecraft/client/Camera;getYRot()F": "Lnet/minecraft/client/Camera;m_90590_()F"
     },
     "yezi/abilityevolve/mixin/CraftingContainerMixin": {
       "slotChangedCraftingGrid": "Lnet/minecraft/world/inventory/CraftingMenu;m_150546_(Lnet/minecraft/world/inventory/AbstractContainerMenu;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/inventory/CraftingContainer;Lnet/minecraft/world/inventory/ResultContainer;)V"
@@ -10,9 +26,25 @@
   },
   "data": {
     "searge": {
-      "yezi/abilityevolve/mixin/PlayerChargeJumpMixin": {
+      "yezi/abilityevolve/mixin/PlayerMixin": {
         "tick": "Lnet/minecraft/world/entity/player/Player;m_8119_()V",
         "jumpFromGround": "Lnet/minecraft/world/entity/player/Player;m_6135_()V"
+      },
+      "yezi/abilityevolve/mixin/LivingEntityMixin": {
+        "travel": "Lnet/minecraft/world/entity/LivingEntity;m_7023_(Lnet/minecraft/world/phys/Vec3;)V"
+      },
+      "yezi/abilityevolve/mixin/HudMixin": {
+        "Lcom/mojang/blaze3d/vertex/PoseStack;translate(FFF)V": "Lcom/mojang/blaze3d/vertex/PoseStack;m_252880_(FFF)V",
+        "render": "Lnet/minecraft/client/gui/Gui;m_280421_(Lnet/minecraft/client/gui/GuiGraphics;F)V"
+      },
+      "yezi/abilityevolve/mixin/CameraMixin": {
+        "getMaxZoom": "Lnet/minecraft/client/Camera;m_90566_(D)D",
+        "setup": "Lnet/minecraft/client/Camera;m_90575_(Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/world/entity/Entity;ZZF)V"
+      },
+      "yezi/abilityevolve/mixin/GameRendererMixin": {
+        "renderLevel": "Lnet/minecraft/client/renderer/GameRenderer;m_109089_(FJLcom/mojang/blaze3d/vertex/PoseStack;)V",
+        "Lnet/minecraft/client/Camera;getXRot()F": "Lnet/minecraft/client/Camera;m_90589_()F",
+        "Lnet/minecraft/client/Camera;getYRot()F": "Lnet/minecraft/client/Camera;m_90590_()F"
       },
       "yezi/abilityevolve/mixin/CraftingContainerMixin": {
         "slotChangedCraftingGrid": "Lnet/minecraft/world/inventory/CraftingMenu;m_150546_(Lnet/minecraft/world/inventory/AbstractContainerMenu;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/inventory/CraftingContainer;Lnet/minecraft/world/inventory/ResultContainer;)V"
