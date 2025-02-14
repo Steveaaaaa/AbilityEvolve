@@ -45,6 +45,6 @@ public class TransformListener {
     }
 
     private int getPlayerLevel(Player player) {
-        return GetAbilityLevel.getAbilityLevelAttack1(ModCapabilities.getSkillModel(player).getSkillLevel(Skill.BUILDING), TransformAbility.requirement);
+        return GetAbilityLevel.getAbilityLevelBuilding1(ModCapabilities.getSkillModel(player).getSkillLevel(Skill.BUILDING), TransformAbility.requirement);
     }
 }

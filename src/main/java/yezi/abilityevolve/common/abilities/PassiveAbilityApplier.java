@@ -98,11 +98,19 @@ public class PassiveAbilityApplier {
     }
 
     private void applyBuildingAbility(int index) {
+
         AbilityEvolve.LOGGER.info("应用 building 被动能力, 索引: " + index);
+        switch (index) {
+            case 2 -> applyAbility("isTransformAbilityActive", new TransformListener(player), "紫颂果嬗变术生效");
+        }
     }
 
     private void applyFarmingAbility(int index) {
         AbilityEvolve.LOGGER.info("应用 farming 被动能力, 索引: " + index);
+        switch (index) {
+            case 1 -> applyAbility("isHarvestAbilityActive", new HarvestListener(player), "收割生效");
+            case 2 -> EnergeticListener.abilityUnlockedMap.put(this.player.getUUID(), true);
+        }
     }
 
     private void applyAgilityAbility(int index) {
