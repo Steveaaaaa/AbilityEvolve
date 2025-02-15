@@ -7,7 +7,7 @@ import yezi.abilityevolve.common.capabilities.ModCapabilities;
 import yezi.abilityevolve.common.skills.Requirement;
 import yezi.abilityevolve.common.skills.Skill;
 import yezi.abilityevolve.common.utils.GetAbilityLevel;
-
+//这个技能是一个被动技能，当玩家攻击时，如果目标没有检测到玩家，则增加伤害
 public class BlindsideAbility extends Ability{
     private static final String name = "blindside";
     private static final String description = "If the target does not detect you, the damage increase";

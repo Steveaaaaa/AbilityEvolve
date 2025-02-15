@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
-Specification-Title: skillablereforged
-Specification-Vendor: 
+Specification-Title: abilityevolve
+Specification-Vendor: Yezy
 Specification-Version: 1
-Implementation-Title: SkillableReforged
-Implementation-Version: 1.1
-Implementation-Vendor: 
-Implementation-Timestamp: 2024-12-07T19:17:31+0800
-MixinConfigs: skillablereforged.mixins.json
+Implementation-Title: AbilityEvolve
+Implementation-Version: 1.0
+Implementation-Vendor: Yezy
+Implementation-Timestamp: 2025-02-14T18:04:21+0800
+MixinConfigs: abilityevolve.mixins.json
 

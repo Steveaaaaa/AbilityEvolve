@@ -16,7 +16,7 @@ import yezi.abilityevolve.common.utils.GetAbilityLevel;
 
 import java.util.List;
 import java.util.Map;
-
+//这是一个强化伙伴的技能，它会根据玩家等级和技能等级来增强附近的对应种类的动物。
 public class AidSupportAbility extends Ability {
     public static final String name = "aid_support";
     public static final String description = "Enhance the nearby corresponding fed creatures.";

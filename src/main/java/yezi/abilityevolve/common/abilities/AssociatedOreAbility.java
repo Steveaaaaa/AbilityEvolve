@@ -13,7 +13,7 @@ import yezi.abilityevolve.common.skills.Skill;
 import yezi.abilityevolve.common.utils.GetAbilityLevel;
 
 import java.util.Random;
-
+//这是一个挖掘技能，可以根据玩家挖掘等级和技能等级来决定概率和额外掉落物。
 public class AssociatedOreAbility extends Ability {
     private static final String name = "associated_ore";
     private static final String description = "Mining with a non-enchanted pickaxe has a chance to drop related ores.";

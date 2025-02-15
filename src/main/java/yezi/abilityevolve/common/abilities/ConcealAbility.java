@@ -12,6 +12,8 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+//这是一个隐藏技能，当玩家在指定时间段内没有进行任何操作时，会自动隐藏自己，并增加攻击伤害。
+
 public class ConcealAbility extends Ability{
     private static final String name = "conceal";
     private static final String description = "Become a assassin";

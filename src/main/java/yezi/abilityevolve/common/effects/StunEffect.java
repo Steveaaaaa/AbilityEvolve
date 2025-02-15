@@ -25,7 +25,7 @@ public class StunEffect {
         long expireTime = System.currentTimeMillis() + (long) (durationSeconds * 1000);
         stunnedEntities.put(uuid, expireTime);
         int durationTicks = (int) (durationSeconds * 20);
-    //    AbilityEvolve.LOGGER.info("应用了 " + durationSeconds + " 秒的眩晕效果在实体 " + uuid + " 上");
+        //    AbilityEvolve.LOGGER.info("应用了 " + durationSeconds + " 秒的眩晕效果在实体 " + uuid + " 上");
         if (!entity.hasEffect(MobEffects.MOVEMENT_SLOWDOWN)) {
             entity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SLOWDOWN, durationTicks, 255, false, false, false));
         }
@@ -81,4 +81,5 @@ public class StunEffect {
         }
     }
 }
+
 
