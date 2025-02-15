@@ -4,5 +4,4 @@
   "scaling": "never",
   "effects": "bypasses_armor|bypasses_effects",
   "death_message_type": "default"
-  "message_id": "custom"
 }
